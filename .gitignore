@@ -1,0 +1,12 @@
+node_modules/
+.wrangler/
+dist/
+*.zip
+*.pem
+*.key
+.env
+.env.*
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc

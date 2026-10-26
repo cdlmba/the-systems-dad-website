@@ -1,0 +1,35 @@
+{
+  "entries": [
+    {
+      "path": "skills/Brand-and-Voice"
+    },
+    {
+      "path": "skills/Brand-and-Voice/master-brand-context",
+      "description": "CANONICAL brand context. Load first in any content or voice session. Single source of truth."
+    },
+    {
+      "path": "skills/Content-and-Social"
+    },
+    {
+      "path": "skills/Marketing-and-Growth"
+    },
+    {
+      "path": "skills/Systems-and-Architecture"
+    },
+    {
+      "path": "skills/Family-and-Life"
+    },
+    {
+      "path": "skills/Consulting-and-Strategy"
+    },
+    {
+      "path": "skills/daily-retro"
+    },
+    {
+      "path": "skills/social-copy-filter"
+    },
+    {
+      "path": "skills/design-inspiration"
+    }
+  ]
+}

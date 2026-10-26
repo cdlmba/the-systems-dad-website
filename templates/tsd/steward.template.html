@@ -1,0 +1,175 @@
+{{head}}
+<body class="brand-tsd" style="display: block; background-color: var(--background-main);">
+    {{header}}
+    
+    <style>
+        /* Steward Variant Specific Clean Styling (design.md aligned) */
+        .premium-hero {
+            padding: 5rem 1.5rem 4rem;
+            background-color: var(--background-main);
+            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .hero-eyebrow {
+            display: inline-block;
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--primary-color);
+            background: var(--accent-soft);
+            padding: 0.35rem 0.85rem;
+            border-radius: var(--radius-sm);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title {
+            font-size: clamp(2.6rem, 7vw, 4.25rem);
+            line-height: 1.15;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-top: 0.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-color-emphasis);
+        }
+
+        .hero-accent {
+            display: block;
+            font-style: italic;
+            font-weight: 400;
+            color: var(--primary-color);
+            font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+            margin-top: 0.5rem;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-body);
+            font-size: 1.25rem;
+            line-height: 1.65;
+            color: var(--text-color-muted);
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .problem-section {
+            background: #FFFFFF;
+            border-radius: var(--radius-md);
+            padding: 3.5rem 3rem;
+            margin: 4.5rem auto;
+            max-width: 860px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            .problem-section {
+                padding: 2.25rem 1.75rem;
+                margin: 3rem auto;
+            }
+        }
+
+        .price-card-premium {
+            background: #1F2421;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 4.5rem 3rem;
+            text-align: center;
+            position: relative;
+            box-shadow: var(--shadow-md);
+            margin: 6rem auto;
+            max-width: 860px;
+        }
+
+        .price-card-premium h2, 
+        .price-card-premium p, 
+        .price-card-premium .price-strikethrough {
+            color: #FAF8F5 !important;
+        }
+
+        .premium-tag {
+            background: var(--primary-color);
+            color: #FAF8F5 !important;
+            padding: 0.45rem 1.25rem;
+            border-radius: var(--radius-sm);
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-premium {
+            background: var(--primary-color);
+            color: #FAF8F5 !important;
+            padding: 1.15rem 3rem;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: 1.15rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.2s ease, transform 0.2s ease;
+            margin-top: 1.5rem;
+            border: none;
+            cursor: pointer;
+            min-height: 48px;
+        }
+
+        .cta-premium:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+    </style>
+    
+    <main class="main-container" style="display: block;">
+        <section class="premium-hero">
+            <div class="hero-eyebrow">[THE HOUSE OPERATING SYSTEM · $97]</div>
+            <h1 class="hero-title">{{steward_copy_hero_title}} <span class="hero-accent">{{steward_copy_hero_accent}}</span></h1>
+            <p class="hero-subtitle">
+                {{steward_copy_hero_subtitle}}
+            </p>
+        </section>
+
+        <section class="problem-section">
+            <h2 style="font-family: var(--font-heading); font-size: 2.2rem; margin-bottom: 1.5rem; color: var(--text-color-emphasis);">{{steward_copy_problem_title}}</h2>
+            <div style="font-size: 1.15rem; line-height: 1.8; color: var(--text-color-main);">
+                {{steward_copy_problem_body}}
+            </div>
+        </section>
+
+        <section class="section-padding" style="text-align: left; max-width: 860px; margin: 0 auto;">
+            <div class="brand-markdown">
+                {{steward_copy}}
+            </div>
+        </section>
+
+        <section class="price-card-premium">
+            <span class="premium-tag">THE COMPLETE HOUSE SYSTEM</span>
+            <h2 style="font-family: var(--font-heading); font-size: clamp(2.2rem, 5vw, 3.2rem); line-height: 1.15; margin: 0.5rem 0;">Stop Ghosting. <br>Start Being There.</h2>
+            
+            <div style="font-size: clamp(3rem, 6vw, 4rem); font-weight: 800; margin: 1.5rem 0; display: flex; align-items: center; justify-content: center; gap: 1.25rem;">
+                <span class="price-strikethrough" style="font-size: 1.8rem; opacity: 0.4; text-decoration: line-through;">{{steward_copy_price_strikethrough}}</span>
+                <span style="color: #6BBF8C;">{{steward_copy_price}}</span>
+            </div>
+            
+            <p style="font-size: 1.15rem; opacity: 0.85; margin-bottom: 2rem;">
+                Includes the Home Dashboard, Shutdown Routine, and Sunday Sync Checklist.
+            </p>
+            
+            <button onclick="handleStripeCheckout('SYSTEMS_DAD_OS', null, 'steward', this)" class="cta-premium">
+                Get the Self-Serve System &rarr;
+            </button>
+        </section>
+    </main>
+
+    {{footer}}
+    {{chatbot}}
+    {{checkout_logic}}
+    {{sendfox_logic}}
+    {{scripts}}
+</body>
+</html>

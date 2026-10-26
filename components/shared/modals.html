@@ -1,0 +1,65 @@
+<!-- MEDIA MODAL -->
+<div id="mediaModal" class="media-modal">
+    <div class="modal-content">
+        <button class="modal-close" id="closeModal">&times;</button>
+        <div class="modal-body">
+            <img src="" alt="" class="modal-image" id="modalImage">
+            <h3 class="modal-title" id="modalTitle"></h3>
+            <p class="modal-desc" id="modalDesc"></p>
+            <a href="" target="_blank" class="cta-button cta-button-primary" id="modalLink">Listen Now</a>
+        </div>
+    </div>
+</div>
+
+<!-- CASE STUDY MODAL -->
+<div id="caseStudyModal" class="media-modal">
+    <div class="modal-content">
+        <button class="modal-close" id="closeCaseStudyModal">&times;</button>
+        <div class="modal-body text-left">
+            <span id="csModalTag" class="case-study-tag"></span>
+            <h3 id="csModalTitle" class="modal-title" style="text-align: left; margin-top: 0.5rem;"></h3>
+            <div id="csModalBody" class="case-study-body" style="margin-top: 1.5rem; margin-bottom: 2rem;"></div>
+            <div class="case-study-result"
+                style="background: var(--background-secondary, #F3EFE6); border: 1px solid var(--border-color, #E8E4DC); border-left: 4px solid var(--primary-color, #244234); border-radius: var(--radius-md, 12px); padding: 1.5rem;">
+                <strong
+                    style="color: var(--primary-color); display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">The
+                    Result</strong>
+                <p id="csModalResult" style="color: var(--text-color-main); font-weight: 600; margin: 0;"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CONTACT MODAL -->
+<div id="contactModal" class="media-modal">
+    <div class="modal-content">
+        <button class="modal-close" id="closeContactModal">&times;</button>
+        <div class="contact-modal-body">
+            <h3 class="modal-title">Send a Message</h3>
+            <p class="modal-desc" style="margin-bottom: 2rem;">Fill out the form below and I'll get back to you
+                within 24-48 hours.</p>
+
+            <form id="contactForm" action="https://formspree.io/f/maqngzrg" method="POST">
+                <div class="contact-form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" class="contact-form-input" placeholder="Your Name"
+                        required>
+                </div>
+                <div class="contact-form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" id="email" name="email" class="contact-form-input"
+                        placeholder="email@example.com" required>
+                </div>
+                <div class="contact-form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" class="contact-form-textarea"
+                        placeholder="How can I help you?" required></textarea>
+                </div>
+                <button type="submit" id="contactSubmit" class="contact-submit-btn">Send Message</button>
+                <div id="contactStatus"
+                    style="margin-top: 1.5rem; display: none; text-align: center; border-radius: 0.5rem; padding: 1rem;">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

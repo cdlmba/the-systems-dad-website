@@ -1,0 +1,90 @@
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+
+    <!-- 1. CRITICAL: Inline Mobile Detection (Prevents layout jitter) -->
+    <script>
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            document.documentElement.classList.add('is-mobile');
+            document.body.classList.add('is-mobile');
+        }
+        
+        // 1.1 Global Configuration Access
+        window.siteConfig = {
+            globals: {
+                tidycal_url: "{{global_tidycal_url}}",
+                cls_booking_price: "{{global_cls_booking_price}}",
+                tsd_booking_price: "{{global_tsd_booking_price}}"
+            },
+            brand: "TSD",
+            version: "2"
+        };
+    </script>
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <!-- 2. STYLES (Load before analytics to prevent FOUC) -->
+    <link rel="stylesheet" href="{{root_path}}style.css?v=20260930e">
+
+    <!-- GA4 Systems Dad Index — G-W4TB1J0TNK only -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GT-PBSGZ5XB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-W4TB1J0TNK');
+    </script>
+
+    <!-- Microsoft Clarity Tracking -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "weaa6eknja");
+    </script>
+
+<!-- Whop Checkout Script -->
+<script async defer src="https://js.whop.com/static/checkout/loader.js"></script>
+
+<!-- SEO Meta Tags -->
+<meta name="description"
+    content="{{description}}">
+<link rel="canonical" href="https://thesystemsdad.com/{{slug}}">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description"
+    content="{{description}}">
+<meta property="og:image" content="https://thesystemsdad.com/{{og_image}}">
+<meta property="og:url" content="https://thesystemsdad.com/{{slug}}">
+<meta property="og:type" content="website">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{title}}">
+<meta name="twitter:description" content="{{description}}">
+<meta name="twitter:image" content="https://thesystemsdad.com/{{og_image}}">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap"
+    rel="stylesheet">
+
+<!-- Styles (Moved to top of head) -->
+
+<link rel="icon" type="image/png" href="{{favicon_url}}">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"Christopher Lynn",
+  "url":"https://thesystemsdad.com",
+  "sameAs":["https://www.linkedin.com/in/ChristopherDLynn"],
+  "jobTitle":"Systems Consultant and Coach"
+}
+</script>

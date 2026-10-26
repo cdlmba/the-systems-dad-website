@@ -1,0 +1,460 @@
+<!-- Unified The Residue Audit Component -->
+<div id="unifiedAudit" class="unified-audit-container">
+    <div class="audit-header text-center">
+        <span class="badge">The Audit</span>
+        <h1 class="audit-title">The <span class="highlight">Friction</span> Audit</h1>
+        <p class="audit-subtitle">Measure the drag at work and at home. Find the leaks before the window closes.</p>
+    </div>
+
+    <div class="audit-progress-container">
+        <div class="progress-labels">
+            <span id="stepLabel">Phase 1: Professional Floor</span>
+            <span id="progressPercent">0%</span>
+        </div>
+        <div class="progress-bar">
+            <div id="auditProgress" class="progress-fill" style="width: 0%;"></div>
+        </div>
+    </div>
+
+    <form id="auditForm" class="audit-form">
+        <!-- PHASE 1: WORK -->
+        <div class="audit-step active" data-step="1" data-phase="Work">
+            <div class="pillar-tag">Meetings</div>
+            <h3 class="audit-question">How would you describe your current recurring meeting load?</h3>
+            <div class="audit-options">
+                <label class="audit-option">
+                    <input type="radio" name="w1" value="0" required>
+                    <span class="option-box">
+                        <span class="option-title">Reactive Overhead</span>
+                        <span class="option-desc">I sit through status updates that could have been an email/dashboard.</span>
+                    </span>
+                </label>
+                <label class="audit-option">
+                    <input type="radio" name="w1" value="3">
+                    <span class="option-box">
+                        <span class="option-title">Strategic Lead</span>
+                        <span class="option-desc">Status moves asynchronously. Meetings are exclusively for decision-making.</span>
+                    </span>
+                </label>
+            </div>
+        </div>
+
+        <div class="audit-step" data-step="2" data-phase="Work">
+            <div class="pillar-tag">Updates</div>
+            <h3 class="audit-question">How do stakeholders receive project status updates?</h3>
+            <div class="audit-options">
+                <label class="audit-option">
+                    <input type="radio" name="w2" value="0" required>
+                    <span class="option-box">
+                        <span class="option-title">Manual Gathering</span>
+                        <span class="option-desc">I spend hours gathering data, drafting, and proofing reports every week.</span>
+                    </span>
+                </label>
+                <label class="audit-option">
+                    <input type="radio" name="w2" value="3">
+                    <span class="option-box">
+                        <span class="option-title">AI-Enabled Artifacts</span>
+                        <span class="option-desc">Live dashboards or AI-drafted reports are generated in under 10 minutes.</span>
+                    </span>
+                </label>
+            </div>
+        </div>
+
+        <div class="audit-step" data-step="3" data-phase="Work">
+            <div class="pillar-tag">The Bottleneck</div>
+            <h3 class="audit-question">What happens to your projects when you are out of the office?</h3>
+            <div class="audit-options">
+                <label class="audit-option">
+                    <input type="radio" name="w3" value="0" required>
+                    <span class="option-box">
+                        <span class="option-title">Structural Stalling</span>
+                        <span class="option-desc">Decisions wait for me. I am the primary bottleneck for the team.</span>
+                    </span>
+                </label>
+                <label class="audit-option">
+                    <input type="radio" name="w3" value="3">
+                    <span class="option-box">
+                        <span class="option-title">Autonomous Flow</span>
+                        <span class="option-desc">Team has the playbooks and authority to move without me in the middle.</span>
+                    </span>
+                </label>
+            </div>
+        </div>
+
+        <div class="audit-step" data-step="4" data-phase="Work">
+            <div class="pillar-tag">AI Integration</div>
+            <h3 class="audit-question">What is the current status of AI in your day-to-day workflow?</h3>
+            <div class="audit-options">
+                <label class="audit-option">
+                    <input type="radio" name="w4" value="0" required>
+                    <span class="option-box">
+                        <span class="option-title">Aspirational Tooling</span>
+                        <span class="option-desc">I use it for basic email drafts, but it hasn't shifted my core ops.</span>
+                    </span>
+                </label>
+                <label class="audit-option">
+                    <input type="radio" name="w4" value="3">
+                    <span class="option-box">
+                        <span class="option-title">Integrated Core</span>
+                        <span class="option-desc">AI handles risk analysis, stakeholder prep, and strategic synthesis.</span>
+                    </span>
+                </label>
+            </div>
+        </div>
+
+        <div class="audit-step" data-step="5" data-phase="Work">
+            <div class="pillar-tag">The Shutdown</div>
+            <h3 class="audit-question">How does your workday officially end?</h3>
+            <div class="audit-options">
+                <label class="audit-option">
+                    <input type="radio" name="w5" value="0" required>
+                    <span class="option-box">
+                        <span class="option-title">Energy Depletion</span>
+                        <span class="option-desc">I stop when I'm tired. Open loops follow me to the dinner table.</span>
+                    </span>
+                </label>
+                <label class="audit-option">
+                    <input type="radio" name="w5" value="3">
+                    <span class="option-box">
+                        <span class="option-title">Systematic Shutdown</span>
+                        <span class="option-desc">A 10-minute ritual captures loops and closes the mental laptop.</span>
+                    </span>
+                </label>
+            </div>
+        </div>
+
+        <!-- PHASE 2: HOME -->
+        <div class="audit-step" data-step="6" data-phase="Home">
+            <div class="pillar-tag">The Mission</div>
+            <h3 class="audit-question">If I asked your family what your household "stands for," what is the answer?</h3>
+            <div class="audit-options">
+                <label class="audit-option">
+                    <input type="radio" name="h1" value="0" required>
+                    <span class="option-box">
+                        <span class="option-title">Tactical Reaction</span>
+                        <span class="option-desc">We react to today's chaos. There is no shared mission or vision.</span>
+                    </span>
+                </label>
+                <label class="audit-option">
+                    <input type="radio" name="h1" value="3">
+                    <span class="option-box">
+                        <span class="option-title">Shared Mission</span>
+                        <span class="option-desc">We have a written vision that we reference and live by daily.</span>
+                    </span>
+                </label>
+            </div>
+        </div>
+
+        <div class="audit-step" data-step="7" data-phase="Home">
+            <div class="pillar-tag">The Rules</div>
+            <h3 class="audit-question">Where does your family's "operating system" (schedules, SOPs) exist?</h3>
+            <div class="audit-options">
+                <label class="audit-option">
+                    <input type="radio" name="h2" value="0" required>
+                    <span class="option-box">
+                        <span class="option-title">Mental Bottleneck</span>
+                        <span class="option-desc">It's all in our heads. Total reliance on verbal reminders.</span>
+                    </span>
+                </label>
+                <label class="audit-option">
+                    <input type="radio" name="h2" value="3">
+                    <span class="option-box">
+                        <span class="option-title">Central Home Hub</span>
+                        <span class="option-desc">We have a documented "Reference Architecture" everyone uses.</span>
+                    </span>
+                </label>
+            </div>
+        </div>
+
+        <div class="audit-step" data-step="8" data-phase="Home">
+            <div class="pillar-tag">Household Work</div>
+            <h3 class="audit-question">How are recurring household tasks (bills, groceries, chores) handled?</h3>
+            <div class="audit-options">
+                <label class="audit-option">
+                    <input type="radio" name="h3" value="0" required>
+                    <span class="option-box">
+                        <span class="option-title">Manual Decisioning</span>
+                        <span class="option-desc">Every task requires a new conversation or manual effort every time.</span>
+                    </span>
+                </label>
+                <label class="audit-option">
+                    <input type="radio" name="h3" value="3">
+                    <span class="option-box">
+                        <span class="option-title">The Hand-Off Stack</span>
+                        <span class="option-desc">80%+ of logistics are automated or delegated via system.</span>
+                    </span>
+                </label>
+            </div>
+        </div>
+
+        <div class="audit-step" data-step="9" data-phase="Home">
+            <div class="pillar-tag">Presence</div>
+            <h3 class="audit-question">When you are home, how much of your mind is still at the office?</h3>
+            <div class="audit-options">
+                <label class="audit-option">
+                    <input type="radio" name="h4" value="0" required>
+                    <span class="option-box">
+                        <span class="option-title">Residual Engagement</span>
+                        <span class="option-desc">I'm checking Slack or thinking about projects during dinner.</span>
+                    </span>
+                </label>
+                <label class="audit-option">
+                    <input type="radio" name="h4" value="3">
+                    <span class="option-box">
+                        <span class="option-title">Total Stewardship</span>
+                        <span class="option-desc">I am 100% present. The system handles the professional floor.</span>
+                    </span>
+                </label>
+            </div>
+        </div>
+
+        <div class="audit-step" data-step="10" data-phase="Home">
+            <div class="pillar-tag">The Window</div>
+            <h3 class="audit-question">How would you describe your current pace of family leadership?</h3>
+            <div class="audit-options">
+                <label class="audit-option">
+                    <input type="radio" name="h5" value="0" required>
+                    <span class="option-box">
+                        <span class="option-title">Drifting</span>
+                        <span class="option-desc">I'm waiting for a "slower season" to finally build these systems.</span>
+                    </span>
+                </label>
+                <label class="audit-option">
+                    <input type="radio" name="h5" value="3">
+                    <span class="option-box">
+                        <span class="option-title">Architecting</span>
+                        <span class="option-desc">I am building the machine now because the window is closing.</span>
+                    </span>
+                </label>
+            </div>
+        </div>
+
+        <div class="audit-nav">
+            <button type="button" id="prevBtn" class="btn btn-secondary" style="display:none;">Back</button>
+            <button type="button" id="nextBtn" class="btn btn-primary">Next Pillar</button>
+            <button type="submit" id="submitBtn" class="btn btn-primary" style="display:none;">Calculate Diagnosis</button>
+        </div>
+    </form>
+
+    <div id="auditResults" class="audit-results" style="display:none;">
+        <div class="results-header">
+            <h2>Your Audit Results</h2>
+            <div class="score-grid">
+                <div class="score-card">
+                    <span class="score-label">Professional Floor</span>
+                    <span id="workScore" class="score-value">0/15</span>
+                </div>
+                <div class="score-card">
+                    <span class="score-label">Domestic Ceiling</span>
+                    <span id="homeScore" class="score-value">0/15</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="diagnosisCard" class="diagnosis-card">
+            <h3 id="diagnosisTitle">Calculating...</h3>
+            <p id="diagnosisDesc"></p>
+            
+            <div id="unifiedCTA" class="cta-section">
+                <!-- Dynamic CTA based on score -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .unified-audit-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+        background: rgba(30, 41, 59, 0.4);
+        backdrop-filter: blur(16px);
+        border: 1px solid var(--border-color);
+        border-radius: 2rem;
+        color: var(--text-color);
+    }
+
+    .audit-title {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        font-weight: 800;
+    }
+
+    .audit-subtitle {
+        color: var(--text-color-muted);
+        margin-bottom: 2rem;
+    }
+
+    .audit-progress-container {
+        margin-bottom: 3rem;
+    }
+
+    .progress-labels {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--primary-color);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .progress-bar {
+        height: 6px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 3px;
+        overflow: hidden;
+    }
+
+    .progress-fill {
+        height: 100%;
+        background: var(--primary-color);
+        box-shadow: 0 0 10px var(--primary-glow-light);
+        transition: width 0.4s ease;
+    }
+
+    .audit-step {
+        display: none;
+        animation: fadeIn 0.4s ease;
+    }
+
+    .audit-step.active {
+        display: block;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .pillar-tag {
+        font-size: 0.8rem;
+        color: var(--primary-color);
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+    }
+
+    .audit-question {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        line-height: 1.4;
+    }
+
+    .audit-options {
+        display: grid;
+        gap: 1.5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .audit-option input {
+        display: none;
+    }
+
+    .option-box {
+        display: block;
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--border-color);
+        border-radius: 1rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .audit-option:hover .option-box {
+        border-color: var(--primary-color);
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .audit-option input:checked + .option-box {
+        background: var(--primary-glow-light);
+        border-color: var(--primary-color);
+        box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+    }
+
+    .option-title {
+        display: block;
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+    }
+
+    .option-desc {
+        display: block;
+        font-size: 0.9rem;
+        color: var(--text-color-muted);
+        line-height: 1.5;
+    }
+
+    .audit-nav {
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-end;
+    }
+
+    .audit-results {
+        animation: scaleUp 0.5s ease;
+    }
+
+    @keyframes scaleUp {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+    }
+
+    .score-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin: 2rem 0;
+    }
+
+    .score-card {
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--border-color);
+        border-radius: 1rem;
+        text-align: center;
+    }
+
+    .score-label {
+        display: block;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        color: var(--text-color-muted);
+        margin-bottom: 0.5rem;
+    }
+
+    .score-value {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--primary-color);
+    }
+
+    .diagnosis-card {
+        padding: 2.5rem;
+        background: linear-gradient(135deg, rgba(30, 41, 59, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%);
+        border: 2px solid var(--primary-color);
+        border-radius: 1.5rem;
+        text-align: center;
+    }
+
+    #diagnosisTitle {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+    }
+
+    #diagnosisDesc {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        margin-bottom: 2rem;
+        color: var(--text-color-muted);
+    }
+
+    .cta-section {
+        margin-top: 2rem;
+    }
+</style>
+
+<script src="/js/audit.js" defer></script>

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>“Making Time” is a lie</title>
+
+    <!-- 1. CRITICAL: Inline Mobile Detection (Prevents layout jitter) -->
+    <script>
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            document.documentElement.classList.add('is-mobile');
+            document.body.classList.add('is-mobile');
+        }
+        
+        // 1.1 Global Configuration Access
+        window.siteConfig = {
+            globals: {
+                tidycal_url: "https://tidycal.com/christopherlynnsystems/30-minute-meeting",
+                cls_booking_price: "$2,800",
+                tsd_booking_price: "$97"
+            },
+            brand: "TSD",
+            version: "2"
+        };
+    </script>
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <!-- 2. STYLES (Load before analytics to prevent FOUC) -->
+    <link rel="stylesheet" href="../style.css?v=20260930e">
+
+    <!-- GA4 Systems Dad Index — G-W4TB1J0TNK only -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GT-PBSGZ5XB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-W4TB1J0TNK');
+    </script>
+
+    <!-- Microsoft Clarity Tracking -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "weaa6eknja");
+    </script>
+
+<!-- Whop Checkout Script -->
+<script async defer src="https://js.whop.com/static/checkout/loader.js"></script>
+
+<!-- SEO Meta Tags -->
+<meta name="description"
+    content="And why you&#8217;re burning out just chasing the lie">
+<link rel="canonical" href="https://thesystemsdad.com/blog/2026-02-26-making-time-is-a-lie">
+<meta property="og:title" content="“Making Time” is a lie">
+<meta property="og:description"
+    content="And why you&#8217;re burning out just chasing the lie">
+<meta property="og:image" content="https://thesystemsdad.com/https://substackcdn.com/image/fetch/$s_!B93N!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F475cc3c2-b74b-4d73-8d33-f56db9bdd90e_784x1168.jpeg">
+<meta property="og:url" content="https://thesystemsdad.com/blog/2026-02-26-making-time-is-a-lie">
+<meta property="og:type" content="website">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="“Making Time” is a lie">
+<meta name="twitter:description" content="And why you&#8217;re burning out just chasing the lie">
+<meta name="twitter:image" content="https://thesystemsdad.com/https://substackcdn.com/image/fetch/$s_!B93N!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F475cc3c2-b74b-4d73-8d33-f56db9bdd90e_784x1168.jpeg">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Public+Sans:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet">
+
+<!-- Styles (Moved to top of head) -->
+
+<link rel="icon" type="image/png" href="/images/tsd-favicon.png">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"Christopher Lynn",
+  "url":"https://thesystemsdad.com",
+  "sameAs":["https://www.linkedin.com/in/ChristopherDLynn"],
+  "jobTitle":"Systems Consultant and Coach"
+}
+</script>
+
+    <style>
+        /* Specific Blog Styles - Inline for now to keep things self-contained during build */
+        .blog-header {
+            background-color: var(--background-secondary);
+            border-bottom: 1px solid var(--border-color);
+            padding: 6rem 0 4rem;
+            text-align: center;
+        }
+
+        .blog-meta {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            display: block;
+            font-weight: 600;
+        }
+
+        .blog-title {
+            font-size: 1.8rem;
+            max-width: 800px;
+            margin: 0 auto 1rem;
+            line-height: 1.2;
+            padding: 0 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .blog-title { font-size: 2.5rem; margin-bottom: 1.5rem; padding: 0; }
+        }
+
+        .blog-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-color-muted);
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 400;
+            padding: 0 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .blog-subtitle { font-size: 1.25rem; padding: 0; }
+        }
+
+        .blog-content {
+            max-width: 740px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-color-main);
+        }
+
+        /* Typography within blog content */
+        .blog-content h2 {
+            font-size: 1.8rem;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text-color-emphasis);
+        }
+
+        .blog-content h3 {
+            font-size: 1.4rem;
+            margin-top: 2.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-color-emphasis);
+        }
+
+        .blog-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-content ul,
+        .blog-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            color: var(--text-color-muted);
+        }
+
+        .blog-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-content blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1.5rem;
+            font-style: italic;
+            font-size: 1.25rem;
+            color: var(--text-color-emphasis);
+            margin: 2rem 0;
+            background: linear-gradient(90deg, var(--primary-glow-light) 0%, transparent 100%);
+            padding: 1.5rem;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+
+        .blog-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            margin: 2rem 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .blog-content a {
+            color: var(--primary-color);
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        .blog-content a:hover {
+            color: var(--primary-hover);
+        }
+
+        .author-box {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-color);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-color-muted);
+            min-height: 44px; /* Touch Target */
+            padding: 0 0.5rem;
+            margin-left: -0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+
+<body class="brand-tsd">
+    <div class="promo-banner">
+    Real Talk Tuesday — <a href="/real-talk-tuesday">The Weekly Note for Dads →</a>
+</div>
+<header class="main-header">
+    <div class="main-container header-content">
+        <a href="/" class="logo">
+            <span class="logo-primary">the systems dad</span>
+        </a>
+
+        <nav class="main-nav">
+            <a href="/the-systems-dad-method">The Method</a>
+            <a href="/win">The House System</a>
+            <a href="/lab">Coaching</a>
+            <a href="/blog">Essays</a>
+            <a href="/real-talk-tuesday" class="nav-cta">The Weekly Note →</a>
+        </nav>
+        <button class="menu-toggle" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>
+
+
+    <article>
+        <!-- Blog Header -->
+        <header class="blog-header">
+            <div class="main-container">
+                <a href="../blog.html" class="back-link">← Back to Essays</a>
+                <span class="blog-meta">2026-02-26 • The Systems Dad</span>
+                <h1 class="blog-title">“Making Time” is a lie</h1>
+                <p class="blog-subtitle">And why you&#8217;re burning out just chasing the lie</p>
+            </div>
+        </header>
+
+        <!-- Main Content (Injected from Markdown) -->
+        <div class="blog-content">
+            <p>&#8220;I need to make more time.&#8221;</p>
+<p>You&#8217;ve said it. I&#8217;ve said it. We all say it when we&#8217;re drowning in commitments and watching our to-do lists multiply like gremlins. We hunt for productivity hacks, rearrange our calendars, and stay up late (or get up even earlier) trying to squeeze more hours out of the day.</p>
+<p>Here&#8217;s the truth: You&#8217;re not a time creator. You&#8217;re a time steward. You have what you have, and stewardship means wise allocation. Let&#8217;s dive in.</p>
+<div class="captioned-image-container"><figure><a class="image-link image2 is-viewable-img" target="_blank" href="https://substackcdn.com/image/fetch/$s_!B93N!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F475cc3c2-b74b-4d73-8d33-f56db9bdd90e_784x1168.jpeg" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!B93N!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F475cc3c2-b74b-4d73-8d33-f56db9bdd90e_784x1168.jpeg 424w, https://substackcdn.com/image/fetch/$s_!B93N!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F475cc3c2-b74b-4d73-8d33-f56db9bdd90e_784x1168.jpeg 848w, https://substackcdn.com/image/fetch/$s_!B93N!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F475cc3c2-b74b-4d73-8d33-f56db9bdd90e_784x1168.jpeg 1272w, https://substackcdn.com/image/fetch/$s_!B93N!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F475cc3c2-b74b-4d73-8d33-f56db9bdd90e_784x1168.jpeg 1456w" sizes="100vw"><img src="https://substackcdn.com/image/fetch/$s_!B93N!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F475cc3c2-b74b-4d73-8d33-f56db9bdd90e_784x1168.jpeg" width="414" height="616.7755102040817" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/475cc3c2-b74b-4d73-8d33-f56db9bdd90e_784x1168.jpeg&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:1168,&quot;width&quot;:784,&quot;resizeWidth&quot;:414,&quot;bytes&quot;:306330,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/jpeg&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:&quot;https://christopherlynn.substack.com/i/188712465?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F475cc3c2-b74b-4d73-8d33-f56db9bdd90e_784x1168.jpeg&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!B93N!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F475cc3c2-b74b-4d73-8d33-f56db9bdd90e_784x1168.jpeg 424w, https://substackcdn.com/image/fetch/$s_!B93N!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F475cc3c2-b74b-4d73-8d33-f56db9bdd90e_784x1168.jpeg 848w, https://substackcdn.com/image/fetch/$s_!B93N!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F475cc3c2-b74b-4d73-8d33-f56db9bdd90e_784x1168.jpeg 1272w, https://substackcdn.com/image/fetch/$s_!B93N!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F475cc3c2-b74b-4d73-8d33-f56db9bdd90e_784x1168.jpeg 1456w" sizes="100vw" fetchpriority="high"></picture><div class="image-link-expand"><div class="pencraft pc-display-flex pc-gap-8 pc-reset"><button tabindex="0" type="button" class="pencraft pc-reset pencraft icon-container restack-image"><svg role="img" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke-width="1.5" stroke="var(--color-fg-primary)" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><g><title></title><path d="M2.53001 7.81595C3.49179 4.73911 6.43281 2.5 9.91173 2.5C13.1684 2.5 15.9537 4.46214 17.0852 7.23684L17.6179 8.67647M17.6179 8.67647L18.5002 4.26471M17.6179 8.67647L13.6473 6.91176M17.4995 12.1841C16.5378 15.2609 13.5967 17.5 10.1178 17.5C6.86118 17.5 4.07589 15.5379 2.94432 12.7632L2.41165 11.3235M2.41165 11.3235L1.5293 15.7353M2.41165 11.3235L6.38224 13.0882"></path></g></svg></button><button tabindex="0" type="button" class="pencraft pc-reset pencraft icon-container view-image"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-maximize2 lucide-maximize-2"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" x2="14" y1="3" y2="10"></line><line x1="3" x2="10" y1="21" y2="14"></line></svg></button></div></div></div></a></figure></div>
+<p></p>
+<h2><strong>The Problem With &#8220;Making Time&#8221;</strong></h2>
+<p>The whole concept is a trap. When we believe we can generate more hours, we set ourselves up for burnout. We&#8217;re trying to control something we can&#8217;t control. Time doesn&#8217;t bend to our will. We live by the clock, and the clock wins every time.</p>
+<p>Then comes the guilt. When we fail to &#8220;make time,&#8221; we assume something&#8217;s wrong with us. Maybe we&#8217;re not disciplined enough. Maybe we&#8217;re lazy.</p>
+<p>The real problem?</p>
+<p><strong>Our approach is broken.</strong></p>
+<p>It&#8217;s a hamster wheel. You run faster, optimize harder, grind longer. Nothing changes. You just get more tired.</p>
+<p>Time isn&#8217;t a resource you produce. It&#8217;s a fixed allowance you allocate.</p>
+<h2><strong>What It Means to Steward Time</strong></h2>
+<p>Stewarding means taking care of something valuable that&#8217;s been entrusted to you. It means responsibility, thoughtfulness, and planning ahead. A steward often has legal responsibility.</p>
+<p><strong>Do you treat your time like it&#8217;s a legal weight?</strong></p>
+<p>You have 168 hours each week. That&#8217;s it. Your power isn&#8217;t in creating more hours. It&#8217;s in deciding how to use the ones you have.</p>
+<p>Think of time like money. You&#8217;ve got a budget. Where are you spending it? Are you making conscious choices, or just letting it drain away on autopilot?</p>
+<h2><strong>How to Reallocate Your Time</strong></h2>
+<p>Start with an audit. Track where your time actually goes for three or four days. No judgment, just data. You&#8217;ll spot the leaks fast. Social media scrolling. Meetings that could&#8217;ve been emails. Default activities you do because you&#8217;ve always done them.</p>
+<p>Now comes the hard part: figuring out what matters. What aligns with your real goals and values? What&#8217;s genuinely important versus just urgent?</p>
+<p>This is where you learn to say no. Protecting your time budget means turning down requests that don&#8217;t serve your priorities. It feels uncomfortable at first. It gets easier.</p>
+<p>Here&#8217;s how to reallocate strategically. Cut low-value activities to create space for high-value ones. Batch similar tasks together instead of context-switching all day. Stack things together to maximize efficiency.</p>
+<p>Automate or delegate whatever you can. Design your ideal week in advance, blocking out time for what matters before the urgent stuff fills every gap.</p>
+<h2><strong>Rest Isn&#8217;t Optional</strong></h2>
+<p>Rest is part of your time budget, not something you fit in if there&#8217;s room left over.</p>
+<p>Your body and brain need downtime: sleep, mental breaks, actual rest. The hustle-harder mentality is a con. Pushing through exhaustion doesn&#8217;t make you productive. It makes you slow and stupid.</p>
+<p>Schedule rest like you schedule meetings. Decide what rest means for you. Sometimes it&#8217;s Netflix. Sometimes it&#8217;s a walk. Sometimes it&#8217;s staring at the ceiling for twenty minutes because your brain needs to process nothing.</p>
+<p>Rest compounds. When you&#8217;re rested, you focus better, think clearer, and get more done in less time. Skipping rest to work more is like refusing to refuel your car because you&#8217;re in a hurry.</p>
+<p>Take <em><strong>one day a week</strong></em> for non-productive activity (I call it Sabbath-maxxing). It doesn&#8217;t have to be religious. It just has to be real. Recharge so you can steward the rest of your week better.</p>
+<h2><strong>The Freedom in Limits</strong></h2>
+<p>Accepting that time is finite is liberating, not depressing.</p>
+<p>You stop feeling guilty about not doing everything. You start making intentional choices. You build a sustainable life, not just temporarily productive.</p>
+<p>You trade reactive busyness for conscious decisions about what deserves your hours.</p>
+<h2><strong>Stop Trying to Defy Physics</strong></h2>
+<p>You will never make more time. But you can become an exceptional steward of the time you have.</p>
+<p>It&#8217;s a shift from frantic creation to deliberate curation. Audit your hours. Align them with what matters. Protect the moments that let you recharge.</p>
+<p>Try this for one week: stop saying &#8220;I need to make more time.&#8221; Ask yourself instead, &#8220;How can I better steward the time I have today?&#8221;</p>
+<p>The life you want isn&#8217;t waiting for you to create more time. It&#8217;s waiting for you to manage what you&#8217;ve already been given.</p>
+
+            <!-- Simple Author Box -->
+            <div class="author-box">
+                <img src="/images/ChristopherLynnHeadshot_v2.jpg" alt="Christopher Lynn" class="author-img" loading="lazy" width="60" height="60">
+                <div>
+                    <h4 style="margin-bottom: 0.25rem;">Christopher Lynn</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-color-muted);">Systems Coach for Overwhelmed Leaders.
+                    </p>
+                </div>
+            </div>
+
+            
+            <div class="cta-box" style="margin-top: 3rem; background: var(--background-secondary); padding: 2rem; border-radius: 0.5rem; text-align: center; border: 1px solid var(--border-color);">
+                <h3 style="margin-bottom: 1rem;">Reclaim 10 Hours This Week</h3>
+                <p style="margin-bottom: 1.5rem; color: var(--text-color-muted);">Stop letting the chaos run your home. Let's install the architectural systems you use at work in your household.</p>
+                <a href="https://tidycal.com/christopherlynnsystems/30-minute-meeting?utm_source=tsd_blog&utm_content=2026-02-26-making-time-is-a-lie" target="_blank" class="cta-button cta-button-primary">Reclaim 10 Hours This Week →</a>
+            </div>
+            
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+    <div class="main-container">
+        <div class="footer-flex-row">
+            <div class="footer-brand">
+                <a href="/" class="logo"><span class="logo-primary">the systems dad</span></a>
+                <p class="footer-tagline">Helping dads stop being ghosts at home. Simple house systems for busy fathers.</p>
+                <div class="footer-nav-links" style="margin-top: 1rem; display: flex; gap: 1.25rem; flex-wrap: wrap; font-size: 0.9rem;">
+                    <a href="/the-systems-dad-method" style="color: var(--text-color-main); font-weight: 600; text-decoration: none;">The Method</a>
+                    <a href="/win" style="color: var(--text-color-main); font-weight: 600; text-decoration: none;">The House System</a>
+                    <a href="/lab" style="color: var(--text-color-main); font-weight: 600; text-decoration: none;">Coaching</a>
+                    <a href="/blog" style="color: var(--text-color-main); font-weight: 600; text-decoration: none;">Essays</a>
+                    <a href="/real-talk-tuesday" style="color: var(--text-color-main); font-weight: 600; text-decoration: none;">The Weekly Note</a>
+                </div>
+                <p class="footer-tagline" style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.85;">
+                    If you're in active crisis and need to reset your workday transition tonight, I built a specific tool for that: <a href="https://marginreset.com" target="_blank" style="color: var(--accent-color); font-weight: 700; text-decoration: underline;">marginreset.com</a>
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">&copy; 2026 Christopher Lynn Systems, LLC. All rights reserved. <br>
+                The Systems Dad is a brand of Christopher Lynn Systems, LLC. <br>
+                <span style="font-size: 0.8rem; opacity: 0.8;">
+                    <a href="/privacy" style="color: inherit;">Privacy Policy</a> |
+                    <a href="/terms" style="color: inherit;">Terms of Service</a> |
+                    <a href="/disclaimer" style="color: inherit;">Disclaimer</a>
+                </span>
+            </p>
+            <div class="footer-social">
+                <!-- X (Twitter) -->
+                <a href="https://x.com/TheSystemsDad" target="_blank" rel="noopener noreferrer" class="social-icon-link"
+                    aria-label="X (Twitter)">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>X</title>
+                        <path
+                            d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+                    </svg>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/ChristopherDLynn" target="_blank" rel="noopener noreferrer"
+                    class="social-icon-link" aria-label="LinkedIn">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>LinkedIn</title>
+                        <path
+                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/thesystemsdad" target="_blank" rel="noopener noreferrer"
+                    class="social-icon-link" aria-label="Instagram">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>Instagram</title>
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                </a>
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@cdlynn" target="_blank" rel="noopener noreferrer"
+                    class="social-icon-link" aria-label="YouTube">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>YouTube</title>
+                        <path
+                            d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545S-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <script>
+        // Header scroll effect
+        const header = document.querySelector('.main-header');
+        if (header) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) header.classList.add('scrolled');
+                else header.classList.remove('scrolled');
+            });
+        }
+    </script>
+
+    <!-- Chatbot component is now segmented into systems-dad-bot-v4.js to reduce HTML bloat. -->
+<!-- To enable, add <script src="systems-dad-bot-v4.js"></script> to your page. -->
+
+    <script src="/js/core.js" defer></script>
+<script src="/js/systems-dad-bot-v4.js" defer></script>
+
+</body>
+
+</html>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 36-Hour Reset</title>
+
+    <!-- 1. CRITICAL: Inline Mobile Detection (Prevents layout jitter) -->
+    <script>
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            document.documentElement.classList.add('is-mobile');
+            document.body.classList.add('is-mobile');
+        }
+        
+        // 1.1 Global Configuration Access
+        window.siteConfig = {
+            globals: {
+                tidycal_url: "https://tidycal.com/christopherlynnsystems/30-minute-meeting",
+                cls_booking_price: "$2,800",
+                tsd_booking_price: "$97"
+            },
+            brand: "TSD",
+            version: "2"
+        };
+    </script>
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <!-- 2. STYLES (Load before analytics to prevent FOUC) -->
+    <link rel="stylesheet" href="../style.css?v=20260930e">
+
+    <!-- GA4 Systems Dad Index — G-W4TB1J0TNK only -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GT-PBSGZ5XB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-W4TB1J0TNK');
+    </script>
+
+    <!-- Microsoft Clarity Tracking -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "weaa6eknja");
+    </script>
+
+<!-- Whop Checkout Script -->
+<script async defer src="https://js.whop.com/static/checkout/loader.js"></script>
+
+<!-- SEO Meta Tags -->
+<meta name="description"
+    content="Why I Stop Everything Every 90 Days">
+<link rel="canonical" href="https://thesystemsdad.com/blog/2026-03-26-the-36-hour-quarterly-renewal-rhythm">
+<meta property="og:title" content="The 36-Hour Reset">
+<meta property="og:description"
+    content="Why I Stop Everything Every 90 Days">
+<meta property="og:image" content="https://thesystemsdad.com/https://substackcdn.com/image/fetch/$s_!S4A3!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9c6fbca8-8dd5-497f-bc49-c5ef7268b8b0_1024x608.png">
+<meta property="og:url" content="https://thesystemsdad.com/blog/2026-03-26-the-36-hour-quarterly-renewal-rhythm">
+<meta property="og:type" content="website">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The 36-Hour Reset">
+<meta name="twitter:description" content="Why I Stop Everything Every 90 Days">
+<meta name="twitter:image" content="https://thesystemsdad.com/https://substackcdn.com/image/fetch/$s_!S4A3!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9c6fbca8-8dd5-497f-bc49-c5ef7268b8b0_1024x608.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Public+Sans:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet">
+
+<!-- Styles (Moved to top of head) -->
+
+<link rel="icon" type="image/png" href="/images/tsd-favicon.png">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"Christopher Lynn",
+  "url":"https://thesystemsdad.com",
+  "sameAs":["https://www.linkedin.com/in/ChristopherDLynn"],
+  "jobTitle":"Systems Consultant and Coach"
+}
+</script>
+
+    <style>
+        /* Specific Blog Styles - Inline for now to keep things self-contained during build */
+        .blog-header {
+            background-color: var(--background-secondary);
+            border-bottom: 1px solid var(--border-color);
+            padding: 6rem 0 4rem;
+            text-align: center;
+        }
+
+        .blog-meta {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            display: block;
+            font-weight: 600;
+        }
+
+        .blog-title {
+            font-size: 1.8rem;
+            max-width: 800px;
+            margin: 0 auto 1rem;
+            line-height: 1.2;
+            padding: 0 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .blog-title { font-size: 2.5rem; margin-bottom: 1.5rem; padding: 0; }
+        }
+
+        .blog-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-color-muted);
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 400;
+            padding: 0 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .blog-subtitle { font-size: 1.25rem; padding: 0; }
+        }
+
+        .blog-content {
+            max-width: 740px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-color-main);
+        }
+
+        /* Typography within blog content */
+        .blog-content h2 {
+            font-size: 1.8rem;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text-color-emphasis);
+        }
+
+        .blog-content h3 {
+            font-size: 1.4rem;
+            margin-top: 2.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-color-emphasis);
+        }
+
+        .blog-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-content ul,
+        .blog-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            color: var(--text-color-muted);
+        }
+
+        .blog-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-content blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1.5rem;
+            font-style: italic;
+            font-size: 1.25rem;
+            color: var(--text-color-emphasis);
+            margin: 2rem 0;
+            background: linear-gradient(90deg, var(--primary-glow-light) 0%, transparent 100%);
+            padding: 1.5rem;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+
+        .blog-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            margin: 2rem 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .blog-content a {
+            color: var(--primary-color);
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        .blog-content a:hover {
+            color: var(--primary-hover);
+        }
+
+        .author-box {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-color);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-color-muted);
+            min-height: 44px; /* Touch Target */
+            padding: 0 0.5rem;
+            margin-left: -0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+
+<body class="brand-tsd">
+    <div class="promo-banner">
+    Real Talk Tuesday — <a href="/real-talk-tuesday">The Weekly Note for Dads →</a>
+</div>
+<header class="main-header">
+    <div class="main-container header-content">
+        <a href="/" class="logo">
+            <span class="logo-primary">the systems dad</span>
+        </a>
+
+        <nav class="main-nav">
+            <a href="/the-systems-dad-method">The Method</a>
+            <a href="/win">The House System</a>
+            <a href="/lab">Coaching</a>
+            <a href="/blog">Essays</a>
+            <a href="/real-talk-tuesday" class="nav-cta">The Weekly Note →</a>
+        </nav>
+        <button class="menu-toggle" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>
+
+
+    <article>
+        <!-- Blog Header -->
+        <header class="blog-header">
+            <div class="main-container">
+                <a href="../blog.html" class="back-link">← Back to Essays</a>
+                <span class="blog-meta">2026-03-26 • The Systems Dad</span>
+                <h1 class="blog-title">The 36-Hour Reset</h1>
+                <p class="blog-subtitle">Why I Stop Everything Every 90 Days</p>
+            </div>
+        </header>
+
+        <!-- Main Content (Injected from Markdown) -->
+        <div class="blog-content">
+            <p>I genuinely don&#8217;t know how most guys do it without a reset. We&#8217;re all running hard&#8212;the career, the side projects, the church commitments. On a good day, it feels like success. On a Friday in late March, it usually just feels like I&#8217;m failing everyone.</p>
+<p>My morning routine starts to fray. I find myself snapping at my wife over something stupid, usually because I&#8217;m halfway through a spreadsheet in my head while she&#8217;s trying to tell me about her day. I&#8217;m tired of limping across the finish line.</p>
+<p>If you&#8217;re a Systems Dad, you need a system for <strong>renewal</strong>, not just more ways to squeeze work out of your day. This is the 36-hour ritual I keep coming back to.</p>
+<div class="captioned-image-container"><figure><a class="image-link image2 is-viewable-img" target="_blank" href="https://substackcdn.com/image/fetch/$s_!S4A3!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9c6fbca8-8dd5-497f-bc49-c5ef7268b8b0_1024x608.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!S4A3!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9c6fbca8-8dd5-497f-bc49-c5ef7268b8b0_1024x608.png 424w, https://substackcdn.com/image/fetch/$s_!S4A3!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9c6fbca8-8dd5-497f-bc49-c5ef7268b8b0_1024x608.png 848w, https://substackcdn.com/image/fetch/$s_!S4A3!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9c6fbca8-8dd5-497f-bc49-c5ef7268b8b0_1024x608.png 1272w, https://substackcdn.com/image/fetch/$s_!S4A3!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9c6fbca8-8dd5-497f-bc49-c5ef7268b8b0_1024x608.png 1456w" sizes="100vw"><img src="https://substackcdn.com/image/fetch/$s_!S4A3!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9c6fbca8-8dd5-497f-bc49-c5ef7268b8b0_1024x608.png" width="1024" height="608" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/9c6fbca8-8dd5-497f-bc49-c5ef7268b8b0_1024x608.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:&quot;normal&quot;,&quot;height&quot;:608,&quot;width&quot;:1024,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:null,&quot;alt&quot;:&quot;&quot;,&quot;title&quot;:null,&quot;type&quot;:null,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:null,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" title="" srcset="https://substackcdn.com/image/fetch/$s_!S4A3!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9c6fbca8-8dd5-497f-bc49-c5ef7268b8b0_1024x608.png 424w, https://substackcdn.com/image/fetch/$s_!S4A3!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9c6fbca8-8dd5-497f-bc49-c5ef7268b8b0_1024x608.png 848w, https://substackcdn.com/image/fetch/$s_!S4A3!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9c6fbca8-8dd5-497f-bc49-c5ef7268b8b0_1024x608.png 1272w, https://substackcdn.com/image/fetch/$s_!S4A3!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9c6fbca8-8dd5-497f-bc49-c5ef7268b8b0_1024x608.png 1456w" sizes="100vw" fetchpriority="high"></picture><div class="image-link-expand"><div class="pencraft pc-display-flex pc-gap-8 pc-reset"><button tabindex="0" type="button" class="pencraft pc-reset pencraft icon-container restack-image"><svg role="img" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke-width="1.5" stroke="var(--color-fg-primary)" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><g><title></title><path d="M2.53001 7.81595C3.49179 4.73911 6.43281 2.5 9.91173 2.5C13.1684 2.5 15.9537 4.46214 17.0852 7.23684L17.6179 8.67647M17.6179 8.67647L18.5002 4.26471M17.6179 8.67647L13.6473 6.91176M17.4995 12.1841C16.5378 15.2609 13.5967 17.5 10.1178 17.5C6.86118 17.5 4.07589 15.5379 2.94432 12.7632L2.41165 11.3235M2.41165 11.3235L1.5293 15.7353M2.41165 11.3235L6.38224 13.0882"></path></g></svg></button><button tabindex="0" type="button" class="pencraft pc-reset pencraft icon-container view-image"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-maximize2 lucide-maximize-2"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" x2="14" y1="3" y2="10"></line><line x1="3" x2="10" y1="21" y2="14"></line></svg></button></div></div></div></a></figure></div>
+<div><hr></div>
+<h3>Friday: The Break</h3>
+<p>I start at 6:00 PM. The goal is simple: kill the noise.</p>
+<ul><li><p><strong>Log out of Slack.</strong> If I don&#8217;t explicitly log out, I&#8217;ll &#8220;just check&#8221; one more time. I also do a brain dump into my journal&#8212;every loose end goes on paper so it doesn&#8217;t haunt me at 2:00 AM.</p></li><li><p><strong>A &#8220;No Work&#8221; Dinner.</strong> This is harder than it sounds. No phones. No talk about projects. Just being there for my wife and kids.</p></li><li><p><strong>Bedtime Prayers.</strong> Don&#8217;t rush this. It&#8217;s the one time of day I can actually see what&#8217;s going on in my kids&#8217; heads.</p></li></ul>
+<h3>Saturday Morning: The Audit</h3>
+<p>I usually sleep in. Once I&#8217;m up and moving (a long walk is best), I sit down with a journal. No judgment, just honesty.</p>
+<ul><li><p>What actually worked this quarter? Where did I lose my cool? How is my walk with God?</p></li><li><p>The most important part: I look at my wife. What signals have I been missing because I was too busy &#8220;leading&#8221;?</p></li></ul>
+<h3>Saturday Afternoon: The Re-Launch</h3>
+<p>I pick <strong>one</strong> big win for the next quarter. Not ten. One for work, one for my family (like a specific trip or date night), and one for my own growth.</p>
+<p>Then I sit down with my wife. I share my plan, but mostly I just ask: <em>&#8220;What do you need from me for the next three months?&#8221;</em> Usually, her answer is the one thing I wasn&#8217;t even thinking about.</p>
+<div><hr></div>
+<h3>Stewardship, Not Selfishness</h3>
+<p>This isn&#8217;t a &#8220;vacation.&#8221; It&#8217;s stewardship. You can&#8217;t lead your family if your tank is empty.</p>
+<p>Consistency is better than perfection here. Some quarters, the kids are sick or the water heater breaks and the 36 hours gets squeezed. Do it anyway. Even a messy reset is better than none.</p>
+<p>Check your calendar for the last weekend of the quarter. Block it off. Tell your wife. Let&#8217;s finish the next one strong.</p>
+<p><strong>Systems Spotlight: &#128295;</strong><br><em>This week, I&#8217;m using the <a href="https://whop.com/christopher-lynn-systems-llc/the-weekly-retro-prompt">Weekly Retro Protocol</a> to catch loose ends before my reset starts. Try it out.</em></p>
+<div><hr></div>
+<p><strong>What&#8217;s your current &#8220;renewal rhythm&#8221;? Reply and let me know&#8212;I&#8217;d love to hear how you recharge.</strong></p>
+
+            <!-- Simple Author Box -->
+            <div class="author-box">
+                <img src="/images/ChristopherLynnHeadshot_v2.jpg" alt="Christopher Lynn" class="author-img" loading="lazy" width="60" height="60">
+                <div>
+                    <h4 style="margin-bottom: 0.25rem;">Christopher Lynn</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-color-muted);">Systems Coach for Overwhelmed Leaders.
+                    </p>
+                </div>
+            </div>
+
+            
+            <div class="cta-box" style="margin-top: 3rem; background: var(--background-secondary); padding: 2rem; border-radius: 0.5rem; text-align: center; border: 1px solid var(--border-color);">
+                <h3 style="margin-bottom: 1rem;">Reclaim 10 Hours This Week</h3>
+                <p style="margin-bottom: 1.5rem; color: var(--text-color-muted);">Stop letting the chaos run your home. Let's install the architectural systems you use at work in your household.</p>
+                <a href="https://tidycal.com/christopherlynnsystems/30-minute-meeting?utm_source=tsd_blog&utm_content=2026-03-26-the-36-hour-quarterly-renewal-rhythm" target="_blank" class="cta-button cta-button-primary">Reclaim 10 Hours This Week →</a>
+            </div>
+            
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+    <div class="main-container">
+        <div class="footer-flex-row">
+            <div class="footer-brand">
+                <a href="/" class="logo"><span class="logo-primary">the systems dad</span></a>
+                <p class="footer-tagline">Helping dads stop being ghosts at home. Simple house systems for busy fathers.</p>
+                <div class="footer-nav-links" style="margin-top: 1rem; display: flex; gap: 1.25rem; flex-wrap: wrap; font-size: 0.9rem;">
+                    <a href="/the-systems-dad-method" style="color: var(--text-color-main); font-weight: 600; text-decoration: none;">The Method</a>
+                    <a href="/win" style="color: var(--text-color-main); font-weight: 600; text-decoration: none;">The House System</a>
+                    <a href="/lab" style="color: var(--text-color-main); font-weight: 600; text-decoration: none;">Coaching</a>
+                    <a href="/blog" style="color: var(--text-color-main); font-weight: 600; text-decoration: none;">Essays</a>
+                    <a href="/real-talk-tuesday" style="color: var(--text-color-main); font-weight: 600; text-decoration: none;">The Weekly Note</a>
+                </div>
+                <p class="footer-tagline" style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.85;">
+                    If you're in active crisis and need to reset your workday transition tonight, I built a specific tool for that: <a href="https://marginreset.com" target="_blank" style="color: var(--accent-color); font-weight: 700; text-decoration: underline;">marginreset.com</a>
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">&copy; 2026 Christopher Lynn Systems, LLC. All rights reserved. <br>
+                The Systems Dad is a brand of Christopher Lynn Systems, LLC. <br>
+                <span style="font-size: 0.8rem; opacity: 0.8;">
+                    <a href="/privacy" style="color: inherit;">Privacy Policy</a> |
+                    <a href="/terms" style="color: inherit;">Terms of Service</a> |
+                    <a href="/disclaimer" style="color: inherit;">Disclaimer</a>
+                </span>
+            </p>
+            <div class="footer-social">
+                <!-- X (Twitter) -->
+                <a href="https://x.com/TheSystemsDad" target="_blank" rel="noopener noreferrer" class="social-icon-link"
+                    aria-label="X (Twitter)">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>X</title>
+                        <path
+                            d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+                    </svg>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/ChristopherDLynn" target="_blank" rel="noopener noreferrer"
+                    class="social-icon-link" aria-label="LinkedIn">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>LinkedIn</title>
+                        <path
+                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/thesystemsdad" target="_blank" rel="noopener noreferrer"
+                    class="social-icon-link" aria-label="Instagram">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>Instagram</title>
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                </a>
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@cdlynn" target="_blank" rel="noopener noreferrer"
+                    class="social-icon-link" aria-label="YouTube">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>YouTube</title>
+                        <path
+                            d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545S-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <script>
+        // Header scroll effect
+        const header = document.querySelector('.main-header');
+        if (header) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) header.classList.add('scrolled');
+                else header.classList.remove('scrolled');
+            });
+        }
+    </script>
+
+    <!-- Chatbot component is now segmented into systems-dad-bot-v4.js to reduce HTML bloat. -->
+<!-- To enable, add <script src="systems-dad-bot-v4.js"></script> to your page. -->
+
+    <script src="/js/core.js" defer></script>
+<script src="/js/systems-dad-bot-v4.js" defer></script>
+
+</body>
+
+</html>

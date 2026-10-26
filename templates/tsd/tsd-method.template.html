@@ -1,0 +1,1600 @@
+{{head}}
+
+<body class="brand-tsd" style="display: block; background-color: var(--background-main); color: var(--text-color-main); line-height: 1.7;">
+    {{header}}
+
+    <style>
+        /* ─── Global Clean Editorial Standards (No Eyebrows, No Badges) ─── */
+        :root {
+            --tsd-forest: #244234;
+            --tsd-forest-dark: #1A2F25;
+            --tsd-forest-deep: #0f1d17;
+            --tsd-forest-glow: rgba(36, 66, 52, 0.12);
+            --tsd-gold: #B8860B;
+            --tsd-gold-glow: rgba(184, 134, 11, 0.12);
+            --tsd-cream: #FAF8F5;
+            --tsd-parchment: #F3EFE6;
+            --tsd-parchment-alt: #ECE6D8;
+            --tsd-charcoal: #24221F;
+            --tsd-ink: #24221F;
+            --tsd-taupe: #6B665E;
+            --tsd-border: #E8E4DC;
+            --tsd-border-gold: rgba(184, 134, 11, 0.3);
+        }
+
+        /* Page Layout & Breathing Room */
+        .method-page {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 0 1.5rem 8rem;
+            position: relative;
+        }
+
+        /* ─── Hero Section ───────────────────────────────────────────── */
+        .method-hero {
+            padding: 6rem 0 4.5rem;
+            text-align: center;
+        }
+
+        .hero-title-method {
+            font-family: 'Lora', Georgia, serif;
+            font-size: clamp(2.6rem, 5.8vw, 4.25rem);
+            font-weight: 700;
+            line-height: 1.12;
+            letter-spacing: -0.03em;
+            color: var(--tsd-ink);
+            margin-bottom: 1.75rem;
+        }
+
+        .hero-title-method .accent {
+            color: var(--tsd-forest);
+            font-style: italic;
+            display: inline-block;
+        }
+
+        .hero-subtitle-method {
+            font-family: var(--font-body);
+            font-size: clamp(1.1rem, 2vw, 1.28rem);
+            line-height: 1.75;
+            color: var(--tsd-taupe);
+            max-width: 740px;
+            margin: 0 auto 3rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+            margin-bottom: 4rem;
+        }
+
+        .btn-method-primary {
+            background: var(--tsd-forest);
+            color: #ffffff !important;
+            padding: 1.15rem 2.5rem;
+            border-radius: 10px;
+            font-family: var(--font-body);
+            font-size: 1.02rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: all 0.2s ease;
+            box-shadow: 0 6px 18px var(--tsd-forest-glow);
+            border: 1px solid var(--tsd-forest-dark);
+            cursor: pointer;
+        }
+
+        .btn-method-primary:hover {
+            background: var(--tsd-forest-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(24, 46, 36, 0.25);
+        }
+
+        .btn-method-secondary {
+            background: var(--tsd-parchment);
+            color: var(--tsd-forest) !important;
+            padding: 1.15rem 2.25rem;
+            border-radius: 10px;
+            font-family: var(--font-body);
+            font-size: 1.02rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: 1px solid var(--tsd-border);
+            transition: all 0.2s ease;
+        }
+
+        .btn-method-secondary:hover {
+            border-color: var(--tsd-forest);
+            background: var(--tsd-parchment-alt);
+            transform: translateY(-2px);
+        }
+
+        /* Trust Strip (Clean 4-column layout, no badges) */
+        .trust-strip {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem 2.25rem;
+            background: var(--tsd-parchment);
+            border: 1px solid var(--tsd-border);
+            border-radius: 16px;
+            margin-bottom: 5.5rem;
+        }
+
+        .trust-item {
+            text-align: left;
+        }
+
+        .trust-heading {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--tsd-ink);
+            margin-bottom: 0.25rem;
+        }
+
+        .trust-subtext {
+            font-size: 0.85rem;
+            color: var(--tsd-taupe);
+            line-height: 1.45;
+        }
+
+        /* ─── Story Callout: Chris Gallagher Photos ─────────────────── */
+        .photo-story-box {
+            background: #ffffff;
+            border: 1px solid var(--tsd-border);
+            border-radius: 20px;
+            padding: 4rem 3.5rem;
+            margin: 5.5rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+        }
+
+        @media (max-width: 860px) {
+            .photo-story-box { padding: 2.5rem 1.75rem; }
+        }
+
+        .photo-story-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 3.5rem;
+            align-items: center;
+        }
+
+        @media (max-width: 860px) {
+            .photo-story-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+        }
+
+        .story-heading {
+            font-family: 'Lora', Georgia, serif;
+            font-size: clamp(1.9rem, 3.2vw, 2.45rem);
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--tsd-ink);
+            margin-bottom: 1.75rem;
+        }
+
+        .story-body p {
+            font-size: 1.04rem;
+            line-height: 1.8;
+            color: var(--tsd-taupe);
+            margin-bottom: 1.25rem;
+        }
+
+        .story-body strong {
+            color: var(--tsd-ink);
+            font-weight: 600;
+        }
+
+        .story-quote {
+            border-left: 3px solid var(--tsd-gold);
+            padding: 0.5rem 0 0.5rem 1.25rem;
+            margin: 1.75rem 0;
+            font-family: 'Lora', Georgia, serif;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--tsd-forest-dark);
+            line-height: 1.6;
+        }
+
+        .photo-frame-visual {
+            background: var(--tsd-parchment);
+            border: 1px solid var(--tsd-border);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+
+        .photo-frame-inner {
+            background: #ffffff;
+            border: 1px solid var(--tsd-border);
+            border-radius: 12px;
+            padding: 2.25rem 1.75rem;
+        }
+
+        .photo-frame-caption {
+            font-family: 'Lora', Georgia, serif;
+            font-style: italic;
+            font-size: 1.12rem;
+            color: var(--tsd-ink);
+            line-height: 1.6;
+            margin-top: 1rem;
+        }
+
+        /* ─── The Drift vs. Time Section ─────────────────────────────── */
+        .truth-section {
+            background: var(--tsd-parchment);
+            border-radius: 20px;
+            padding: 4.5rem 3.5rem;
+            margin: 5.5rem 0;
+            border: 1px solid var(--tsd-border);
+        }
+
+        @media (max-width: 768px) {
+            .truth-section { padding: 2.5rem 1.75rem; }
+        }
+
+        .truth-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            margin-top: 2.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .truth-grid { grid-template-columns: 1fr; gap: 1.75rem; }
+        }
+
+        .truth-card {
+            background: #ffffff;
+            border: 1px solid var(--tsd-border);
+            border-radius: 14px;
+            padding: 2.25rem;
+        }
+
+        .truth-card h3 {
+            font-family: var(--font-body);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--tsd-ink);
+            margin-bottom: 0.85rem;
+        }
+
+        .truth-card p {
+            font-size: 0.98rem;
+            color: var(--tsd-taupe);
+            line-height: 1.75;
+            margin: 0;
+        }
+
+        /* ─── The Transformation Matrix ──────────────────────────────── */
+        .matrix-box {
+            background: #ffffff;
+            border: 1px solid var(--tsd-border);
+            border-radius: 20px;
+            padding: 4rem 3.5rem;
+            margin: 5.5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .matrix-box { padding: 2.5rem 1.75rem; }
+        }
+
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        @media (max-width: 680px) {
+            .matrix-grid { grid-template-columns: 1fr; }
+        }
+
+        .matrix-col {
+            padding: 2.25rem;
+            border-radius: 14px;
+            border: 1px solid var(--tsd-border);
+        }
+
+        .matrix-col.ghost {
+            background: #faf8f7;
+        }
+
+        .matrix-col.systems {
+            background: #f4f7f5;
+            border-color: rgba(36, 66, 52, 0.2);
+        }
+
+        .matrix-col h3 {
+            font-family: var(--font-body);
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--tsd-ink);
+            margin-bottom: 0.85rem;
+        }
+
+        .matrix-col p {
+            font-size: 0.98rem;
+            line-height: 1.75;
+            color: var(--tsd-taupe);
+            margin: 0;
+        }
+
+        /* ─── The 5 Phases (Clean Cards, No Badges) ──────────────────── */
+        .phases-section {
+            margin: 6rem 0;
+        }
+
+        .section-header-clean {
+            text-align: left;
+            max-width: 780px;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-title {
+            font-family: 'Lora', Georgia, serif;
+            font-size: clamp(2.1rem, 3.8vw, 2.85rem);
+            font-weight: 700;
+            line-height: 1.18;
+            color: var(--tsd-ink);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.12rem;
+            color: var(--tsd-taupe);
+            line-height: 1.75;
+        }
+
+        .phase-cards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .phase-card {
+            background: #ffffff;
+            border: 1px solid var(--tsd-border);
+            border-radius: 18px;
+            padding: 3rem;
+            transition: border-color 0.2s ease;
+        }
+
+        @media (max-width: 768px) {
+            .phase-card { padding: 2rem 1.5rem; }
+        }
+
+        .phase-card:hover {
+            border-color: var(--tsd-forest);
+        }
+
+        .phase-header-row {
+            margin-bottom: 1.25rem;
+        }
+
+        .phase-card h3 {
+            font-family: 'Lora', Georgia, serif;
+            font-size: 1.85rem;
+            font-weight: 700;
+            color: var(--tsd-ink);
+            margin-bottom: 0.35rem;
+        }
+
+        .phase-duration {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.82rem;
+            color: var(--tsd-taupe);
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+        }
+
+        .phase-lead {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--tsd-taupe);
+            margin-bottom: 2rem;
+        }
+
+        .phase-lead strong {
+            color: var(--tsd-ink);
+        }
+
+        .phase-feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .phase-feature-item {
+            background: var(--tsd-parchment);
+            border-radius: 12px;
+            padding: 1.6rem;
+            border: 1px solid rgba(36, 34, 31, 0.05);
+        }
+
+        .phase-feature-title {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--tsd-ink);
+            margin-bottom: 0.5rem;
+        }
+
+        .phase-feature-desc {
+            font-size: 0.92rem;
+            color: var(--tsd-taupe);
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        .deliverable-strip {
+            background: #faf8f5;
+            border: 1px solid var(--tsd-border);
+            border-radius: 10px;
+            padding: 1rem 1.5rem;
+            margin-top: 2rem;
+            font-size: 0.92rem;
+            color: var(--tsd-ink);
+        }
+
+        /* ─── Graduation Section ─────────────────────────────────────── */
+        .graduation-card {
+            background: var(--tsd-parchment);
+            border: 1px solid var(--tsd-border);
+            border-radius: 20px;
+            padding: 3.5rem;
+            margin: 5.5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .graduation-card { padding: 2.25rem 1.5rem; }
+        }
+
+        .graduation-card h3 {
+            font-family: 'Lora', Georgia, serif;
+            font-size: clamp(1.85rem, 3vw, 2.35rem);
+            font-weight: 700;
+            color: var(--tsd-ink);
+            margin-bottom: 1rem;
+        }
+
+        .conferral-quote {
+            background: #ffffff;
+            border-left: 4px solid var(--tsd-forest);
+            border-radius: 0 10px 10px 0;
+            padding: 1.75rem 2rem;
+            margin: 2rem 0;
+            font-family: 'Lora', Georgia, serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--tsd-forest-dark);
+            line-height: 1.6;
+        }
+
+        /* ─── Before & After Comparison Table ────────────────────────── */
+        .comparison-section {
+            margin: 6rem 0;
+        }
+
+        .comparison-table-wrapper {
+            background: #ffffff;
+            border: 1px solid var(--tsd-border);
+            border-radius: 18px;
+            overflow: hidden;
+        }
+
+        .table-row-comp {
+            display: grid;
+            grid-template-columns: 140px 1fr 1fr;
+            border-bottom: 1px solid var(--tsd-border);
+        }
+
+        @media (max-width: 768px) {
+            .table-row-comp { grid-template-columns: 1fr; }
+        }
+
+        .table-row-comp:last-child {
+            border-bottom: none;
+        }
+
+        .table-row-comp.header {
+            background: var(--tsd-parchment);
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--tsd-ink);
+        }
+
+        .table-col-comp {
+            padding: 1.35rem 1.5rem;
+            display: flex;
+            align-items: center;
+            font-size: 0.94rem;
+            line-height: 1.65;
+        }
+
+        .table-col-comp.time-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--tsd-forest);
+            background: rgba(36, 66, 52, 0.03);
+        }
+
+        .table-col-comp.ghost-state {
+            color: var(--tsd-taupe);
+            border-right: 1px solid var(--tsd-border);
+            background: #fafafa;
+        }
+
+        .table-col-comp.systems-state {
+            color: var(--tsd-ink);
+            font-weight: 500;
+            background: #ffffff;
+        }
+
+        /* ─── Pricing Section (Clean, Confident, No Ribbons) ──────────── */
+        .pricing-section {
+            margin: 6rem 0;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3.5rem;
+            align-items: stretch;
+        }
+
+        @media (max-width: 980px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 520px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        .price-card {
+            background: #ffffff;
+            border: 1px solid var(--tsd-border);
+            border-radius: 20px;
+            padding: 3rem 2.25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: border-color 0.2s ease;
+        }
+
+        .price-card:hover {
+            border-color: var(--tsd-forest);
+        }
+
+        .price-card.featured {
+            background: var(--tsd-forest-deep);
+            color: #ffffff;
+            border: 2px solid var(--tsd-forest);
+            box-shadow: 0 16px 36px rgba(15, 29, 23, 0.2);
+        }
+
+        .tier-name {
+            font-family: 'Lora', Georgia, serif;
+            font-size: 1.85rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--tsd-ink);
+        }
+
+        .price-card.featured .tier-name {
+            color: #ffffff;
+        }
+
+        .tier-desc {
+            font-size: 0.95rem;
+            line-height: 1.65;
+            color: var(--tsd-taupe);
+            margin-bottom: 2rem;
+            min-height: 50px;
+        }
+
+        .price-card.featured .tier-desc {
+            color: #d1d5db;
+        }
+
+        .tier-price-box {
+            margin: 1.5rem 0 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--tsd-border);
+        }
+
+        .price-card.featured .tier-price-box {
+            border-bottom-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .tier-price {
+            font-family: var(--font-body);
+            font-size: 3.25rem;
+            font-weight: 800;
+            line-height: 1;
+            color: var(--tsd-ink);
+            display: flex;
+            align-items: baseline;
+            gap: 0.35rem;
+        }
+
+        .price-card.featured .tier-price {
+            color: #ffffff;
+        }
+
+        .tier-cadence {
+            font-size: 0.88rem;
+            color: var(--tsd-taupe);
+            margin-top: 0.35rem;
+            display: block;
+        }
+
+        .price-card.featured .tier-cadence {
+            color: #9ca3af;
+        }
+
+        .tier-role {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 0.75rem;
+            color: var(--tsd-forest);
+        }
+
+        .price-card.featured .tier-role {
+            color: var(--tsd-gold);
+        }
+
+        .tier-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2.5rem;
+            flex-grow: 1;
+        }
+
+        .tier-features li {
+            font-size: 0.94rem;
+            line-height: 1.65;
+            color: var(--tsd-charcoal);
+            margin-bottom: 0.85rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+        }
+
+        .price-card.featured .tier-features li {
+            color: #f3f4f6;
+        }
+
+        .tier-features li::before {
+            content: '✓';
+            color: var(--tsd-gold);
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .tier-cta {
+            width: 100%;
+            padding: 1.15rem 1.5rem;
+            border-radius: 10px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .tier-cta.btn-outline {
+            background: var(--tsd-parchment);
+            color: var(--tsd-forest);
+            border: 1px solid var(--tsd-forest);
+        }
+
+        .tier-cta.btn-outline:hover {
+            background: var(--tsd-forest);
+            color: #ffffff;
+        }
+
+        .tier-cta.btn-forest-accent {
+            background: #ffffff;
+            color: var(--tsd-forest-deep);
+        }
+
+        .tier-cta.btn-forest-accent:hover {
+            background: var(--tsd-cream);
+            transform: translateY(-2px);
+        }
+
+        /* ─── Guarantee Box ──────────────────────────────────────────── */
+        .guarantee-box {
+            background: var(--tsd-parchment);
+            border: 1px solid var(--tsd-border);
+            border-radius: 18px;
+            padding: 3rem 2.5rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 5.5rem auto;
+        }
+
+        .guarantee-box h3 {
+            font-family: 'Lora', Georgia, serif;
+            font-size: 1.85rem;
+            font-weight: 700;
+            color: var(--tsd-ink);
+            margin-bottom: 1rem;
+        }
+
+        .guarantee-box p {
+            font-size: 1.02rem;
+            line-height: 1.75;
+            color: var(--tsd-taupe);
+            margin: 0;
+        }
+
+        /* ─── Operator FAQs ──────────────────────────────────────────── */
+        .faq-section {
+            margin: 6rem 0;
+            max-width: 860px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .faq-item {
+            background: #ffffff;
+            border: 1px solid var(--tsd-border);
+            border-radius: 14px;
+            margin-bottom: 1.25rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem 2rem;
+            text-align: left;
+            background: none;
+            border: none;
+            font-family: var(--font-body);
+            font-size: 1.12rem;
+            font-weight: 700;
+            color: var(--tsd-ink);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            cursor: pointer;
+        }
+
+        .faq-chevron {
+            font-size: 1.25rem;
+            color: var(--tsd-forest);
+            transition: transform 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .faq-item.active .faq-chevron {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.25s ease, padding 0.25s ease;
+            padding: 0 2rem;
+            font-size: 1rem;
+            line-height: 1.75;
+            color: var(--tsd-taupe);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 450px;
+            padding: 0 2rem 1.75rem;
+        }
+
+        /* ─── Final CTA Hero ─────────────────────────────────────────── */
+        .final-cta-section {
+            background: var(--tsd-forest-deep);
+            color: #ffffff;
+            border-radius: 24px;
+            padding: 5rem 3.5rem;
+            text-align: center;
+            margin: 6rem 0 2rem;
+            border: 1px solid var(--tsd-forest);
+        }
+
+        @media (max-width: 768px) {
+            .final-cta-section { padding: 3rem 1.75rem; }
+        }
+
+        .final-cta-title {
+            font-family: 'Lora', Georgia, serif;
+            font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+        }
+
+        .final-cta-subtitle {
+            font-size: 1.12rem;
+            line-height: 1.75;
+            color: #d1d5db;
+            max-width: 680px;
+            margin: 0 auto 3rem;
+        }
+
+        /* ─── Modal ──────────────────────────────────────────────────── */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(15, 29, 23, 0.75);
+            backdrop-filter: blur(6px);
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        .modal-overlay.active { display: flex; }
+
+        .modal-container {
+            background: #ffffff;
+            border: 1px solid var(--tsd-border);
+            border-radius: 20px;
+            max-width: 580px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 3rem 2.5rem;
+            position: relative;
+        }
+
+        @media (max-width: 600px) {
+            .modal-container { padding: 2rem 1.5rem; }
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--tsd-taupe);
+            cursor: pointer;
+            line-height: 1;
+            padding: 0.5rem;
+        }
+
+        .modal-title {
+            font-family: 'Lora', Georgia, serif;
+            font-size: 1.85rem;
+            font-weight: 700;
+            color: var(--tsd-ink);
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-subtitle {
+            font-size: 0.95rem;
+            color: var(--tsd-taupe);
+            margin-bottom: 2rem;
+            line-height: 1.55;
+        }
+
+        .form-group-modal {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-label-modal {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--tsd-ink);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-input-modal,
+        .form-select-modal,
+        .form-textarea-modal {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--tsd-border);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            background: var(--tsd-cream);
+            color: var(--tsd-ink);
+            box-sizing: border-box;
+            transition: border-color 0.2s;
+        }
+
+        .form-input-modal:focus,
+        .form-select-modal:focus,
+        .form-textarea-modal:focus {
+            outline: none;
+            border-color: var(--tsd-forest);
+            background: #ffffff;
+        }
+    </style>
+
+    <main class="method-page">
+
+        <!-- ─── HERO SECTION (CLEAN: NO BADGES, NO EYEBROWS) ─── -->
+        <section class="method-hero">
+            <h1 class="hero-title-method">
+                Stop being a Ghost Dad.<br>
+                Walk through your front door at 5:15 <span class="accent">fully present.</span>
+            </h1>
+
+            <p class="hero-subtitle-method">
+                You run complex programs all day. Then you walk through your front door and disappear. Your chair is empty. Your dinner is cold. Your eyes are glued to Slack. The Systems Dad Method fixes the leak in your schedule. You leave work at 5:00. You walk in at 5:15. And you don't drop a single ball at work.
+            </p>
+
+            <div class="hero-actions">
+                <button onclick="openApplyModal('cohort')" class="btn-method-primary">
+                    Apply for the 90-Day Cohort &rarr;
+                </button>
+                <a href="#the-method" class="btn-method-secondary">
+                    See the 90 Days &darr;
+                </a>
+            </div>
+
+            <!-- Trust Strip (Clean 4-column overview) -->
+            <div class="trust-strip">
+                <div class="trust-item">
+                    <div class="trust-heading">3 Practical Tiers</div>
+                    <div class="trust-subtext">Self-Serve, Cohort, or 1:1 Flagship</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-heading">Zero Willpower</div>
+                    <div class="trust-subtext">Physical house rules that run on autopilot</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-heading">Evidence-Based</div>
+                    <div class="trust-subtext">Data from your own week proves the shift</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-heading">Small Groups</div>
+                    <div class="trust-subtext">Capped at 4 to 6 dads per round</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── THE HOOK: CHRIS GALLAGHER STORY ─── -->
+        <section id="the-hook" class="photo-story-box">
+            <div class="photo-story-grid">
+                <div>
+                    <h2 class="story-heading">Look at the framed photos in your hallway tonight.</h2>
+                    <div class="story-body">
+                        <p>
+                            Walk down your hallway before you go to bed. Look at the framed photos on the wall.
+                        </p>
+                        <p>
+                            The beach trip two summers ago. Christmas morning by the tree. The eighth birthday party. The Saturday soccer tournament.
+                        </p>
+                        <p>
+                            Now count how many of those pictures you're actually in.
+                        </p>
+                        <p>
+                            If you're like most operators I talk to, the honest answer is almost none.
+                        </p>
+                        <p>
+                            You weren't holding the camera.
+                        </p>
+                        <p>
+                            You were in the office, answering a 5:30 PM Slack thread nobody remembers today. Or sitting in your car in the driveway with your laptop on your steering wheel.
+                        </p>
+                        
+                        <div class="story-quote">
+                            "Chris Gallagher looked at his hallway wall and said it plainly: The family photos didn't include me because I was always the one missing."
+                        </div>
+
+                        <p>
+                            You called it dedication. You told yourself you were providing. But your family didn't hire a remote corporate provider. They need a father.
+                        </p>
+                        <p>
+                            You didn't wake up one morning and decide to become a Ghost Dad. Ambition just carried you past the life you agreed to build.
+                        </p>
+                        <p>
+                            <strong>Was working late and missing dinner part of the original plan?</strong>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="photo-frame-visual">
+                        <span class="friction-tag" style="margin-bottom: 1rem; display: inline-block;">[OBSERVABLE REALITY]</span>
+                        <p class="photo-frame-caption">
+                            "The empty chair at the dinner table isn't dedication. It's a broken system, not a badge of honor."
+                        </p>
+                        <div style="margin-top: 1.5rem; font-size: 0.88rem; color: var(--tsd-taupe);">
+                            The Systems Dad Method is the structured return back into the frame.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── THE DIAGNOSIS: DRIFT VS. TIME MANAGEMENT ─── -->
+        <section class="truth-section">
+            <div class="section-header-clean">
+                <h2 class="section-title">Time management apps can't fix slow drift.</h2>
+                <p class="section-subtitle">
+                    Color-coded calendars and 5:00 AM alarms never hold up.
+                </p>
+            </div>
+
+            <div class="truth-grid">
+                <div class="truth-card">
+                    <h3>The Endless Conveyor Belt</h3>
+                    <p>
+                        Corporate work has no finish line. The faster you close tickets, the more work piles on your desk. You can't out-work an endless queue.
+                    </p>
+                </div>
+
+                <div class="truth-card">
+                    <h3>The Front Door Shock</h3>
+                    <p>
+                        When your laptop closes, you hit a blank wall. At work, you know who you are. At home, things are loud and messy. You don't know what to do with your hands, so you grab your phone.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── THE 90-DAY TRAJECTORY ─── -->
+        <section class="matrix-box">
+            <div class="section-header-clean">
+                <h2 class="section-title">From Ghost Dad to Systems Dad</h2>
+                <p class="section-subtitle">
+                    We don't rely on willpower. We build physical rules that hold when motivation fails.
+                </p>
+            </div>
+
+            <div class="matrix-grid">
+                <div class="matrix-col ghost">
+                    <h3>Where You Enter: The Ghost Dad</h3>
+                    <p>
+                        Work is his whole world. He carries office fires through the front door. He sits at dinner, but his thumbs twitch under the table. He tells himself his family doesn't get the pressure he's under.
+                    </p>
+                </div>
+
+                <div class="matrix-col systems">
+                    <h3>Where You Exit: The Systems Dad</h3>
+                    <p>
+                        Home by 5:15. His phone hits the charger the second his shoes come off. He hugs his wife and kids before touching a screen. His calendar holds because his boundaries are locked. He is in the room. And he is back in the photos.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── FOUNDER STORY: THE PROOF ─── -->
+        <section id="the-founder" class="photo-story-box">
+            <h2 class="story-heading">I had a panic attack after a game night.</h2>
+            <div class="story-body">
+                <p>
+                    I was leading a Christian board and carrying a full enterprise load at my day job. I thought I could out-work all of it.
+                </p>
+                <p>
+                    Then the panic attack hit. I called it hard work, but it was a design failure. Pushing harder was never going to fix it.
+                </p>
+                <p>
+                    So I peeled off commitments. I called a few brothers I trust and told them the truth. Then I built rules at work and rules at home so I'd walk through my front door by 5:15.
+                </p>
+                <p>
+                    I'm Christopher Lynn, a Program Manager. I build systems that keep people out of chaos. The Systems Dad Method is the one I built for my own front door.
+                </p>
+            </div>
+        </section>
+
+        <!-- ─── THE 90 DAYS: THREE STRETCHES, OUTCOMES ONLY ─── -->
+        <section id="the-method" class="phases-section">
+            <div class="section-header-clean">
+                <h2 class="section-title">How the 90 days work</h2>
+                <p class="section-subtitle">
+                    Three stretches. Each one ends with something you can see in your house.
+                </p>
+            </div>
+
+            <div class="phase-cards-container">
+
+                <div class="phase-card">
+                    <div class="phase-header-row">
+                        <h3>See where the hours go</h3>
+                        <div class="phase-duration">Weeks 1–3</div>
+                    </div>
+                    <p class="phase-lead">
+                        For seven days, you write down the minute you stop working and what pulls you back in. Pen and paper. No apps. Then you read it out loud with someone who won't flinch.
+                    </p>
+                    <div class="deliverable-strip">
+                        <strong>What changes:</strong> You know the real reason you're late. It's often not the workload.
+                    </div>
+                </div>
+
+                <div class="phase-card">
+                    <div class="phase-header-row">
+                        <h3>Make 5:15 hold</h3>
+                        <div class="phase-duration">Weeks 3–6</div>
+                    </div>
+                    <p class="phase-lead">
+                        You run the 4:50 Protocol. 10 minutes to shut down at your desk. 15 minutes to commute and clear your head, ending with a 2-minute Driveway Reset. Home by the 5:15 Hard Stop.</p>
+                    <p class="phase-lead">
+                        You sit down with your wife over Saturday coffee and agree on how evenings work. At the office, you move meetings, cut repeat work, and hand off what someone else can carry.
+                    </p>
+                    <div class="deliverable-strip">
+                        <strong>What changes:</strong> Your calendar defends 5:15, and your wife has a reason to trust it.
+                    </div>
+                </div>
+
+                <div class="phase-card">
+                    <div class="phase-header-row">
+                        <h3>Let the house hold the line</h3>
+                        <div class="phase-duration">Weeks 6–12</div>
+                    </div>
+                    <p class="phase-lead">
+                        At 5:15, your phone goes to one set spot, the same one every day. Your kids see it there and know Dad is home. You write down the proof from your own weeks. A monthly check-in catches drift before it comes back.
+                    </p>
+                    <div class="deliverable-strip">
+                        <strong>What changes:</strong> You stop needing willpower. The house does the work.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ─── GRADUATION ─── -->
+        <section class="graduation-card">
+            <h3>Graduation: Earning Systems Dad Status</h3>
+            <p style="font-size: 1.05rem; line-height: 1.8; color: var(--tsd-taupe); margin-bottom: 1.5rem;">
+                The program doesn't just fizzle out. At the end, you write your family a letter. We get on a 30-minute call, I read it, and I check that your 4:50 Protocol held for 30 days.
+            </p>
+
+            <div class="conferral-quote">
+                "You held the line. You're in the photographs. The system is yours now. You're a Systems Dad."
+            </div>
+        </section>
+
+        <!-- ─── BEFORE & AFTER COMPARISON TABLE ─── -->
+        <section class="comparison-section">
+            <div class="section-header-clean">
+                <h2 class="section-title">A Day in the Life: Before vs. After</h2>
+                <p class="section-subtitle">
+                    The difference between reacting all day and running on clean systems.
+                </p>
+            </div>
+
+            <div class="comparison-table-wrapper">
+                <div class="table-row-comp header">
+                    <div class="table-col-comp time-label">Time</div>
+                    <div class="table-col-comp">The Ghost Dad (Before)</div>
+                    <div class="table-col-comp">The Systems Dad (After)</div>
+                </div>
+
+                <div class="table-row-comp">
+                    <div class="table-col-comp time-label">7:30 AM</div>
+                    <div class="table-col-comp ghost-state">
+                        Wakes up scrolling notifications in bed. Reactive to whichever Slack fire flared up overnight.
+                    </div>
+                    <div class="table-col-comp systems-state">
+                        Three questions answered before email opens. The day is filtered and locked.
+                    </div>
+                </div>
+
+                <div class="table-row-comp">
+                    <div class="table-col-comp time-label">4:50 PM</div>
+                    <div class="table-col-comp ghost-state">
+                        Scrambling to finish "just one more thing." Heart rate spikes. Calendar is wide open for late invites.
+                    </div>
+                    <div class="table-col-comp systems-state">
+                        10-minute hard shutdown. Laptop closed by 5:00. Tomorrow's three tasks on paper.
+                    </div>
+                </div>
+
+                <div class="table-row-comp">
+                    <div class="table-col-comp time-label">5:00 PM</div>
+                    <div class="table-col-comp ghost-state">
+                        Driving with AirPods in, rehashing budget friction or listening to corporate voicemails.
+                    </div>
+                    <div class="table-col-comp systems-state">
+                        Commute starts. One job: shift his attention from work to home. At 5:13, the Driveway Reset: phone face-down, one thing he's looking forward to inside.
+                    </div>
+                </div>
+
+                <div class="table-row-comp">
+                    <div class="table-col-comp time-label">5:15 PM</div>
+                    <div class="table-col-comp ghost-state">
+                        Still at his office desk or parked in the driveway taking a "critical" 30-minute sync.
+                    </div>
+                    <div class="table-col-comp systems-state">
+                        Front door opens at the 5:15 Hard Stop. Phone goes to its one set spot. Greet wife and kids with two minutes of eye contact.
+                    </div>
+                </div>
+
+                <div class="table-row-comp">
+                    <div class="table-col-comp time-label">6:30 PM</div>
+                    <div class="table-col-comp ghost-state">
+                        Tapping phone under the dinner table. Irritable when interrupted because mind is in an email thread.
+                    </div>
+                    <div class="table-col-comp systems-state">
+                        Phone stays in its set spot. Laughing, listening, and actually hearing what happened at school.
+                    </div>
+                </div>
+
+                <div class="table-row-comp">
+                    <div class="table-col-comp time-label">8:30 PM</div>
+                    <div class="table-col-comp ghost-state">
+                        Hovering near the bedroom door while reading a memo. Kids stop asking for a bedtime story.
+                    </div>
+                    <div class="table-col-comp systems-state">
+                        Inside the room, sitting on the mattress, fully engaged. Phone is outside the bedroom completely.
+                    </div>
+                </div>
+
+                <div class="table-row-comp">
+                    <div class="table-col-comp time-label">The Photos</div>
+                    <div class="table-col-comp ghost-state">
+                        Missing from the family vacation album. A footnote in his family's daily memories.
+                    </div>
+                    <div class="table-col-comp systems-state">
+                        Standing in the center of the frame with his family. Present, anchored, and respected.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── PRICING TIERS (CLEAN: NO RIBBONS, NO BADGES) ─── -->
+        <section id="the-tiers" class="pricing-section">
+            <div class="section-header-clean">
+                <h2 class="section-title">Choose Your Level of Engagement</h2>
+                <p class="section-subtitle">
+                    Three clear tiers. Pick the level of support you need right now.
+                </p>
+            </div>
+
+            <div class="pricing-grid">
+
+                <!-- Tier 1: Self-Serve -->
+                <div class="price-card">
+                    <div>
+                        <h3 class="tier-name">Self-Serve System</h3>
+                        <p class="tier-desc">
+                            The complete digital system and tools for operators who want to build solo.
+                        </p>
+
+                        <div class="tier-price-box">
+                            <div class="tier-price">$97</div>
+                            <span class="tier-cadence">One-time payment &bull; Instant Access</span>
+                            <div class="tier-role">Zero live touchpoints</div>
+                        </div>
+
+                        <ul class="tier-features">
+                            <li>A guide to find where your hours drift</li>
+                            <li>A 7-day tracking sheet for your 4:50 Protocol</li>
+                            <li>A morning triage card for your first 15 minutes</li>
+                            <li>A drive-home audio track (coming soon)</li>
+                            <li>A script for the talk with your wife</li>
+                            <li>A house setup checklist</li>
+                        </ul>
+                    </div>
+
+                    <a href="https://stan.store/thesystemsdad" class="tier-cta btn-outline" target="_blank">
+                        Get the Self-Serve System ($97) &rarr;
+                    </a>
+                </div>
+
+                <!-- Tier 2: The Cohort Sprint -->
+                <div class="price-card featured">
+                    <div>
+                        <h3 class="tier-name">The 90-Day Cohort</h3>
+                        <p class="tier-desc">
+                            Weekly group coaching and real peer accountability with other high-performing corporate dads.
+                        </p>
+
+                        <div class="tier-price-box">
+                            <div class="tier-price">$2,500</div>
+                            <span class="tier-cadence">Or 3 monthly payments of $895</span>
+                            <div class="tier-role">Weekly live group call with Christopher</div>
+                        </div>
+
+                        <ul class="tier-features">
+                            <li><strong>Everything in Self-Serve</strong> included</li>
+                            <li><strong>Weekly 60-min live group coaching</strong> on Zoom</li>
+                            <li><strong>Live guided work</strong> on how you got here</li>
+                            <li><strong>Group 4:50 Protocol review</strong> & data debrief</li>
+                            <li><strong>Accountability</strong> on the talk with your wife</li>
+                            <li><strong>Graduation</strong> and letter reading in week 12</li>
+                            <li><strong>Private alumni community access</strong></li>
+                            <li><strong>Strictly capped at 4 to 6 dads</strong></li>
+                        </ul>
+                    </div>
+
+                    <button onclick="openApplyModal('cohort')" class="tier-cta btn-forest-accent">
+                        Apply for Next Cohort &rarr;
+                    </button>
+                </div>
+
+                <!-- Tier 3: Flagship 1:1 -->
+                <div class="price-card">
+                    <div>
+                        <h3 class="tier-name">Flagship 1:1</h3>
+                        <p class="tier-desc">
+                            Direct 1:1 partnership. Private calendar surgery, custom delegation plans, and personal accountability.
+                        </p>
+
+                        <div class="tier-price-box">
+                            <div class="tier-price">$10,000</div>
+                            <span class="tier-cadence">Private 90-Day Intensive</span>
+                            <div class="tier-role">Full 1:1 access to Christopher Lynn</div>
+                        </div>
+
+                        <ul class="tier-features">
+                            <li><strong>Full private access</strong> — zero group calls</li>
+                            <li><strong>60–90 min dedicated 1:1 sessions</strong> for every phase</li>
+                            <li><strong>Hands-on calendar surgery</strong> & inbox boundary audit</li>
+                            <li><strong>Custom repeat-work handoff</strong> documentation built</li>
+                            <li><strong>Private prep</strong> for the talk with your wife</li>
+                            <li><strong>1:1 graduation call</strong> and letter review</li>
+                            <li><strong>Direct text / voice memo access</strong></li>
+                            <li><strong>Limited to 2 active leaders</strong> at a time</li>
+                        </ul>
+                    </div>
+
+                    <button onclick="openApplyModal('flagship')" class="tier-cta btn-outline">
+                        Apply for Flagship 1:1 &rarr;
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ─── GUARANTEE ─── -->
+        <section class="guarantee-box">
+            <h3>The 30-Day 4:50 Protocol Guarantee</h3>
+            <p>
+                Complete your intake homework and track seven days of the 4:50 Protocol. If you don't see the exact leak pulling you away from your family, ask for a full refund within 30 days. No hard feelings. No fine print.
+            </p>
+        </section>
+
+        <!-- ─── OPERATOR FAQS ─── -->
+        <section id="faq" class="faq-section">
+            <div class="section-header-clean">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">
+                    Honest answers for skeptical operators who have tried other systems.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>My job has an aggressive after-hours culture. What if an executive calls at 5:15?</span>
+                    <span class="faq-chevron">▾</span>
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        We don't teach you to ignore real fires. We teach you to tell real fires from bad habits. In the first six weeks, you get the exact script for late meetings: "I have a hard stop at 5:15. Can we move this to 3:00 instead?" In almost every case, people move the call without an argument. If a true fire breaks out once a quarter, you stay on purpose. And you log it in your tracker as an intentional choice, not an accident.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>Will my wife actually trust this, or will she see it as another passing phase?</span>
+                    <span class="faq-chevron">▾</span>
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        If you give an emotional speech tonight, she will be skeptical. She should be. She has seen you burn out and slip back before. That's why you sit down with her over coffee and agree on the rules together. You don't make big promises. You acknowledge what she carried alone. You agree on three simple rules (Arrival, Phone, Bedtime). Then you set a 30-day review date. Words don't rebuild trust. The phone sitting on the charger at 5:15 rebuilds trust.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>I've tried productivity books and habit apps. Why is this different?</span>
+                    <span class="faq-chevron">▾</span>
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        Productivity books teach you to do more in less time. That just dumps more work on your plate. The Systems Dad Method isn't about time management. It is about physical boundaries and clear roles. When your phone stays on the charger and your laptop stays out of the bedroom, you don't need willpower. The room does the work for you.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>What if I travel frequently for work?</span>
+                    <span class="faq-chevron">▾</span>
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        Distance is physical, but presence is a decision. When you are on the road, the 25-minute window is event-anchored before your hotel door or dinner. You block dedicated FaceTime check-ins with your kids—morning drop-off or bedtime—and protect them on your calendar like a client meeting. In the hotel room, the threshold holds: the laptop stays zipped in your bag, and the phone stays off the bed.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>What happens on nights when I genuinely have to work late?</span>
+                    <span class="faq-chevron">▾</span>
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        We don't pretend corporate emergencies never happen. But you run the Advance Notice rule: if a deadline pushes past 5:00, you text your wife by 3:00 PM so she isn't left guessing. The laptop closes at the office, never in the living room. You take two minutes in the driveway to flush work adrenaline. And your phone goes to its set spot the second you walk inside. Late work is an intentional exception, not a license to bring Slack to bed.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>How do I know whether to apply for the Cohort or Flagship 1:1?</span>
+                    <span class="faq-chevron">▾</span>
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        The <strong>Cohort ($2,500)</strong> is built for operators who want peer accountability. Hearing another dad admit he feels anxious shutting his laptop helps you realize you're not crazy. The <strong>Flagship 1:1 ($10,000)</strong> is private calendar surgery. It is built for founders and senior leaders who need confidential 1:1 sessions, custom handoff plans, and direct access.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── FINAL CLOSING CALL TO ACTION ─── -->
+        <section class="final-cta-section">
+            <h2 class="final-cta-title">Get back in the frame.</h2>
+            <p class="final-cta-subtitle">
+                Ten years from now, your current slide decks will be deleted. Your roadmaps will be archived. Someone else will sit in your office chair.<br><br>
+                Your kids will remember one of two things. They will remember Dad sitting on the edge of the bed, listening. Or they will remember your face lit by a glowing screen.<br><br>
+                Take back your 5:15.
+            </p>
+
+            <div style="display: flex; gap: 1.25rem; justify-content: center; flex-wrap: wrap;">
+                <button onclick="openApplyModal('cohort')" class="btn-method-primary" style="background: var(--tsd-gold); border-color: #a8762d;">
+                    Apply for the 90-Day Cohort &rarr;
+                </button>
+                <a href="/win" class="btn-method-secondary" style="background: #ffffff; color: var(--tsd-ink) !important;">
+                    Get Self-Serve System ($97) &rarr;
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ─── APPLICATION MODAL ─── -->
+    <div id="applyModal" class="modal-overlay" onclick="handleBackdropClick(event)">
+        <div class="modal-container">
+            <button class="modal-close-btn" onclick="closeApplyModal()" aria-label="Close modal">&times;</button>
+            
+            <h3 class="modal-title">Apply for The Systems Dad Method</h3>
+            <p class="modal-subtitle">
+                We review every application personally to make sure the group is the right fit. Cohort rounds are capped at 6 dads.
+            </p>
+
+            <form action="https://formspree.io/f/mqakppny" method="POST" id="methodApplyForm">
+                <input type="hidden" name="_subject" id="modalSubject" value="The Systems Dad Method Application">
+                <input type="hidden" name="applied_tier" id="appliedTierInput" value="cohort">
+
+                <div class="form-group-modal">
+                    <label class="form-label-modal" for="applicantName">Full Name</label>
+                    <input type="text" id="applicantName" name="name" class="form-input-modal" placeholder="David Miller" required>
+                </div>
+
+                <div class="form-group-modal">
+                    <label class="form-label-modal" for="applicantEmail">Work / Personal Email</label>
+                    <input type="email" id="applicantEmail" name="_replyto" class="form-input-modal" placeholder="david@company.com" required>
+                </div>
+
+                <div class="form-group-modal">
+                    <label class="form-label-modal" for="applicantRole">Current Title & Company</label>
+                    <input type="text" id="applicantRole" name="role_company" class="form-input-modal" placeholder="Senior Engineering Manager, Stripe" required>
+                </div>
+
+                <div class="form-group-modal">
+                    <label class="form-label-modal" for="applicantFamily">Kids' Ages & Family Context</label>
+                    <input type="text" id="applicantFamily" name="family_context" class="form-input-modal" placeholder="e.g. 2 kids (ages 7 and 10), married 12 years" required>
+                </div>
+
+                <div class="form-group-modal">
+                    <label class="form-label-modal" for="tierSelection">Selected Tier</label>
+                    <select id="tierSelection" name="selected_tier" class="form-select-modal" onchange="updateTierChoice(this.value)">
+                        <option value="cohort">90-Day Cohort Sprint ($2,500 / 3 payments of $895)</option>
+                        <option value="flagship">Flagship 1:1 Private Intensive ($10,000)</option>
+                    </select>
+                </div>
+
+                <div class="form-group-modal">
+                    <label class="form-label-modal" for="applicantBottleneck">What is the #1 reason work keeps following you through the front door?</label>
+                    <textarea id="applicantBottleneck" name="biggest_bottleneck" class="form-textarea-modal" rows="3" placeholder="e.g. Late meetings, fear of missing decisions, or feeling restless when I stop working." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-method-primary" style="width: 100%; justify-content: center; margin-top: 1rem;">
+                    Submit Application &rarr;
+                </button>
+
+                <p style="font-size: 0.78rem; color: var(--tsd-taupe); text-align: center; margin-top: 1rem; line-height: 1.4;">
+                    Submitting this form does not charge your card. We will review your application and email you within 24 hours.
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- ─── INTERACTIVE SCRIPTS ─── -->
+    <script>
+        function openApplyModal(tier) {
+            const modal = document.getElementById('applyModal');
+            const tierSelect = document.getElementById('tierSelection');
+            const tierInput = document.getElementById('appliedTierInput');
+            const subjectInput = document.getElementById('modalSubject');
+            
+            if (tier === 'flagship') {
+                tierSelect.value = 'flagship';
+                tierInput.value = 'flagship';
+                subjectInput.value = 'The Systems Dad Method: 1:1 Flagship Application';
+            } else {
+                tierSelect.value = 'cohort';
+                tierInput.value = 'cohort';
+                subjectInput.value = 'The Systems Dad Method: Cohort Sprint Application';
+            }
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeApplyModal() {
+            const modal = document.getElementById('applyModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function handleBackdropClick(event) {
+            if (event.target === document.getElementById('applyModal')) {
+                closeApplyModal();
+            }
+        }
+
+        function updateTierChoice(value) {
+            document.getElementById('appliedTierInput').value = value;
+            document.getElementById('modalSubject').value = value === 'flagship' 
+                ? 'The Systems Dad Method: 1:1 Flagship Application' 
+                : 'The Systems Dad Method: Cohort Sprint Application';
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeApplyModal();
+            }
+        });
+
+        function toggleFaq(button) {
+            const item = button.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            document.querySelectorAll('.faq-item').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        }
+    </script>
+
+    {{footer}}
+    {{chatbot}}
+    {{scripts}}
+</body>
+</html>

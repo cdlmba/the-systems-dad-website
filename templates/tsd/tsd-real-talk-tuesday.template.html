@@ -1,0 +1,439 @@
+{{head}}
+
+<style>
+    /* Real Talk Tuesday - Warm Editorial Design System (design.md aligned) */
+    .rtt-hero {
+        padding: 5.5rem 1.5rem 4.5rem;
+        background-color: var(--background-main);
+        border-bottom: 1px solid var(--border-color);
+        text-align: center;
+    }
+
+    .rtt-eyebrow {
+        display: inline-block;
+        font-family: var(--font-body);
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--primary-color);
+        background: var(--accent-soft);
+        padding: 0.35rem 0.85rem;
+        border-radius: var(--radius-sm);
+        margin-bottom: 1.5rem;
+    }
+
+    .rtt-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.4rem, 6.5vw, 4.25rem);
+        line-height: 1.15;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        color: var(--text-color-emphasis);
+        margin-bottom: 1.25rem;
+    }
+
+    .rtt-accent {
+        display: block;
+        font-family: var(--font-heading);
+        font-size: clamp(1.25rem, 3.5vw, 1.85rem);
+        font-weight: 400;
+        font-style: italic;
+        color: var(--primary-color);
+        margin-top: 0.5rem;
+        line-height: 1.35;
+    }
+
+    .rtt-subtitle {
+        font-family: var(--font-body);
+        font-size: 1.2rem;
+        line-height: 1.65;
+        color: var(--text-color-muted);
+        max-width: 680px;
+        margin: 0 auto 2.5rem;
+    }
+
+    .rtt-trust-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.85rem 2rem;
+        margin-top: 2rem;
+        font-size: 0.9rem;
+        color: var(--text-color-muted);
+    }
+
+    .rtt-trust-item {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+    }
+
+    .rtt-trust-check {
+        color: var(--primary-color);
+        font-weight: 700;
+    }
+
+    /* 3-Part Anatomy Grid */
+    .rtt-grid-section {
+        background-color: var(--background-secondary);
+        border-bottom: 1px solid var(--border-color);
+        padding: 5rem 1.5rem;
+    }
+
+    .rtt-cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.75rem;
+        max-width: 1040px;
+        margin: 3rem auto 0;
+    }
+
+    .rtt-feature-card {
+        background: #FFFFFF;
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-md);
+        padding: 2.25rem 2rem;
+        box-shadow: var(--shadow-sm);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        text-align: left;
+        transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .rtt-feature-card:hover {
+        transform: translateY(-2px);
+        border-color: var(--primary-color);
+    }
+
+    .rtt-card-badge {
+        display: inline-block;
+        align-self: flex-start;
+        font-family: var(--font-body);
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--primary-color);
+        background: var(--accent-soft);
+        padding: 0.25rem 0.65rem;
+        border-radius: var(--radius-sm);
+        margin-bottom: 1.25rem;
+    }
+
+    .rtt-card-title {
+        font-family: var(--font-heading);
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--text-color-emphasis);
+        margin-bottom: 0.75rem;
+        line-height: 1.3;
+    }
+
+    .rtt-card-text {
+        font-family: var(--font-body);
+        font-size: 0.95rem;
+        color: var(--text-color-muted);
+        line-height: 1.65;
+        margin: 0;
+    }
+
+    /* Editorial Essay / Founder Letter Section */
+    .rtt-letter-section {
+        background-color: var(--background-main);
+        padding: 5.5rem 1.5rem;
+    }
+
+    .rtt-letter-container {
+        max-width: 720px;
+        margin: 0 auto;
+        text-align: left;
+    }
+
+    .rtt-prose h3 {
+        font-family: var(--font-heading);
+        font-size: clamp(1.8rem, 4vw, 2.3rem);
+        font-weight: 600;
+        color: var(--text-color-emphasis);
+        margin-bottom: 1.75rem;
+        letter-spacing: -0.015em;
+        line-height: 1.25;
+    }
+
+    .rtt-prose p {
+        font-family: var(--font-body);
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: var(--text-color-main);
+        margin-bottom: 1.5rem;
+    }
+
+    .rtt-prose strong {
+        color: var(--text-color-emphasis);
+        font-weight: 600;
+    }
+
+    .rtt-author-lockup {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .rtt-author-avatar {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        border: 2px solid var(--primary-color);
+        object-fit: cover;
+    }
+
+    /* Archive Preview Section */
+    .rtt-preview-section {
+        background-color: var(--background-secondary);
+        border-top: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+        padding: 5.5rem 1.5rem;
+    }
+
+    .rtt-preview-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 2.25rem;
+        max-width: 1040px;
+        margin: 3rem auto 0;
+        align-items: stretch;
+    }
+
+    @media (max-width: 860px) {
+        .rtt-preview-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .rtt-preview-card {
+        background: #FFFFFF;
+        border: 1px solid var(--border-color);
+        border-left: 4px solid var(--primary-color);
+        border-radius: var(--radius-md);
+        padding: 2.5rem 2.25rem;
+        box-shadow: var(--shadow-sm);
+        text-align: left;
+    }
+
+    .rtt-preview-memo-tag {
+        font-family: var(--font-body);
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--primary-color);
+        margin-bottom: 1.25rem;
+        display: block;
+    }
+
+    .rtt-preview-quote {
+        font-family: var(--font-body);
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: var(--text-color-main);
+        margin: 0;
+    }
+
+    .rtt-image-card {
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        border: 1px solid var(--border-color);
+        background: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .rtt-image-card img {
+        width: 100%;
+        height: 100%;
+        min-height: 280px;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* CTA / Opt-in Section */
+    .rtt-optin-section {
+        background-color: var(--background-main);
+        padding: 6rem 1.5rem;
+        text-align: center;
+    }
+
+    .rtt-optin-card {
+        background: #FFFFFF;
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-md);
+        padding: 3.5rem 2.5rem;
+        max-width: 620px;
+        margin: 0 auto;
+        box-shadow: var(--shadow-md);
+        text-align: center;
+    }
+
+    @media (max-width: 600px) {
+        .rtt-optin-card {
+            padding: 2.5rem 1.5rem;
+        }
+    }
+
+    .rtt-optin-title {
+        font-family: var(--font-heading);
+        font-size: clamp(1.8rem, 4.5vw, 2.2rem);
+        font-weight: 600;
+        color: var(--text-color-emphasis);
+        margin-bottom: 0.75rem;
+        line-height: 1.25;
+    }
+
+    .rtt-optin-desc {
+        font-family: var(--font-body);
+        font-size: 1.05rem;
+        color: var(--text-color-muted);
+        line-height: 1.6;
+        margin-bottom: 2rem;
+    }
+</style>
+
+<body class="brand-tsd" style="display: block; background-color: var(--background-main);">
+    {{header}}
+
+    <main>
+        <!-- HERO -->
+        <section class="rtt-hero">
+            <div class="main-container">
+                <div class="rtt-eyebrow">[FREE WEEKLY BRIEFING · 4-MINUTE READ]</div>
+                <h1 class="rtt-title">
+                    {{rtt_content_hero_title}}
+                    <span class="rtt-accent">{{rtt_content_hero_accent}}</span>
+                </h1>
+                <p class="rtt-subtitle">
+                    {{rtt_content_hero_subtitle}}
+                </p>
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+                    <a href="#join" class="cta-button cta-button-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem; border-radius: var(--radius-md); text-decoration: none;">
+                        {{rtt_content_cta_text}}
+                    </a>
+                    <div class="rtt-trust-row">
+                        <div class="rtt-trust-item"><span class="rtt-trust-check">✓</span> Free. Always.</div>
+                        <div class="rtt-trust-item"><span class="rtt-trust-check">✓</span> Tuesdays only. 5:45 AM.</div>
+                        <div class="rtt-trust-item"><span class="rtt-trust-check">✓</span> Unsubscribe in one click.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHAT YOU GET / 3-PART ANATOMY -->
+        <section class="rtt-grid-section">
+            <div class="main-container text-center">
+                <div style="max-width: 640px; margin: 0 auto;">
+                    <div class="rtt-eyebrow" style="margin-bottom: 0.75rem;">[THE 3-PART ANATOMY]</div>
+                    <h2 style="font-family: var(--font-heading); font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 600; color: var(--text-color-emphasis); margin-bottom: 0.75rem;">What's inside every Tuesday</h2>
+                    <p style="color: var(--text-color-muted); font-size: 1.05rem; line-height: 1.6; margin: 0;">
+                        Three things. That's it. Designed to read in under four minutes on your phone before your first meeting.
+                    </p>
+                </div>
+                <div class="rtt-cards-grid">
+                    <div class="rtt-feature-card">
+                        <span class="rtt-card-badge">01 · THE HONEST SCENE</span>
+                        <h3 class="rtt-card-title">{{rtt_content_benefit_1_title}}</h3>
+                        <p class="rtt-card-text">{{rtt_content_benefit_1_description}}</p>
+                    </div>
+                    <div class="rtt-feature-card">
+                        <span class="rtt-card-badge">02 · THE HOME ROUTINE</span>
+                        <h3 class="rtt-card-title">{{rtt_content_benefit_2_title}}</h3>
+                        <p class="rtt-card-text">{{rtt_content_benefit_2_description}}</p>
+                    </div>
+                    <div class="rtt-feature-card">
+                        <span class="rtt-card-badge">03 · ONE STEP BEFORE FRIDAY</span>
+                        <h3 class="rtt-card-title">{{rtt_content_benefit_3_title}}</h3>
+                        <p class="rtt-card-text">{{rtt_content_benefit_3_description}}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CLOSING WINDOW SECTION / THE ESSAY -->
+        <section class="rtt-letter-section">
+            <div class="rtt-letter-container">
+                <div class="rtt-eyebrow" style="margin-bottom: 1.25rem;">[THE REASON THIS EXISTS]</div>
+                <article class="brand-markdown rtt-prose">
+                    {{rtt_content}}
+                </article>
+                <div class="rtt-author-lockup">
+                    <img src="images/ChristopherLynnHeadshot_v2.jpg" alt="Christopher Lynn" loading="lazy" width="64" height="64" class="rtt-author-avatar">
+                    <div>
+                        <div style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--text-color-emphasis); font-weight: 600;">Christopher Lynn</div>
+                        <div style="color: var(--text-color-muted); font-size: 0.9rem; font-family: var(--font-body); font-weight: 500;">The Systems Dad · Senior Program Manager</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SAMPLE ISSUE PREVIEW -->
+        <section class="rtt-preview-section">
+            <div class="main-container text-center">
+                <div class="rtt-eyebrow" style="margin-bottom: 0.75rem;">[ISSUE ARCHIVE PREVIEW]</div>
+                <h2 style="font-family: var(--font-heading); font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 600; color: var(--text-color-emphasis); margin-bottom: 0.75rem;">A recent issue, in preview</h2>
+                <p style="color: var(--text-color-muted); margin-bottom: 0; font-size: 1.05rem;">From the archive — so you know the exact standard hitting your inbox.</p>
+                
+                <div class="rtt-preview-grid">
+                    <div class="rtt-preview-card">
+                        <span class="rtt-preview-memo-tag">ISSUE PREVIEW · TUESDAY 5:45 AM</span>
+                        <div class="rtt-preview-quote">
+                            <p style="margin-bottom: 1rem;"><strong style="color: var(--text-color-emphasis);">{{rtt_content_sample_issue_bold}}</strong></p>
+                            <p style="margin-bottom: 1.25rem; color: var(--text-color-muted); line-height: 1.7;">{{rtt_content_sample_issue_body}}</p>
+                            <p style="margin-bottom: 0.75rem;"><strong style="color: var(--text-color-emphasis);">{{rtt_content_sample_issue_header}}</strong></p>
+                            <ol style="margin: 0 0 1.25rem 1.25rem; padding: 0; color: var(--text-color-muted); line-height: 1.7;">
+                                <li style="margin-bottom: 0.4rem;"><strong>{{rtt_content_sample_issue_item_1}}</strong></li>
+                                <li style="margin-bottom: 0.4rem;"><strong>{{rtt_content_sample_issue_item_2}}</strong></li>
+                                <li style="margin-bottom: 0.4rem;"><strong>{{rtt_content_sample_issue_item_3}}</strong></li>
+                            </ol>
+                            <p style="margin: 0; font-weight: 600; color: var(--primary-color);">{{rtt_content_sample_issue_footer}}</p>
+                        </div>
+                    </div>
+                    <div class="rtt-image-card">
+                        <img src="images/ghost_at_dinner_table_1774490562808.png" alt="Ghost Dad at Dinner" loading="lazy" width="600" height="400">
+                    </div>
+                </div>
+                <p style="margin-top: 2rem; color: var(--text-color-muted); font-size: 0.95rem;">Every issue follows this format. Human first. Routine second. Action always.</p>
+            </div>
+        </section>
+
+        <!-- JOIN / CONVERSION BOX -->
+        <section class="rtt-optin-section" id="join">
+            <div class="main-container text-center">
+                <div class="rtt-optin-card">
+                    <div class="rtt-eyebrow" style="margin-bottom: 1rem;">[THE INBOX DISPATCH]</div>
+                    <h2 class="rtt-optin-title">{{rtt_content_footer_form_title}}</h2>
+                    <p class="rtt-optin-desc">{{rtt_content_footer_form_desc}}</p>
+
+                    <a href="https://stan.store/thesystemsdad" class="cta-button cta-button-primary" style="display: block; width: 100%; padding: 1.15rem 1.5rem; font-size: 1.1rem; font-weight: 700; text-align: center; text-decoration: none; border-radius: var(--radius-md);" target="_blank">
+                        Join Free on Stan.Store &rarr;
+                    </a>
+                    <p style="margin-top: 1.25rem; font-size: 0.85rem; color: var(--text-color-muted); margin-bottom: 0;">
+                        No spam. One email per week on Tuesday morning. Unsubscribe in one click.
+                    </p>
+                </div>
+
+                <div class="text-center" style="margin-top: 3rem;">
+                    <a href="/method" style="color: var(--primary-color); font-weight: 600; text-decoration: none; font-size: 1rem;">
+                        Looking for the complete framework? Explore The 90-Day Method &rarr;
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    {{footer}}
+    {{chatbot}}
+    {{scripts}}
+</body>
+</html>

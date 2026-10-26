@@ -1,0 +1,504 @@
+{{head}}
+<body class="brand-tsd">
+    {{header}}
+
+    <main class="page-wrapper">
+        <style>
+            /* ================================================================ */
+            /* DESIGN TOKENS                                                    */
+            /* ================================================================ */
+            :root {
+                --guide-primary: #D4A017; /* Gold Accent */
+                --guide-bg: #2A5F4E; /* Deep Green Background */
+                --guide-bg2: #1e4538; /* Darker Green */
+                --guide-bg3: #367c66;
+                --guide-slate: #F8F4EF; /* Warm Cream Text */
+                --guide-muted: #a7b5a9; /* Muted Green-Gray */
+                --guide-border: rgba(248, 244, 239, 0.15);
+                --guide-radius: 10px;
+            }
+
+            /* ================================================================ */
+            /* PRINT RESET (Skill: premium-pdf-guide-architect)                 */
+            /* ================================================================ */
+            @page {
+                size: Letter portrait;
+                margin: 0;
+            }
+
+            .page-wrapper {
+                width: 7.75in;
+                margin: 0 auto;
+                background: var(--guide-bg);
+                color: var(--guide-slate);
+            }
+
+            .print-section {
+                width: 7.75in;
+                min-height: 10.25in;
+                padding: 0.5in 0.75in;
+                position: relative;
+                break-after: page;
+                display: flex;
+                flex-direction: column;
+                background: var(--guide-bg);
+            }
+
+            /* COVER */
+            .cover {
+                justify-content: flex-start;
+                padding: 0.5in 0.75in;
+                background: var(--guide-bg);
+                min-height: 10.25in;
+            }
+
+            .cover-hero-img {
+                width: 100%;
+                height: 3in;
+                object-fit: cover;
+                border-radius: var(--guide-radius);
+                border: 1px solid rgba(212, 160, 23, 0.28);
+                margin-bottom: 2rem;
+                box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.5);
+            }
+
+            .cover-card {
+                background: var(--guide-bg2);
+                border: 1px solid var(--guide-border);
+                border-radius: var(--guide-radius);
+                padding: 2rem 2.25rem;
+                width: 100%;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            }
+
+            .cover-brand {
+                color: var(--guide-primary);
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+                font-size: 8pt;
+                font-weight: 700;
+                margin-bottom: 0.5rem;
+            }
+
+            .cover-title {
+                font-size: 34pt;
+                font-weight: 800;
+                line-height: 1.0;
+                color: #fff;
+                margin-bottom: 0.75rem;
+            }
+
+            .cover-title span {
+                color: var(--guide-primary);
+            }
+
+            .cover-subtitle {
+                font-size: 12pt;
+                color: var(--guide-muted);
+                font-style: italic;
+                font-family: var(--font-serif);
+                margin-bottom: 1.5rem;
+            }
+
+            .cover-deck {
+                font-size: 10pt;
+                color: var(--guide-slate);
+                line-height: 1.6;
+                border-left: 3px solid var(--guide-primary);
+                padding-left: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .pill {
+                background: rgba(212, 160, 23, 0.10);
+                border: 1px solid rgba(212, 160, 23, 0.28);
+                color: var(--guide-primary);
+                font-size: 7.5pt;
+                font-weight: 700;
+                padding: 0.2rem 0.6rem;
+                border-radius: 2rem;
+                letter-spacing: 0.04em;
+                text-transform: uppercase;
+            }
+
+            .cover-bottom {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-top: 1px solid var(--guide-border);
+                padding-top: 1.25rem;
+                margin-top: 1.5rem;
+            }
+
+            .cover-author {
+                font-size: 8.5pt;
+                color: var(--guide-muted);
+            }
+
+            .cover-author strong {
+                color: var(--guide-slate);
+            }
+
+            /* MAIN CONTENT */
+            .section-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding-bottom: 0.5rem;
+                border-bottom: 1px solid rgba(212, 160, 23, 0.28);
+                margin-bottom: 0.75rem;
+            }
+
+            .badge {
+                background: rgba(212, 160, 23, 0.10);
+                border: 1px solid rgba(212, 160, 23, 0.28);
+                color: var(--guide-primary);
+                padding: 0.2rem 0.6rem;
+                border-radius: 6px;
+                font-weight: 800;
+                font-size: 7.5pt;
+                text-transform: uppercase;
+            }
+
+            .hero-row {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1.25rem;
+                margin-bottom: 1.25rem;
+            }
+
+            .hero-img {
+                width: 100%;
+                height: 2in;
+                object-fit: cover;
+                border-radius: var(--guide-radius);
+                border: 1px solid var(--guide-border);
+            }
+
+            .mission-box {
+                background: rgba(212, 160, 23, 0.10);
+                border: 1px solid rgba(212, 160, 23, 0.28);
+                border-radius: var(--guide-radius);
+                padding: 0.75rem 1rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .mission-box h4 {
+                color: var(--guide-primary);
+                font-size: 7.5pt;
+                text-transform: uppercase;
+                letter-spacing: 0.06em;
+                margin-bottom: 0.4rem;
+            }
+
+            .mission-box p {
+                font-size: 9pt;
+                color: var(--guide-slate);
+                font-style: italic;
+                line-height: 1.5;
+            }
+
+            .checklist-block {
+                background: var(--guide-bg2);
+                border: 1px solid var(--guide-border);
+                border-radius: var(--guide-radius);
+                padding: 1rem 1.25rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .checklist-label {
+                font-size: 8.5pt;
+                font-weight: 700;
+                color: var(--guide-primary);
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                border-bottom: 1px solid var(--guide-border);
+                padding-bottom: 0.35rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .check-item {
+                display: flex;
+                align-items: flex-start;
+                gap: 0.65rem;
+                margin-bottom: 0.65rem;
+                font-size: 10pt;
+                color: var(--guide-muted);
+                line-height: 1.5;
+            }
+
+            .check-box {
+                width: 16px;
+                height: 16px;
+                border: 1.5px solid rgba(212, 160, 23, 0.28);
+                border-radius: 3px;
+                flex-shrink: 0;
+                margin-top: 2px;
+            }
+
+            .mode-table {
+                width: 100%;
+                border-collapse: collapse;
+                font-size: 10pt;
+                margin-bottom: 1.5rem;
+            }
+
+            .mode-table thead th {
+                text-align: left;
+                padding: 0.6rem 0.9rem;
+                color: var(--guide-primary);
+                font-weight: 700;
+                font-size: 8pt;
+                text-transform: uppercase;
+                background: var(--guide-bg2);
+                border-bottom: 2px solid rgba(212, 160, 23, 0.28);
+            }
+
+            .mode-table td {
+                padding: 0.85rem 0.9rem;
+                color: var(--guide-muted);
+                border-bottom: 1px solid var(--guide-border);
+            }
+
+            .activity-card {
+                background: var(--guide-bg3);
+                border: 1px solid var(--guide-border);
+                border-radius: var(--guide-radius);
+                padding: 1rem 1.1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .activity-card h4 {
+                font-size: 9.5pt;
+                color: #D4A017;
+                margin-bottom: 0.4rem;
+                text-transform: uppercase;
+            }
+
+            .activity-card p {
+                font-size: 9.5pt;
+                color: var(--guide-muted);
+            }
+
+            .blank-line {
+                border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
+                height: 0.45in;
+                margin-top: 0.4rem;
+            }
+
+            .callout {
+                border-left: 3px solid #D4A017;
+                background: rgba(212, 160, 23, 0.10);
+                padding: 0.9rem 1.25rem;
+                border-radius: 0 8px 8px 0;
+                font-size: 10pt;
+                color: var(--guide-slate);
+                font-style: italic;
+                margin-bottom: 1rem;
+            }
+
+            .page-footer {
+                margin-top: auto;
+                padding-top: 1rem;
+                border-top: 1px solid var(--guide-border);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                opacity: 0.6;
+            }
+
+            .page-footer span {
+                font-size: 8.5pt;
+            }
+
+            .closing-grid {
+                display: grid;
+                grid-template-columns: 2.5in 1fr;
+                gap: 2.25rem;
+                align-items: flex-start;
+                margin: auto 0;
+            }
+
+            .closing-photo-container {
+                width: 100%;
+                height: 4in;
+                border-radius: var(--guide-radius);
+                overflow: hidden;
+                border: 1px solid rgba(212, 160, 23, 0.28);
+            }
+
+            .closing-photo {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            @media print {
+                .main-header, .main-footer, .chatbot-trigger {
+                    display: none !important;
+                }
+                .page-wrapper {
+                   margin: 0 !important;
+                   padding: 0 !important;
+                   width: 100% !important;
+                }
+            }
+
+            @media (max-width: 8in) {
+                .page-wrapper {
+                    width: 100%;
+                    padding: 2rem;
+                }
+                .print-section {
+                    width: 100%;
+                    min-height: auto;
+                    padding: 2rem 0;
+                    break-after: auto;
+                }
+                .hero-row, .closing-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+
+        <!-- PAGE 1: COVER -->
+        <div class="print-section cover">
+            <img src="../images/digital_sabbath_hero.webp" class="cover-hero-img" alt="Digital Sabbath">
+
+            <div class="cover-card">
+                <div class="cover-brand">The Systems Dad</div>
+                <h1 class="cover-title">The Digital<br><span>Sabbath Guide</span></h1>
+                <p class="cover-subtitle">"Good work during the week needs real rest on the weekend. Shut down the laptop."</p>
+
+                <div class="cover-deck">
+                    Your brain is still thinking about work at 7 PM on a Friday. You're physically home, but mentally you're still at your desk. This checklist helps you switch off work brain and be completely there with your family for 24 hours.
+                </div>
+
+                <div class="cover-bottom">
+                    <div class="cover-author">
+                        <strong>Christopher Lynn</strong> · @TheSystemsDad<br>
+                        christopherlynnsystems.com
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGE 2: SHUTDOWN PROTOCOL (A) -->
+        <div class="print-section">
+            <div class="section-header">
+                <h2 style="font-size:20pt; color:#fff;">Step 1: The Friday Shutdown</h2>
+                <span style="color: var(--guide-muted); font-size: 9pt; font-weight: 600;">FRIDAY 4:00 PM</span>
+            </div>
+
+            <div class="hero-row">
+                <img src="../images/digital_sabbath_hero.webp" class="hero-img" alt="Digital Sabbath">
+                <div class="mission-box">
+                    <h4>The Goal</h4>
+                    <p>"Wrap up the week so you can walk through the front door with a clear head."</p>
+                </div>
+            </div>
+
+            <div class="checklist-block">
+                <div class="checklist-label">The Shutdown Sequence</div>
+                <div class="check-item"><div class="check-box"></div><div><strong>Weekly Review Complete:</strong> Did you review what got done?</div></div>
+                <div class="check-item"><div class="check-box"></div><div><strong>"Loose Ends" Dump:</strong> Write down unfinished ideas in your notebook or app.</div></div>
+                <div class="check-item"><div class="check-box"></div><div><strong>Turn Off Alerts:</strong> Mute work email, Slack, and LinkedIn.</div></div>
+                <div class="check-item"><div class="check-box"></div><div><strong>Laptop Closed:</strong> Lid shut. Out of sight. Out of mind.</div></div>
+            </div>
+
+            <div class="page-footer">
+                <span>CHRISTOPHER LYNN | SYSTEMS</span>
+                <span>Section A: The Friday Shutdown</span>
+            </div>
+        </div>
+
+        <!-- PAGE 3: SHUTDOWN PROTOCOL (B) -->
+        <div class="print-section">
+            <div class="section-header">
+                <h2 style="font-size:20pt; color:#fff;">Step 2: Mental Reset</h2>
+                <span style="color: var(--guide-muted); font-size: 9pt; font-weight: 600;">FRIDAY 6:00 PM</span>
+            </div>
+
+            <div class="checklist-block">
+                <div class="checklist-label">The Mental Reset</div>
+                <p style="font-size:10pt; color:var(--guide-muted); margin-bottom:0.75rem;">Say this out loud to yourself or your partner:</p>
+                <div class="callout">
+                    "I'm done for the week. My notes are saved. I am with my family until Monday. Everything else can wait."
+                </div>
+            </div>
+
+            <h3 style="font-size:11pt; color:#fff; margin-bottom:1rem;">Choose Your Sabbath Mode</h3>
+            <table class="mode-table">
+                <thead>
+                    <tr><th>Mode</th><th>What You Do</th><th>Select</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>🟢 Grounded</td><td>Phone in a drawer for 24 hours.</td><td>[ ]</td></tr>
+                    <tr><td>🟡 Glove-Box</td><td>Emergency family calls only.</td><td>[ ]</td></tr>
+                    <tr><td>🟠 Simple Mode</td><td>No social media. Camera only.</td><td>[ ]</td></tr>
+                </tbody>
+            </table>
+
+            <div class="page-footer">
+                <span>CHRISTOPHER LYNN | SYSTEMS</span>
+                <span>Section B: Mental Reset</span>
+            </div>
+        </div>
+
+        <!-- PAGE 4: PRESENCE BLUEPRINT -->
+        <div class="print-section">
+            <div class="section-header">
+                <h2 style="font-size:20pt; color:#fff;">Your Weekend Rhythm</h2>
+                <span style="color: var(--guide-muted); font-size: 9pt; font-weight: 600;">WEEKEND BLOCKS</span>
+            </div>
+
+            <div class="activity-card">
+                <h4>🎯 Family Time</h4>
+                <p>Active time with the kids. No phones. Full attention.</p>
+                <div class="blank-line"></div>
+            </div>
+            <div class="activity-card">
+                <h4>📖 Real Rest (No Screens)</h4>
+                <p>Reading, cooking, walking, or building something with your hands.</p>
+                <div class="blank-line"></div>
+            </div>
+            <div class="activity-card">
+                <h4>💤 Deep Rest</h4>
+                <p>Permission to stop. No guilt. Recharging your battery.</p>
+                <div class="blank-line"></div>
+            </div>
+
+            <div class="page-footer">
+                <span>CHRISTOPHER LYNN | SYSTEMS</span>
+                <span>Section C: Being Present</span>
+            </div>
+        </div>
+
+        <!-- PAGE 5: CLOSING -->
+        <div class="print-section">
+            <div class="closing-grid">
+                <div class="closing-photo-container">
+                    <img src="/images/ChristopherLynnHeadshot_v2.jpg" alt="Christopher Lynn" class="closing-photo">
+                </div>
+                <div class="closing-text">
+                    <h2>The grind was never the goal.</h2>
+                    <p>Your family doesn't need a perfect dad. They need a present one. The simple habits you built this week aren't about doing more. They're about clearing away distractions so you can do what only you can do: show up, be there, and lead the people who count on you.</p>
+
+                    <div style="margin-top:2rem; border-top: 1px solid var(--guide-border); padding-top: 1.5rem;">
+                        <h4 style="color:var(--guide-primary); font-size:9pt; text-transform:uppercase;">Take the Next Step</h4>
+                        <a href="{{root_path}}dad-mode-kit" style="display:inline-block; background:var(--guide-primary); color:var(--guide-bg); padding: 0.5rem 1rem; border-radius: 6px; font-weight: 800; font-size: 8.5pt; text-decoration:none; margin-top:0.5rem;">Get the Dad Mode Kit →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="page-footer" style="margin-top:auto;">
+                <span>© 2026 Christopher Lynn Systems, LLC.</span>
+            </div>
+        </div>
+    </main>
+
+    {{footer}}
+    {{scripts}}
+</body>
+</html>

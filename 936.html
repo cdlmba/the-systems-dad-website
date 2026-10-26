@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Systems Dad</title>
+
+    <!-- 1. CRITICAL: Inline Mobile Detection (Prevents layout jitter) -->
+    <script>
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            document.documentElement.classList.add('is-mobile');
+            document.body.classList.add('is-mobile');
+        }
+        
+        // 1.1 Global Configuration Access
+        window.siteConfig = {
+            globals: {
+                tidycal_url: "https://tidycal.com/christopherlynnsystems/30-minute-meeting",
+                cls_booking_price: "$2,800",
+                tsd_booking_price: "$97"
+            },
+            brand: "TSD",
+            version: "2"
+        };
+    </script>
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <!-- 2. STYLES (Load before analytics to prevent FOUC) -->
+    <link rel="stylesheet" href="/style.css?v=20260930e">
+
+    <!-- GA4 Systems Dad Index — G-W4TB1J0TNK only -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GT-PBSGZ5XB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-W4TB1J0TNK');
+    </script>
+
+    <!-- Microsoft Clarity Tracking -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "weaa6eknja");
+    </script>
+
+<!-- Whop Checkout Script -->
+<script async defer src="https://js.whop.com/static/checkout/loader.js"></script>
+
+<!-- SEO Meta Tags -->
+<meta name="description"
+    content="Reclaim your presence.">
+<link rel="canonical" href="https://thesystemsdad.com/936">
+<meta property="og:title" content="The Systems Dad">
+<meta property="og:description"
+    content="Reclaim your presence.">
+<meta property="og:image" content="https://thesystemsdad.com/images/HeadshotThumbnail.png">
+<meta property="og:url" content="https://thesystemsdad.com/936">
+<meta property="og:type" content="website">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Systems Dad">
+<meta name="twitter:description" content="Reclaim your presence.">
+<meta name="twitter:image" content="https://thesystemsdad.com/images/HeadshotThumbnail.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap"
+    rel="stylesheet">
+
+<!-- Styles (Moved to top of head) -->
+
+<link rel="icon" type="image/png" href="/images/tsd-favicon.png?v=4">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"Christopher Lynn",
+  "url":"https://thesystemsdad.com",
+  "sameAs":["https://www.linkedin.com/in/ChristopherDLynn"],
+  "jobTitle":"Systems Consultant and Coach"
+}
+</script>
+
+    <meta name="robots" content="noindex">
+    <style>
+    /* ═══════════════════════════════════════════════════════════
+       THE 936 CLOCK — Standalone Styles (TSD Brand)
+       Scoped to avoid collisions with style.css
+    ═══════════════════════════════════════════════════════════ */
+    :root {
+        --c-bg: #09090b;
+        --c-card: #18181b;
+        --c-elevated: #27272a;
+        --c-border: rgba(255,255,255,0.08);
+        --c-text: #fafafa;
+        --c-muted: #a1a1aa;
+        --c-faint: #52525b;
+        
+        /* TSD Blue/Brand colors */
+        --c-brand: #3b82f6; 
+        --c-brand-hover: #2563eb;
+        
+        /* Grid Dot Colors */
+        --c-dot-future: rgba(255,255,255,0.06);
+        --c-dot-past: rgba(255,255,255,0.25);
+        --c-dot-logged: #f59e0b; /* Amber for memories */
+        --c-dot-current: #3b82f6; /* Blue for this week */
+        
+        --c-radius: 12px;
+    }
+
+    html, body { height: 100%; background: var(--c-bg); color: var(--c-text); margin: 0; }
+    
+    .clock-app {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        font-family: 'Public Sans', 'Inter', -apple-system, sans-serif;
+    }
+
+    /* ── App Header ── */
+    .clock-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid var(--c-border);
+        background: rgba(9, 9, 11, 0.96);
+        backdrop-filter: blur(12px);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+    .clock-logo {
+        font-size: 1rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        text-decoration: none;
+        color: var(--c-text);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .clock-logo-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--c-brand);
+    }
+    .clock-nav { display: flex; gap: 1rem; align-items: center; }
+    
+    /* ── UI Components ── */
+    .c-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.25rem;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+        transition: all 0.2s;
+        text-decoration: none;
+        font-family: inherit;
+    }
+    .c-btn-primary { background: var(--c-brand); color: #fff; }
+    .c-btn-primary:hover { background: var(--c-brand-hover); }
+    .c-btn-ghost { background: transparent; color: var(--c-muted); border: 1px solid var(--c-border); }
+    .c-btn-ghost:hover { border-color: rgba(255,255,255,0.2); color: var(--c-text); }
+    
+    .c-input {
+        width: 100%;
+        background: var(--c-elevated);
+        border: 1px solid var(--c-border);
+        border-radius: 8px;
+        padding: 0.75rem 1rem;
+        color: var(--c-text);
+        font-family: inherit;
+        font-size: 0.95rem;
+        outline: none;
+        transition: border-color 0.2s;
+        box-sizing: border-box;
+    }
+    .c-input:focus { border-color: var(--c-brand); }
+    .c-label {
+        display: block;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--c-muted);
+        margin-bottom: 0.4rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    /* ── Stage & Screens ── */
+    .clock-stage { flex: 1; display: flex; flex-direction: column; padding: 2rem 1.25rem; max-width: 1000px; margin: 0 auto; width: 100%; box-sizing: border-box; }
+    .clock-screen { display: none; animation: fadeIn 0.3s ease; width: 100%; }
+    .clock-screen.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* ── Setup Screen ── */
+    .setup-card {
+        background: var(--c-card);
+        border: 1px solid var(--c-border);
+        border-radius: var(--c-radius);
+        padding: 2.5rem;
+        max-width: 500px;
+        margin: 4rem auto;
+        text-align: center;
+    }
+    .setup-title { font-size: 2rem; font-weight: 800; letter-spacing: -0.04em; margin-bottom: 0.5rem; }
+    .setup-sub { font-size: 1rem; color: var(--c-muted); line-height: 1.6; margin-bottom: 2rem; }
+    .setup-form { text-align: left; display: flex; flex-direction: column; gap: 1.25rem; }
+    .setup-error { color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem; display: none; }
+
+    /* ── Grid Screen ── */
+    .grid-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    .grid-title-wrap h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.04em; margin: 0 0 0.25rem 0; line-height: 1; }
+    .grid-meta { font-size: 1rem; color: var(--c-muted); font-weight: 500; }
+    .grid-meta strong { color: var(--c-text); }
+    
+    .grid-controls { display: flex; gap: 0.75rem; align-items: center; }
+    .child-selector {
+        background: var(--c-card);
+        border: 1px solid var(--c-border);
+        color: var(--c-text);
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        font-family: inherit;
+        font-size: 0.9rem;
+        outline: none;
+    }
+
+    /* The Matrix */
+    .grid-matrix-container {
+        background: var(--c-card);
+        border: 1px solid var(--c-border);
+        border-radius: var(--c-radius);
+        padding: 2rem;
+        overflow-x: auto;
+    }
+    
+    .grid-matrix {
+        display: grid;
+        /* 52 columns (weeks), 18 rows (years) */
+        grid-template-columns: repeat(52, 1fr);
+        gap: 6px;
+        min-width: 800px; /* Ensure dots don't get too crushed on mobile */
+    }
+    
+    .dot {
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: var(--c-dot-future);
+        position: relative;
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+    .dot:hover { transform: scale(1.4); z-index: 10; }
+    
+    .dot.past { background: var(--c-dot-past); }
+    .dot.logged { background: var(--c-dot-logged); box-shadow: 0 0 8px rgba(245,158,11,0.4); }
+    
+    .dot.current { 
+        background: var(--c-dot-current); 
+        box-shadow: 0 0 12px rgba(59,130,246,0.6);
+        animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+        0% { box-shadow: 0 0 0 0 rgba(59,130,246,0.6); }
+        70% { box-shadow: 0 0 0 6px rgba(59,130,246,0); }
+        100% { box-shadow: 0 0 0 0 rgba(59,130,246,0); }
+    }
+
+    /* Tooltip */
+    .dot-tooltip {
+        position: absolute;
+        bottom: 150%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--c-elevated);
+        border: 1px solid var(--c-border);
+        padding: 0.5rem 0.75rem;
+        border-radius: 6px;
+        font-size: 0.75rem;
+        color: var(--c-text);
+        white-space: nowrap;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.2s;
+        z-index: 20;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+    .dot:hover .dot-tooltip { opacity: 1; }
+
+    /* Legend */
+    .grid-legend {
+        display: flex;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+        font-size: 0.8rem;
+        color: var(--c-muted);
+        justify-content: center;
+    }
+    .legend-item { display: flex; align-items: center; gap: 0.5rem; }
+    .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+    /* ── Modal ── */
+    .modal-overlay {
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0,0,0,0.8);
+        backdrop-filter: blur(4px);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        padding: 1rem;
+    }
+    .modal-overlay.active { display: flex; animation: fadeIn 0.2s ease; }
+    .modal-content {
+        background: var(--c-card);
+        border: 1px solid var(--c-border);
+        border-radius: var(--c-radius);
+        padding: 2rem;
+        width: 100%;
+        max-width: 440px;
+        position: relative;
+    }
+    .modal-close {
+        position: absolute;
+        top: 1rem; right: 1rem;
+        background: none; border: none; color: var(--c-muted);
+        font-size: 1.5rem; cursor: pointer; line-height: 1;
+    }
+    .modal-close:hover { color: var(--c-text); }
+    
+    .rating-group { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; }
+    .rating-btn {
+        flex: 1;
+        padding: 0.75rem 0;
+        background: var(--c-elevated);
+        border: 1px solid var(--c-border);
+        border-radius: 6px;
+        color: var(--c-muted);
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+    .rating-btn:hover { border-color: var(--c-brand); color: var(--c-text); }
+    .rating-btn.active { background: var(--c-brand); border-color: var(--c-brand); color: #fff; }
+
+    /* ── Paywall ── */
+    .paywall-screen { text-align: center; max-width: 500px; margin: 4rem auto; }
+    .paywall-icon { font-size: 3rem; margin-bottom: 1rem; }
+    .paywall-title { font-size: 2rem; font-weight: 800; margin-bottom: 1rem; }
+    .paywall-features { text-align: left; background: var(--c-card); border: 1px solid var(--c-border); border-radius: var(--c-radius); padding: 1.5rem; margin: 1.5rem 0; }
+    .paywall-feature { margin-bottom: 0.75rem; font-size: 0.9rem; display: flex; gap: 0.5rem; }
+    
+    @media (max-width: 768px) {
+        .grid-matrix-container { padding: 1rem; }
+        .grid-header { flex-direction: column; align-items: flex-start; }
+    }
+    </style>
+</head>
+<body>
+    <div class="promo-banner">
+    Real Talk Tuesday — <a href="/real-talk-tuesday">The Weekly Note for Dads →</a>
+</div>
+<header class="main-header">
+    <div class="main-container header-content">
+        <a href="/" class="logo">
+            <span class="logo-primary">the systems dad</span>
+        </a>
+
+        <nav class="main-nav">
+            <a href="/the-systems-dad-method">The Method</a>
+            <a href="/win">The House System</a>
+            <a href="/lab">Coaching</a>
+            <a href="/blog">Essays</a>
+            <a href="/real-talk-tuesday" class="nav-cta">The Weekly Note →</a>
+        </nav>
+        <button class="menu-toggle" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>
+
+    
+    <div class="clock-app">
+        <!-- ══ APP HEADER ══ -->
+        <header class="clock-header">
+            <a href="/" class="clock-logo">
+                <div class="clock-logo-dot"></div>
+                The 936 Clock
+            </a>
+            <nav class="clock-nav">
+                <button class="c-btn c-btn-ghost" style="padding: 0.4rem 0.75rem; font-size: 0.8rem;" onclick="App.addProfile()">+ Add Child</button>
+            </nav>
+        </header>
+
+        <!-- ══ STAGE ══ -->
+        <main class="clock-stage">
+            
+            <!-- ┌──────────────────────────┐ -->
+            <!-- │  SCREEN: SETUP           │ -->
+            <!-- └──────────────────────────┘ -->
+            <section class="clock-screen active" id="screen-setup">
+                <div class="setup-card">
+                    <h1 class="setup-title">936 Saturdays.</h1>
+                    <p class="setup-sub">That's what you get from the day they are born until they turn 18. Let's see where you are.</p>
+                    
+                    <div class="setup-form">
+                        <div>
+                            <label class="c-label">Child's Name</label>
+                            <input type="text" id="setup-name" class="c-input" placeholder="e.g. Leo">
+                        </div>
+                        <div>
+                            <label class="c-label">Date of Birth</label>
+                            <input type="date" id="setup-dob" class="c-input">
+                            <div class="setup-error" id="setup-error">Child must be under 18.</div>
+                        </div>
+                        <button class="c-btn c-btn-primary" style="margin-top:0.5rem;" onclick="App.saveProfile()">Create Grid →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ┌──────────────────────────┐ -->
+            <!-- │  SCREEN: MAIN GRID       │ -->
+            <!-- └──────────────────────────┘ -->
+            <section class="clock-screen" id="screen-grid">
+                
+                <div class="grid-header">
+                    <div class="grid-title-wrap">
+                        <h1 id="grid-name">Child's Grid</h1>
+                        <div class="grid-meta">
+                            <span id="grid-age">—</span> old. 
+                            <strong id="grid-left">— Saturdays left.</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="grid-controls">
+                        <select id="child-select" class="child-selector" onchange="App.switchProfile(this.value)" style="display:none;"></select>
+                        <button class="c-btn c-btn-primary" onclick="App.openLogModal()">Log This Week</button>
+                    </div>
+                </div>
+
+                <div class="grid-matrix-container">
+                    <div class="grid-matrix" id="matrix">
+                        <!-- Dots generated by JS -->
+                    </div>
+                    
+                    <div class="grid-legend">
+                        <div class="legend-item"><div class="legend-dot" style="background:var(--c-dot-past)"></div> Past</div>
+                        <div class="legend-item"><div class="legend-dot" style="background:var(--c-dot-future)"></div> Future</div>
+                        <div class="legend-item"><div class="legend-dot" style="background:var(--c-dot-current); box-shadow:0 0 8px rgba(59,130,246,0.6)"></div> This Week</div>
+                        <div class="legend-item"><div class="legend-dot" style="background:var(--c-dot-logged)"></div> Logged</div>
+                    </div>
+                </div>
+                
+            </section>
+
+            <!-- ┌──────────────────────────┐ -->
+            <!-- │  SCREEN: PAYWALL         │ -->
+            <!-- └──────────────────────────┘ -->
+            <section class="clock-screen" id="screen-paywall">
+                <div class="paywall-screen">
+                    <div class="paywall-icon">🔒</div>
+                    <h1 class="paywall-title">Track More Kids</h1>
+                    <p style="color:var(--c-muted); font-size:1.1rem; line-height:1.6;">
+                        The free version lets you track one kid. To add more kids and unlock unlimited weekly notes, get the Dad Mode Kit.
+                    </p>
+                    
+                    <div class="paywall-features">
+                        <div class="paywall-feature">✅ <span>Track multiple kids</span></div>
+                        <div class="paywall-feature">✅ <span>Unlimited weekly notes</span></div>
+                        <div class="paywall-feature">✅ <span>Year-end printable grid</span></div>
+                        <div class="paywall-feature">✅ <span>Private to your browser</span></div>
+                    </div>
+                    
+                    <a href="/dad-mode-kit" class="c-btn c-btn-primary" style="font-size:1.1rem; padding: 1rem 2rem; width: 100%;">
+                        Get the Dad Mode Kit ($47) →
+                    </a>
+                    
+                    <button class="c-btn c-btn-ghost" style="margin-top:1rem; width:100%; border:none;" onclick="App.show('grid')">
+                        ← Back to My Grid
+                    </button>
+                </div>
+            </section>
+
+        </main>
+        
+        <!-- ══ LOGGING MODAL ══ -->
+        <div class="modal-overlay" id="log-modal">
+            <div class="modal-content">
+                <button class="modal-close" onclick="App.closeLogModal()">×</button>
+                <h2 style="margin:0 0 0.5rem 0; font-size:1.5rem; letter-spacing:-0.03em;">Log Saturday</h2>
+                <p style="color:var(--c-muted); font-size:0.9rem; margin-bottom:1.5rem;" id="modal-date-label">Week of X</p>
+                
+                <label class="c-label">Presence Rating (1-5)</label>
+                <div class="rating-group" id="modal-rating">
+                    <button class="rating-btn" data-val="1">1</button>
+                    <button class="rating-btn" data-val="2">2</button>
+                    <button class="rating-btn" data-val="3">3</button>
+                    <button class="rating-btn" data-val="4">4</button>
+                    <button class="rating-btn" data-val="5">5</button>
+                </div>
+                
+                <label class="c-label">One memory from this week</label>
+                <textarea class="c-input" id="modal-note" rows="3" placeholder="e.g. Built a fort in the living room..."></textarea>
+                
+                <input type="hidden" id="modal-week-index">
+                
+                <button class="c-btn c-btn-primary" style="width:100%; margin-top:1.5rem;" onclick="App.saveLog()">Save Entry →</button>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="main-footer">
+    <div class="main-container">
+        <div class="footer-flex-row">
+            <div class="footer-brand">
+                <a href="/" class="logo"><span class="logo-primary">the systems dad</span></a>
+                <p class="footer-tagline">Helping dads stop being ghosts at home. Simple house systems for busy fathers.</p>
+                <div class="footer-nav-links" style="margin-top: 1rem; display: flex; gap: 1.25rem; flex-wrap: wrap; font-size: 0.9rem;">
+                    <a href="/the-systems-dad-method" style="color: var(--text-color-main); font-weight: 600; text-decoration: none;">The Method</a>
+                    <a href="/win" style="color: var(--text-color-main); font-weight: 600; text-decoration: none;">The House System</a>
+                    <a href="/lab" style="color: var(--text-color-main); font-weight: 600; text-decoration: none;">Coaching</a>
+                    <a href="/blog" style="color: var(--text-color-main); font-weight: 600; text-decoration: none;">Essays</a>
+                    <a href="/real-talk-tuesday" style="color: var(--text-color-main); font-weight: 600; text-decoration: none;">The Weekly Note</a>
+                </div>
+                <p class="footer-tagline" style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.85;">
+                    If you're in active crisis and need to reset your workday transition tonight, I built a specific tool for that: <a href="https://marginreset.com" target="_blank" style="color: var(--accent-color); font-weight: 700; text-decoration: underline;">marginreset.com</a>
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">&copy; 2026 Christopher Lynn Systems, LLC. All rights reserved. <br>
+                The Systems Dad is a brand of Christopher Lynn Systems, LLC. <br>
+                <span style="font-size: 0.8rem; opacity: 0.8;">
+                    <a href="/privacy" style="color: inherit;">Privacy Policy</a> |
+                    <a href="/terms" style="color: inherit;">Terms of Service</a> |
+                    <a href="/disclaimer" style="color: inherit;">Disclaimer</a>
+                </span>
+            </p>
+            <div class="footer-social">
+                <!-- X (Twitter) -->
+                <a href="https://x.com/TheSystemsDad" target="_blank" rel="noopener noreferrer" class="social-icon-link"
+                    aria-label="X (Twitter)">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>X</title>
+                        <path
+                            d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+                    </svg>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/ChristopherDLynn" target="_blank" rel="noopener noreferrer"
+                    class="social-icon-link" aria-label="LinkedIn">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>LinkedIn</title>
+                        <path
+                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/thesystemsdad" target="_blank" rel="noopener noreferrer"
+                    class="social-icon-link" aria-label="Instagram">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>Instagram</title>
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                </a>
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@cdlynn" target="_blank" rel="noopener noreferrer"
+                    class="social-icon-link" aria-label="YouTube">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>YouTube</title>
+                        <path
+                            d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545S-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- ══ APP LOGIC ══ -->
+    <script>
+    (function(){
+        const DB_KEY = 'tsd_936_app';
+        const TOTAL_WEEKS = 936; // 18 years * 52 weeks
+        const MS_PER_WEEK = 7 * 24 * 60 * 60 * 1000;
+        
+        let state = {
+            unlocked: false,
+            children: [],
+            activeChildId: null
+        };
+
+        // ── STORAGE ──
+        function loadDB() {
+            try {
+                const data = localStorage.getItem(DB_KEY);
+                if (data) {
+                    const parsed = JSON.parse(data);
+                    state.unlocked = parsed.unlocked || false;
+                    state.children = parsed.children || [];
+                }
+            } catch(e) {}
+        }
+        
+        function saveDB() {
+            localStorage.setItem(DB_KEY, JSON.stringify(state));
+        }
+
+        // ── HELPERS ──
+        function el(id) { return document.getElementById(id); }
+        
+        function getWeekIndex(dobDate, targetDate) {
+            const diff = targetDate.getTime() - dobDate.getTime();
+            return Math.floor(diff / MS_PER_WEEK);
+        }
+        
+        function generateId() {
+            return Math.random().toString(36).substring(2, 9);
+        }
+
+        // ── NAVIGATION ──
+        function show(screenId) {
+            document.querySelectorAll('.clock-screen').forEach(s => s.classList.remove('active'));
+            el(`screen-${screenId}`).classList.add('active');
+        }
+
+        // ── INIT ──
+        function init() {
+            loadDB();
+            if (state.children.length === 0) {
+                show('setup');
+            } else {
+                state.activeChildId = state.children[0].id;
+                renderGrid();
+                show('grid');
+            }
+        }
+
+        // ── PROFILE MANAGEMENT ──
+        function addProfile() {
+            if (state.children.length >= 1 && !state.unlocked) {
+                show('paywall');
+                return;
+            }
+            el('setup-name').value = '';
+            el('setup-dob').value = '';
+            el('setup-error').style.display = 'none';
+            show('setup');
+        }
+
+        function saveProfile() {
+            const name = el('setup-name').value.trim();
+            const dobStr = el('setup-dob').value;
+            const err = el('setup-error');
+            
+            if (!name || !dobStr) {
+                err.textContent = "Name and Date of Birth are required.";
+                err.style.display = 'block';
+                return;
+            }
+            
+            const dob = new Date(dobStr);
+            const now = new Date();
+            const ageYears = (now - dob) / (365.25 * 24 * 60 * 60 * 1000);
+            
+            if (ageYears < 0 || ageYears >= 18) {
+                err.textContent = "Child must be between 0 and 18 years old.";
+                err.style.display = 'block';
+                return;
+            }
+            
+            const newChild = {
+                id: generateId(),
+                name: name,
+                dob: dobStr,
+                logs: {}
+            };
+            
+            state.children.push(newChild);
+            state.activeChildId = newChild.id;
+            saveDB();
+            
+            renderGrid();
+            show('grid');
+        }
+
+        function switchProfile(id) {
+            state.activeChildId = id;
+            renderGrid();
+        }
+
+        // ── GRID RENDERING ──
+        function renderGrid() {
+            const child = state.children.find(c => c.id === state.activeChildId);
+            if (!child) return;
+            
+            // Header Info
+            el('grid-name').textContent = child.name;
+            
+            const dob = new Date(child.dob);
+            const now = new Date();
+            const currentWeek = getWeekIndex(dob, now);
+            const ageYears = Math.floor(currentWeek / 52);
+            const weeksLeft = Math.max(0, TOTAL_WEEKS - currentWeek);
+            
+            el('grid-age').textContent = ageYears === 0 ? 'Under 1 year' : `${ageYears} years`;
+            el('grid-left').textContent = `${weeksLeft} Saturdays left.`;
+            
+            // Selector if multiple
+            const sel = el('child-select');
+            if (state.children.length > 1) {
+                sel.style.display = 'block';
+                sel.innerHTML = state.children.map(c => 
+                    `<option value="${c.id}" ${c.id === child.id ? 'selected' : ''}>${c.name}</option>`
+                ).join('');
+            } else {
+                sel.style.display = 'none';
+            }
+            
+            // Matrix
+            const matrix = el('matrix');
+            let html = '';
+            
+            for (let i = 0; i < TOTAL_WEEKS; i++) {
+                let cls = 'dot';
+                let tooltip = '';
+                
+                if (i < currentWeek) {
+                    const log = child.logs[i];
+                    if (log) {
+                        cls += ' logged';
+                        tooltip = `<div class="dot-tooltip">Age ${Math.floor(i/52)}: ${log.note || `Rating: ${log.rating}`}</div>`;
+                    } else {
+                        cls += ' past';
+                    }
+                } else if (i === currentWeek) {
+                    cls += ' current';
+                    const log = child.logs[i];
+                    if (log) cls += ' logged'; // Keep current color but add glow maybe, handled by css
+                }
+                
+                // Allow clicking current or past dots to log retroactively
+                const onclick = i <= currentWeek ? `onclick="App.openLogModal(${i})"` : '';
+                
+                html += `<div class="${cls}" ${onclick}>${tooltip}</div>`;
+            }
+            matrix.innerHTML = html;
+        }
+
+        // ── LOGGING MODAL ──
+        let activeRating = 0;
+        
+        function openLogModal(targetWeek = null) {
+            const child = state.children.find(c => c.id === state.activeChildId);
+            const dob = new Date(child.dob);
+            const now = new Date();
+            const currentWeek = getWeekIndex(dob, now);
+            
+            const weekIndex = targetWeek !== null ? targetWeek : currentWeek;
+            
+            if (weekIndex > currentWeek) return; // Can't log future
+            
+            el('modal-week-index').value = weekIndex;
+            
+            const targetDate = new Date(dob.getTime() + (weekIndex * MS_PER_WEEK));
+            el('modal-date-label').textContent = `Week of ${targetDate.toLocaleDateString()}`;
+            
+            // Load existing if any
+            const existing = child.logs[weekIndex];
+            activeRating = existing ? existing.rating : 0;
+            el('modal-note').value = existing ? existing.note : '';
+            
+            // Update rating buttons
+            document.querySelectorAll('.rating-btn').forEach(btn => {
+                btn.classList.toggle('active', parseInt(btn.dataset.val) === activeRating);
+            });
+            
+            el('log-modal').classList.add('active');
+        }
+        
+        function closeLogModal() {
+            el('log-modal').classList.remove('active');
+        }
+        
+        function saveLog() {
+            const child = state.children.find(c => c.id === state.activeChildId);
+            const weekIndex = parseInt(el('modal-week-index').value);
+            const note = el('modal-note').value.trim();
+            
+            if (activeRating === 0 && !note) {
+                closeLogModal();
+                return;
+            }
+            
+            child.logs[weekIndex] = {
+                rating: activeRating,
+                note: note,
+                ts: Date.now()
+            };
+            
+            saveDB();
+            closeLogModal();
+            renderGrid();
+        }
+
+        // Rating button listeners
+        document.querySelectorAll('.rating-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('.rating-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                activeRating = parseInt(btn.dataset.val);
+            });
+        });
+
+        // Expose API
+        window.App = { addProfile, saveProfile, switchProfile, openLogModal, closeLogModal, saveLog, show };
+        
+        // Boot
+        document.addEventListener('DOMContentLoaded', init);
+
+    })();
+    </script>
+</body>
+</html>

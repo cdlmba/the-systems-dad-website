@@ -1,0 +1,108 @@
+<!-- The Residue Audit Component -->
+<div class="diagnostic-container leadership-carryover" style="background: var(--card-bg); border: 2px solid var(--primary-color); border-radius: 1.5rem; padding: 2.5rem; max-width: 600px; margin: 2rem auto; box-shadow: var(--shadow-xl); position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--primary-color);"></div>
+    
+    <div id="carryover-intro">
+        <h3 style="color: var(--text-color-emphasis); margin-bottom: 1rem; font-size: 1.5rem;">The The Residue Audit</h3>
+        <p style="color: var(--text-color-muted); margin-bottom: 2rem; line-height: 1.6;">
+            You fix big problems at work. But when you walk through your front door, that executive voice can actually make things worse. Take this 1-minute check to see if you're bringing the office home with you.
+        </p>
+        <button onclick="startCarryover()" class="cta-button cta-button-primary" style="width: 100%;">Start the Audit →</button>
+    </div>
+
+    <!-- Question 1 -->
+    <div id="carryover-q1" style="display: none;">
+        <div style="font-size: 0.8rem; color: var(--primary-color); font-weight: 700; margin-bottom: 0.5rem; text-transform: uppercase;">Question 1 / 5</div>
+        <h4 style="margin-bottom: 1.5rem; color: var(--text-color-emphasis); line-height: 1.4;">Do you walk in the door and immediately start looking for things to optimize?</h4>
+        <div style="display: grid; gap: 1rem;">
+            <button onclick="nextCarryover(1, true)" class="cta-button" style="background: var(--bg-dark-alt); border: 1px solid var(--border-color); color: white; text-align: left;">Yes. I start straightening shoes and asking why the dishes aren't done.</button>
+            <button onclick="nextCarryover(1, false)" class="cta-button" style="background: var(--bg-dark-alt); border: 1px solid var(--border-color); color: white; text-align: left;">No. I can leave the operator brain at the desk.</button>
+        </div>
+    </div>
+
+    <!-- Question 2 -->
+    <div id="carryover-q2" style="display: none;">
+        <div style="font-size: 0.8rem; color: var(--primary-color); font-weight: 700; margin-bottom: 0.5rem; text-transform: uppercase;">Question 2 / 5</div>
+        <h4 style="margin-bottom: 1.5rem; color: var(--text-color-emphasis); line-height: 1.4;">When you ask your kids about their day, does it feel like you're running a status meeting?</h4>
+        <div style="display: grid; gap: 1rem;">
+            <button onclick="nextCarryover(2, true)" class="cta-button" style="background: var(--bg-dark-alt); border: 1px solid var(--border-color); color: white; text-align: left;">Yes. I find myself mentally triaging their answers instead of listening.</button>
+            <button onclick="nextCarryover(2, false)" class="cta-button" style="background: var(--bg-dark-alt); border: 1px solid var(--border-color); color: white; text-align: left;">No. I can just sit and hear them out.</button>
+        </div>
+    </div>
+
+    <!-- Question 3 -->
+    <div id="carryover-q3" style="display: none;">
+        <div style="font-size: 0.8rem; color: var(--primary-color); font-weight: 700; margin-bottom: 0.5rem; text-transform: uppercase;">Question 3 / 5</div>
+        <h4 style="margin-bottom: 1.5rem; color: var(--text-color-emphasis); line-height: 1.4;">Do you catch yourself judging how your wife is running the house?</h4>
+        <div style="display: grid; gap: 1rem;">
+            <button onclick="nextCarryover(3, true)" class="cta-button" style="background: var(--bg-dark-alt); border: 1px solid var(--border-color); color: white; text-align: left;">Yes. I see logistics failures everywhere and it stresses me out.</button>
+            <button onclick="nextCarryover(3, false)" class="cta-button" style="background: var(--bg-dark-alt); border: 1px solid var(--border-color); color: white; text-align: left;">No. I respect that she's holding the fort in a different theater.</button>
+        </div>
+    </div>
+
+    <!-- Question 4 -->
+    <div id="carryover-q4" style="display: none;">
+        <div style="font-size: 0.8rem; color: var(--primary-color); font-weight: 700; margin-bottom: 0.5rem; text-transform: uppercase;">Question 4 / 5</div>
+        <h4 style="margin-bottom: 1.5rem; color: var(--text-color-emphasis); line-height: 1.4;">Does the noise level in the living room drop the moment your car pulls into the driveway?</h4>
+        <div style="display: grid; gap: 1rem;">
+            <button onclick="nextCarryover(4, true)" class="cta-button" style="background: var(--bg-dark-alt); border: 1px solid var(--border-color); color: white; text-align: left;">Yes. Everyone seems to tighten up or walk on eggshells.</button>
+            <button onclick="nextCarryover(4, false)" class="cta-button" style="background: var(--bg-dark-alt); border: 1px solid var(--border-color); color: white; text-align: left;">No. They keep playing and running around.</button>
+        </div>
+    </div>
+
+    <!-- Question 5 -->
+    <div id="carryover-q5" style="display: none;">
+        <div style="font-size: 0.8rem; color: var(--primary-color); font-weight: 700; margin-bottom: 0.5rem; text-transform: uppercase;">Question 5 / 5</div>
+        <h4 style="margin-bottom: 1.4rem; color: var(--text-color-emphasis); line-height: 1.4;">Do you use a long day at the office as a shield to avoid carrying your weight at home?</h4>
+        <div style="display: grid; gap: 1rem;">
+            <button onclick="nextCarryover(5, true)" class="cta-button" style="background: var(--bg-dark-alt); border: 1px solid var(--border-color); color: white; text-align: left;">Yes. I tell myself that earning the paycheck is my only job today.</button>
+            <button onclick="nextCarryover(5, false)" class="cta-button" style="background: var(--bg-dark-alt); border: 1px solid var(--border-color); color: white; text-align: left;">No. I know showing up is part of the work.</button>
+        </div>
+    </div>
+
+    <!-- Results -->
+    <div id="carryover-result" style="display: none;">
+        <h3 id="carryover-result-title" style="color: var(--text-color-emphasis); margin-bottom: 1rem;">Result</h3>
+        <p id="carryover-result-desc" style="color: var(--text-color-muted); margin-bottom: 2rem; line-height: 1.6;"></p>
+        <a href="/audit" class="cta-button cta-button-primary" style="display: block; text-align: center; width: 100%; box-sizing: border-box;">Start the The Residue Audit →</a>
+    </div>
+</div>
+
+<script>
+    let carryoverScore = 0;
+    
+    function startCarryover() {
+        document.getElementById('carryover-intro').style.display = 'none';
+        document.getElementById('carryover-q1').style.display = 'block';
+    }
+    
+    function nextCarryover(q, val) {
+        if (val) carryoverScore++;
+        document.getElementById('carryover-q' + q).style.display = 'none';
+        
+        if (q < 5) {
+            document.getElementById('carryover-q' + (q + 1)).style.display = 'block';
+        } else {
+            showCarryoverResult();
+        }
+    }
+    
+    function showCarryoverResult() {
+        const title = document.getElementById('carryover-result-title');
+        const desc = document.getElementById('carryover-result-desc');
+        const resDiv = document.getElementById('carryover-result');
+        
+        if (carryoverScore >= 4) {
+            title.textContent = "Critical Carryover: The Boss";
+            desc.textContent = "You're treating your family like a team that's falling behind. You've brought the office home, and your family is just performing for you now. You need a way to wash off the day before you walk in.";
+        } else if (carryoverScore >= 2) {
+            title.textContent = "Moderate Carryover: The Fixer";
+            desc.textContent = "You're using work logic to fix house problems. It works, but it's cold. You're there, but you're still thinking about Slack while your kids are talking. You need to reset the afternoon.";
+        } else {
+            title.textContent = "Low Carryover: The Steward";
+            desc.textContent = "You have a clear wall between your job and your home. You're a safe harbor for your family. Your next step is making sure you don't waste the window while you still have it.";
+        }
+        
+        resDiv.style.display = 'block';
+    }
+</script>

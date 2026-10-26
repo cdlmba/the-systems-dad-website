@@ -1,0 +1,237 @@
+<section class="zero-residue-hero">
+    <div class="main-container">
+        <h1 class="hero-title" style="font-size: clamp(2.5rem, 8vw, 4.5rem); margin-bottom: 1.5rem; letter-spacing: -0.04em;">{{zero_residue_copy_hero_title}}</h1>
+        <p class="hero-subtitle" style="max-width: 800px; margin: 0 auto; color: var(--text-color-muted); font-size: 1.25rem;">{{zero_residue_copy_hero_subtitle}}</p>
+    </div>
+</section>
+
+<section class="zero-residue-grid section-padding" style="padding-top: 2rem;">
+    <div class="main-container">
+        <div class="grid-3">
+            <div class="card">
+                <div class="card-num">STEP 01</div>
+                <h3>{{zero_residue_copy_step1_title}}</h3>
+                <p>{{zero_residue_copy_step1_desc}}</p>
+            </div>
+
+            <div class="card">
+                <div class="card-num">STEP 02</div>
+                <h3>{{zero_residue_copy_step2_title}}</h3>
+                <p>{{zero_residue_copy_step2_desc}}</p>
+                <div class="prompt-box">
+                    {{zero_residue_copy_step2_prompt}}
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-num">STEP 03</div>
+                <h3>{{zero_residue_copy_step3_title}}</h3>
+                <p>{{zero_residue_copy_step3_desc}}</p>
+            </div>
+
+            <div class="card">
+                <div class="card-num">STEP 04</div>
+                <h3>{{zero_residue_copy_step4_title}}</h3>
+                <p>{{zero_residue_copy_step4_desc}}</p>
+            </div>
+        </div>
+
+        <div class="cta-section" style="margin-top: 6rem;">
+            <div class="grid-2" style="max-width: 1000px; margin: 0 auto; gap: 2rem;">
+                <!-- Free Tier -->
+                <div class="card offer-card" style="text-align: center; border: 1px solid var(--border-color); background: rgba(255,255,255,0.03);">
+                    <div class="card-num">The Rules Only</div>
+                    <h2 style="font-size: 2rem; margin-bottom: 1rem;">{{zero_residue_copy_free_card_title}}</h2>
+                    <p style="margin-bottom: 2rem; color: var(--text-color-muted);">{{zero_residue_copy_free_card_desc}}</p>
+                    <button id="open-capture-modal" class="cta-button" style="background: transparent; border: 1px solid var(--primary-color); color: var(--primary-color); cursor: pointer; padding: 1rem 2rem; width: 100%;">Download Free →</button>
+                </div>
+
+                <!-- Premium Tier -->
+                <div class="card offer-card featured-offer" style="text-align: center; border: 2px solid var(--primary-color); background: rgba(183, 153, 91, 0.05); position: relative; overflow: hidden;">
+                    <div class="card-num" style="color: var(--primary-color);">The Full Kit</div>
+                    <h2 style="font-size: 2rem; margin-bottom: 1rem;">{{zero_residue_copy_premium_card_title}}</h2>
+                    <p style="margin-bottom: 2rem; color: var(--text-color-muted);">{{zero_residue_copy_premium_card_desc}}</p>
+                    <a href="https://buy.stripe.com/00w8wP7EW92meSm88wdnW08" class="cta-button cta-button-primary" style="display: block; text-decoration: none; padding: 1rem 2rem;">Get the Shutdown Kit →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Zero Residue Capture Modal -->
+<div id="capture-modal" class="media-modal">
+    <div class="modal-content" style="max-width: 500px;">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <div class="modal-body" style="text-align: left; padding: 1rem;">
+            <h2 class="modal-title" style="margin-bottom: 1rem;">Get the Rules</h2>
+            <p class="modal-desc" style="margin-bottom: 2rem;">
+                Enter your details to download the <strong>AI Head Dump tools</strong> and the <strong>Shutdown Checklist</strong>.
+            </p>
+            <form id="capture-form">
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-color-muted);">First Name</label>
+                    <input type="text" id="first-name" placeholder="Christopher" required
+                        style="width: 100%; padding: 1rem; border-radius: 0.5rem; border: 1px solid var(--border-color); background: rgba(0,0,0,0.05); color: var(--text-color-main);">
+                </div>
+                <div style="margin-bottom: 2rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-color-muted);">Work Email</label>
+                    <input type="email" id="email" placeholder="chris@example.com" required
+                        style="width: 100%; padding: 1rem; border-radius: 0.5rem; border: 1px solid var(--border-color); background: rgba(0,0,0,0.05); color: var(--text-color-main);">
+                </div>
+                <button type="submit" class="cta-button cta-button-primary" style="width: 100%; border: none; cursor: pointer; padding: 1.25rem;">
+                    Get the Rules →
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    .zero-residue-hero {
+        padding: 10rem 0 4rem;
+        text-align: center;
+        background: radial-gradient(circle at top, var(--primary-glow-light) 0%, transparent 70%);
+    }
+    
+    .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2.5rem;
+        margin-top: 3rem;
+    }
+
+    .card {
+        background: var(--background-secondary);
+        padding: 3rem;
+        border-radius: 2rem;
+        border: 1px solid var(--border-color);
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        box-shadow: var(--shadow-sm);
+    }
+
+    .card:hover {
+        border-color: var(--primary-color);
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-xl);
+    }
+
+    .card-num {
+        font-size: 0.75rem;
+        font-weight: 800;
+        color: var(--primary-color);
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+    }
+    
+    .card h3 {
+        font-size: 1.5rem;
+        color: var(--text-color-emphasis);
+        margin: 0;
+    }
+    
+    .card p {
+        color: var(--text-color-muted);
+        font-size: 1rem;
+        line-height: 1.7;
+        margin: 0;
+    }
+
+    .prompt-box {
+        background: #1a1a1a;
+        padding: 1.75rem;
+        border-radius: 1rem;
+        font-family: 'SF Mono', 'Fira Code', monospace;
+        font-size: 0.9rem;
+        color: #f3f0ea; /* High contrast cream text on dark background */
+        border: 1px solid var(--primary-glow);
+        margin-top: 1.5rem;
+        line-height: 1.6;
+        position: relative;
+    }
+
+    .prompt-box::before {
+        content: 'PROMPT';
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        background: var(--primary-color);
+        color: white;
+        padding: 2px 10px;
+        border-radius: 4px;
+        font-size: 0.7rem;
+        font-weight: 800;
+        letter-spacing: 1px;
+    }
+
+    /* Modal Override to ensure TSD compatibility */
+    #capture-modal.active {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        opacity: 1;
+        visibility: visible;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const modal = document.getElementById('capture-modal');
+        const openBtn = document.getElementById('open-capture-modal');
+        const captureForm = document.getElementById('capture-form');
+
+        if (openBtn) {
+            openBtn.onclick = () => {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            };
+        }
+
+        window.closeModal = () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        if (captureForm) {
+            captureForm.onsubmit = async (e) => {
+                e.preventDefault();
+                const submitBtn = captureForm.querySelector('button');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = "Sending...";
+                submitBtn.disabled = true;
+
+                const payload = {
+                    email: document.getElementById('email').value,
+                    first_name: document.getElementById('first-name').value,
+                    platform: 'sendfox',
+                    audit_data: {
+                        type: 'MARGIN_PROTOCOL_OPTIN',
+                        source: 'zero-residue-page'
+                    }
+                };
+
+                try {
+                    const res = await fetch('/api/capture-audit', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (res.ok) {
+                        submitBtn.innerHTML = "✅ Sent!";
+                        setTimeout(() => {
+                            window.location.href = '/zero-residue-protocol-checklists';
+                        }, 1000);
+                    } else {
+                        throw new Error('Sync failed');
+                    }
+                } catch (err) {
+                    submitBtn.innerHTML = "⚠️ Error. Try again?";
+                    submitBtn.disabled = false;
+                }
+            };
+        }
+    });
+</script>

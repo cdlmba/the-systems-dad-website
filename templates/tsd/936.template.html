@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{head}}
+    <meta name="robots" content="noindex">
+    <style>
+    /* ═══════════════════════════════════════════════════════════
+       THE 936 CLOCK — Standalone Styles (TSD Brand)
+       Scoped to avoid collisions with style.css
+    ═══════════════════════════════════════════════════════════ */
+    :root {
+        --c-bg: #09090b;
+        --c-card: #18181b;
+        --c-elevated: #27272a;
+        --c-border: rgba(255,255,255,0.08);
+        --c-text: #fafafa;
+        --c-muted: #a1a1aa;
+        --c-faint: #52525b;
+        
+        /* TSD Blue/Brand colors */
+        --c-brand: #3b82f6; 
+        --c-brand-hover: #2563eb;
+        
+        /* Grid Dot Colors */
+        --c-dot-future: rgba(255,255,255,0.06);
+        --c-dot-past: rgba(255,255,255,0.25);
+        --c-dot-logged: #f59e0b; /* Amber for memories */
+        --c-dot-current: #3b82f6; /* Blue for this week */
+        
+        --c-radius: 12px;
+    }
+
+    html, body { height: 100%; background: var(--c-bg); color: var(--c-text); margin: 0; }
+    
+    .clock-app {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        font-family: 'Public Sans', 'Inter', -apple-system, sans-serif;
+    }
+
+    /* ── App Header ── */
+    .clock-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid var(--c-border);
+        background: rgba(9, 9, 11, 0.96);
+        backdrop-filter: blur(12px);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+    .clock-logo {
+        font-size: 1rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        text-decoration: none;
+        color: var(--c-text);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .clock-logo-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--c-brand);
+    }
+    .clock-nav { display: flex; gap: 1rem; align-items: center; }
+    
+    /* ── UI Components ── */
+    .c-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.25rem;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+        transition: all 0.2s;
+        text-decoration: none;
+        font-family: inherit;
+    }
+    .c-btn-primary { background: var(--c-brand); color: #fff; }
+    .c-btn-primary:hover { background: var(--c-brand-hover); }
+    .c-btn-ghost { background: transparent; color: var(--c-muted); border: 1px solid var(--c-border); }
+    .c-btn-ghost:hover { border-color: rgba(255,255,255,0.2); color: var(--c-text); }
+    
+    .c-input {
+        width: 100%;
+        background: var(--c-elevated);
+        border: 1px solid var(--c-border);
+        border-radius: 8px;
+        padding: 0.75rem 1rem;
+        color: var(--c-text);
+        font-family: inherit;
+        font-size: 0.95rem;
+        outline: none;
+        transition: border-color 0.2s;
+        box-sizing: border-box;
+    }
+    .c-input:focus { border-color: var(--c-brand); }
+    .c-label {
+        display: block;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--c-muted);
+        margin-bottom: 0.4rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    /* ── Stage & Screens ── */
+    .clock-stage { flex: 1; display: flex; flex-direction: column; padding: 2rem 1.25rem; max-width: 1000px; margin: 0 auto; width: 100%; box-sizing: border-box; }
+    .clock-screen { display: none; animation: fadeIn 0.3s ease; width: 100%; }
+    .clock-screen.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* ── Setup Screen ── */
+    .setup-card {
+        background: var(--c-card);
+        border: 1px solid var(--c-border);
+        border-radius: var(--c-radius);
+        padding: 2.5rem;
+        max-width: 500px;
+        margin: 4rem auto;
+        text-align: center;
+    }
+    .setup-title { font-size: 2rem; font-weight: 800; letter-spacing: -0.04em; margin-bottom: 0.5rem; }
+    .setup-sub { font-size: 1rem; color: var(--c-muted); line-height: 1.6; margin-bottom: 2rem; }
+    .setup-form { text-align: left; display: flex; flex-direction: column; gap: 1.25rem; }
+    .setup-error { color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem; display: none; }
+
+    /* ── Grid Screen ── */
+    .grid-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    .grid-title-wrap h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.04em; margin: 0 0 0.25rem 0; line-height: 1; }
+    .grid-meta { font-size: 1rem; color: var(--c-muted); font-weight: 500; }
+    .grid-meta strong { color: var(--c-text); }
+    
+    .grid-controls { display: flex; gap: 0.75rem; align-items: center; }
+    .child-selector {
+        background: var(--c-card);
+        border: 1px solid var(--c-border);
+        color: var(--c-text);
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        font-family: inherit;
+        font-size: 0.9rem;
+        outline: none;
+    }
+
+    /* The Matrix */
+    .grid-matrix-container {
+        background: var(--c-card);
+        border: 1px solid var(--c-border);
+        border-radius: var(--c-radius);
+        padding: 2rem;
+        overflow-x: auto;
+    }
+    
+    .grid-matrix {
+        display: grid;
+        /* 52 columns (weeks), 18 rows (years) */
+        grid-template-columns: repeat(52, 1fr);
+        gap: 6px;
+        min-width: 800px; /* Ensure dots don't get too crushed on mobile */
+    }
+    
+    .dot {
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: var(--c-dot-future);
+        position: relative;
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+    .dot:hover { transform: scale(1.4); z-index: 10; }
+    
+    .dot.past { background: var(--c-dot-past); }
+    .dot.logged { background: var(--c-dot-logged); box-shadow: 0 0 8px rgba(245,158,11,0.4); }
+    
+    .dot.current { 
+        background: var(--c-dot-current); 
+        box-shadow: 0 0 12px rgba(59,130,246,0.6);
+        animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+        0% { box-shadow: 0 0 0 0 rgba(59,130,246,0.6); }
+        70% { box-shadow: 0 0 0 6px rgba(59,130,246,0); }
+        100% { box-shadow: 0 0 0 0 rgba(59,130,246,0); }
+    }
+
+    /* Tooltip */
+    .dot-tooltip {
+        position: absolute;
+        bottom: 150%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--c-elevated);
+        border: 1px solid var(--c-border);
+        padding: 0.5rem 0.75rem;
+        border-radius: 6px;
+        font-size: 0.75rem;
+        color: var(--c-text);
+        white-space: nowrap;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.2s;
+        z-index: 20;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+    .dot:hover .dot-tooltip { opacity: 1; }
+
+    /* Legend */
+    .grid-legend {
+        display: flex;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+        font-size: 0.8rem;
+        color: var(--c-muted);
+        justify-content: center;
+    }
+    .legend-item { display: flex; align-items: center; gap: 0.5rem; }
+    .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+    /* ── Modal ── */
+    .modal-overlay {
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0,0,0,0.8);
+        backdrop-filter: blur(4px);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        padding: 1rem;
+    }
+    .modal-overlay.active { display: flex; animation: fadeIn 0.2s ease; }
+    .modal-content {
+        background: var(--c-card);
+        border: 1px solid var(--c-border);
+        border-radius: var(--c-radius);
+        padding: 2rem;
+        width: 100%;
+        max-width: 440px;
+        position: relative;
+    }
+    .modal-close {
+        position: absolute;
+        top: 1rem; right: 1rem;
+        background: none; border: none; color: var(--c-muted);
+        font-size: 1.5rem; cursor: pointer; line-height: 1;
+    }
+    .modal-close:hover { color: var(--c-text); }
+    
+    .rating-group { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; }
+    .rating-btn {
+        flex: 1;
+        padding: 0.75rem 0;
+        background: var(--c-elevated);
+        border: 1px solid var(--c-border);
+        border-radius: 6px;
+        color: var(--c-muted);
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+    .rating-btn:hover { border-color: var(--c-brand); color: var(--c-text); }
+    .rating-btn.active { background: var(--c-brand); border-color: var(--c-brand); color: #fff; }
+
+    /* ── Paywall ── */
+    .paywall-screen { text-align: center; max-width: 500px; margin: 4rem auto; }
+    .paywall-icon { font-size: 3rem; margin-bottom: 1rem; }
+    .paywall-title { font-size: 2rem; font-weight: 800; margin-bottom: 1rem; }
+    .paywall-features { text-align: left; background: var(--c-card); border: 1px solid var(--c-border); border-radius: var(--c-radius); padding: 1.5rem; margin: 1.5rem 0; }
+    .paywall-feature { margin-bottom: 0.75rem; font-size: 0.9rem; display: flex; gap: 0.5rem; }
+    
+    @media (max-width: 768px) {
+        .grid-matrix-container { padding: 1rem; }
+        .grid-header { flex-direction: column; align-items: flex-start; }
+    }
+    </style>
+</head>
+<body>
+    {{header_tsd}}
+    
+    <div class="clock-app">
+        <!-- ══ APP HEADER ══ -->
+        <header class="clock-header">
+            <a href="/" class="clock-logo">
+                <div class="clock-logo-dot"></div>
+                The 936 Clock
+            </a>
+            <nav class="clock-nav">
+                <button class="c-btn c-btn-ghost" style="padding: 0.4rem 0.75rem; font-size: 0.8rem;" onclick="App.addProfile()">+ Add Child</button>
+            </nav>
+        </header>
+
+        <!-- ══ STAGE ══ -->
+        <main class="clock-stage">
+            
+            <!-- ┌──────────────────────────┐ -->
+            <!-- │  SCREEN: SETUP           │ -->
+            <!-- └──────────────────────────┘ -->
+            <section class="clock-screen active" id="screen-setup">
+                <div class="setup-card">
+                    <h1 class="setup-title">936 Saturdays.</h1>
+                    <p class="setup-sub">That's what you get from the day they are born until they turn 18. Let's see where you are.</p>
+                    
+                    <div class="setup-form">
+                        <div>
+                            <label class="c-label">Child's Name</label>
+                            <input type="text" id="setup-name" class="c-input" placeholder="e.g. Leo">
+                        </div>
+                        <div>
+                            <label class="c-label">Date of Birth</label>
+                            <input type="date" id="setup-dob" class="c-input">
+                            <div class="setup-error" id="setup-error">Child must be under 18.</div>
+                        </div>
+                        <button class="c-btn c-btn-primary" style="margin-top:0.5rem;" onclick="App.saveProfile()">Create Grid →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ┌──────────────────────────┐ -->
+            <!-- │  SCREEN: MAIN GRID       │ -->
+            <!-- └──────────────────────────┘ -->
+            <section class="clock-screen" id="screen-grid">
+                
+                <div class="grid-header">
+                    <div class="grid-title-wrap">
+                        <h1 id="grid-name">Child's Grid</h1>
+                        <div class="grid-meta">
+                            <span id="grid-age">—</span> old. 
+                            <strong id="grid-left">— Saturdays left.</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="grid-controls">
+                        <select id="child-select" class="child-selector" onchange="App.switchProfile(this.value)" style="display:none;"></select>
+                        <button class="c-btn c-btn-primary" onclick="App.openLogModal()">Log This Week</button>
+                    </div>
+                </div>
+
+                <div class="grid-matrix-container">
+                    <div class="grid-matrix" id="matrix">
+                        <!-- Dots generated by JS -->
+                    </div>
+                    
+                    <div class="grid-legend">
+                        <div class="legend-item"><div class="legend-dot" style="background:var(--c-dot-past)"></div> Past</div>
+                        <div class="legend-item"><div class="legend-dot" style="background:var(--c-dot-future)"></div> Future</div>
+                        <div class="legend-item"><div class="legend-dot" style="background:var(--c-dot-current); box-shadow:0 0 8px rgba(59,130,246,0.6)"></div> This Week</div>
+                        <div class="legend-item"><div class="legend-dot" style="background:var(--c-dot-logged)"></div> Logged</div>
+                    </div>
+                </div>
+                
+            </section>
+
+            <!-- ┌──────────────────────────┐ -->
+            <!-- │  SCREEN: PAYWALL         │ -->
+            <!-- └──────────────────────────┘ -->
+            <section class="clock-screen" id="screen-paywall">
+                <div class="paywall-screen">
+                    <div class="paywall-icon">🔒</div>
+                    <h1 class="paywall-title">Track More Kids</h1>
+                    <p style="color:var(--c-muted); font-size:1.1rem; line-height:1.6;">
+                        The free version lets you track one kid. To add more kids and unlock unlimited weekly notes, get the Dad Mode Kit.
+                    </p>
+                    
+                    <div class="paywall-features">
+                        <div class="paywall-feature">✅ <span>Track multiple kids</span></div>
+                        <div class="paywall-feature">✅ <span>Unlimited weekly notes</span></div>
+                        <div class="paywall-feature">✅ <span>Year-end printable grid</span></div>
+                        <div class="paywall-feature">✅ <span>Private to your browser</span></div>
+                    </div>
+                    
+                    <a href="/dad-mode-kit" class="c-btn c-btn-primary" style="font-size:1.1rem; padding: 1rem 2rem; width: 100%;">
+                        Get the Dad Mode Kit ($47) →
+                    </a>
+                    
+                    <button class="c-btn c-btn-ghost" style="margin-top:1rem; width:100%; border:none;" onclick="App.show('grid')">
+                        ← Back to My Grid
+                    </button>
+                </div>
+            </section>
+
+        </main>
+        
+        <!-- ══ LOGGING MODAL ══ -->
+        <div class="modal-overlay" id="log-modal">
+            <div class="modal-content">
+                <button class="modal-close" onclick="App.closeLogModal()">×</button>
+                <h2 style="margin:0 0 0.5rem 0; font-size:1.5rem; letter-spacing:-0.03em;">Log Saturday</h2>
+                <p style="color:var(--c-muted); font-size:0.9rem; margin-bottom:1.5rem;" id="modal-date-label">Week of X</p>
+                
+                <label class="c-label">Presence Rating (1-5)</label>
+                <div class="rating-group" id="modal-rating">
+                    <button class="rating-btn" data-val="1">1</button>
+                    <button class="rating-btn" data-val="2">2</button>
+                    <button class="rating-btn" data-val="3">3</button>
+                    <button class="rating-btn" data-val="4">4</button>
+                    <button class="rating-btn" data-val="5">5</button>
+                </div>
+                
+                <label class="c-label">One memory from this week</label>
+                <textarea class="c-input" id="modal-note" rows="3" placeholder="e.g. Built a fort in the living room..."></textarea>
+                
+                <input type="hidden" id="modal-week-index">
+                
+                <button class="c-btn c-btn-primary" style="width:100%; margin-top:1.5rem;" onclick="App.saveLog()">Save Entry →</button>
+            </div>
+        </div>
+
+    </div>
+
+    {{footer_tsd}}
+
+    <!-- ══ APP LOGIC ══ -->
+    <script>
+    (function(){
+        const DB_KEY = 'tsd_936_app';
+        const TOTAL_WEEKS = 936; // 18 years * 52 weeks
+        const MS_PER_WEEK = 7 * 24 * 60 * 60 * 1000;
+        
+        let state = {
+            unlocked: false,
+            children: [],
+            activeChildId: null
+        };
+
+        // ── STORAGE ──
+        function loadDB() {
+            try {
+                const data = localStorage.getItem(DB_KEY);
+                if (data) {
+                    const parsed = JSON.parse(data);
+                    state.unlocked = parsed.unlocked || false;
+                    state.children = parsed.children || [];
+                }
+            } catch(e) {}
+        }
+        
+        function saveDB() {
+            localStorage.setItem(DB_KEY, JSON.stringify(state));
+        }
+
+        // ── HELPERS ──
+        function el(id) { return document.getElementById(id); }
+        
+        function getWeekIndex(dobDate, targetDate) {
+            const diff = targetDate.getTime() - dobDate.getTime();
+            return Math.floor(diff / MS_PER_WEEK);
+        }
+        
+        function generateId() {
+            return Math.random().toString(36).substring(2, 9);
+        }
+
+        // ── NAVIGATION ──
+        function show(screenId) {
+            document.querySelectorAll('.clock-screen').forEach(s => s.classList.remove('active'));
+            el(`screen-${screenId}`).classList.add('active');
+        }
+
+        // ── INIT ──
+        function init() {
+            loadDB();
+            if (state.children.length === 0) {
+                show('setup');
+            } else {
+                state.activeChildId = state.children[0].id;
+                renderGrid();
+                show('grid');
+            }
+        }
+
+        // ── PROFILE MANAGEMENT ──
+        function addProfile() {
+            if (state.children.length >= 1 && !state.unlocked) {
+                show('paywall');
+                return;
+            }
+            el('setup-name').value = '';
+            el('setup-dob').value = '';
+            el('setup-error').style.display = 'none';
+            show('setup');
+        }
+
+        function saveProfile() {
+            const name = el('setup-name').value.trim();
+            const dobStr = el('setup-dob').value;
+            const err = el('setup-error');
+            
+            if (!name || !dobStr) {
+                err.textContent = "Name and Date of Birth are required.";
+                err.style.display = 'block';
+                return;
+            }
+            
+            const dob = new Date(dobStr);
+            const now = new Date();
+            const ageYears = (now - dob) / (365.25 * 24 * 60 * 60 * 1000);
+            
+            if (ageYears < 0 || ageYears >= 18) {
+                err.textContent = "Child must be between 0 and 18 years old.";
+                err.style.display = 'block';
+                return;
+            }
+            
+            const newChild = {
+                id: generateId(),
+                name: name,
+                dob: dobStr,
+                logs: {}
+            };
+            
+            state.children.push(newChild);
+            state.activeChildId = newChild.id;
+            saveDB();
+            
+            renderGrid();
+            show('grid');
+        }
+
+        function switchProfile(id) {
+            state.activeChildId = id;
+            renderGrid();
+        }
+
+        // ── GRID RENDERING ──
+        function renderGrid() {
+            const child = state.children.find(c => c.id === state.activeChildId);
+            if (!child) return;
+            
+            // Header Info
+            el('grid-name').textContent = child.name;
+            
+            const dob = new Date(child.dob);
+            const now = new Date();
+            const currentWeek = getWeekIndex(dob, now);
+            const ageYears = Math.floor(currentWeek / 52);
+            const weeksLeft = Math.max(0, TOTAL_WEEKS - currentWeek);
+            
+            el('grid-age').textContent = ageYears === 0 ? 'Under 1 year' : `${ageYears} years`;
+            el('grid-left').textContent = `${weeksLeft} Saturdays left.`;
+            
+            // Selector if multiple
+            const sel = el('child-select');
+            if (state.children.length > 1) {
+                sel.style.display = 'block';
+                sel.innerHTML = state.children.map(c => 
+                    `<option value="${c.id}" ${c.id === child.id ? 'selected' : ''}>${c.name}</option>`
+                ).join('');
+            } else {
+                sel.style.display = 'none';
+            }
+            
+            // Matrix
+            const matrix = el('matrix');
+            let html = '';
+            
+            for (let i = 0; i < TOTAL_WEEKS; i++) {
+                let cls = 'dot';
+                let tooltip = '';
+                
+                if (i < currentWeek) {
+                    const log = child.logs[i];
+                    if (log) {
+                        cls += ' logged';
+                        tooltip = `<div class="dot-tooltip">Age ${Math.floor(i/52)}: ${log.note || `Rating: ${log.rating}`}</div>`;
+                    } else {
+                        cls += ' past';
+                    }
+                } else if (i === currentWeek) {
+                    cls += ' current';
+                    const log = child.logs[i];
+                    if (log) cls += ' logged'; // Keep current color but add glow maybe, handled by css
+                }
+                
+                // Allow clicking current or past dots to log retroactively
+                const onclick = i <= currentWeek ? `onclick="App.openLogModal(${i})"` : '';
+                
+                html += `<div class="${cls}" ${onclick}>${tooltip}</div>`;
+            }
+            matrix.innerHTML = html;
+        }
+
+        // ── LOGGING MODAL ──
+        let activeRating = 0;
+        
+        function openLogModal(targetWeek = null) {
+            const child = state.children.find(c => c.id === state.activeChildId);
+            const dob = new Date(child.dob);
+            const now = new Date();
+            const currentWeek = getWeekIndex(dob, now);
+            
+            const weekIndex = targetWeek !== null ? targetWeek : currentWeek;
+            
+            if (weekIndex > currentWeek) return; // Can't log future
+            
+            el('modal-week-index').value = weekIndex;
+            
+            const targetDate = new Date(dob.getTime() + (weekIndex * MS_PER_WEEK));
+            el('modal-date-label').textContent = `Week of ${targetDate.toLocaleDateString()}`;
+            
+            // Load existing if any
+            const existing = child.logs[weekIndex];
+            activeRating = existing ? existing.rating : 0;
+            el('modal-note').value = existing ? existing.note : '';
+            
+            // Update rating buttons
+            document.querySelectorAll('.rating-btn').forEach(btn => {
+                btn.classList.toggle('active', parseInt(btn.dataset.val) === activeRating);
+            });
+            
+            el('log-modal').classList.add('active');
+        }
+        
+        function closeLogModal() {
+            el('log-modal').classList.remove('active');
+        }
+        
+        function saveLog() {
+            const child = state.children.find(c => c.id === state.activeChildId);
+            const weekIndex = parseInt(el('modal-week-index').value);
+            const note = el('modal-note').value.trim();
+            
+            if (activeRating === 0 && !note) {
+                closeLogModal();
+                return;
+            }
+            
+            child.logs[weekIndex] = {
+                rating: activeRating,
+                note: note,
+                ts: Date.now()
+            };
+            
+            saveDB();
+            closeLogModal();
+            renderGrid();
+        }
+
+        // Rating button listeners
+        document.querySelectorAll('.rating-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('.rating-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                activeRating = parseInt(btn.dataset.val);
+            });
+        });
+
+        // Expose API
+        window.App = { addProfile, saveProfile, switchProfile, openLogModal, closeLogModal, saveLog, show };
+        
+        // Boot
+        document.addEventListener('DOMContentLoaded', init);
+
+    })();
+    </script>
+</body>
+</html>

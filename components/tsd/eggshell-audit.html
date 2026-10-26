@@ -1,0 +1,95 @@
+<div class="eggshell-audit-container" style="background: var(--card-bg); border: 2px solid var(--border-color); border-radius: 1.5rem; padding: 2.5rem; max-width: 600px; margin: 2rem auto; box-shadow: var(--shadow-xl); position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--primary-color);"></div>
+    
+    <div id="eggshell-intro">
+        <h3 style="color: var(--text-color-emphasis); margin-bottom: 1rem; font-size: 1.5rem;">The Eggshell Indicator</h3>
+        <p style="color: var(--text-color-muted); margin-bottom: 2rem; line-height: 1.6;">
+            I used to walk in the door and the whole house would go quiet. I thought they were just being respectful. I was wrong. They were afraid of my mood. Take this 30-second check to see if your house is doing the same.
+        </p>
+        <button onclick="startEggshell()" class="cta-button cta-button-primary" style="width: 100%;">Start the Check →</button>
+    </div>
+
+    <div id="eggshell-q1" style="display: none;">
+        <div style="font-size: 0.8rem; color: var(--primary-color); font-weight: 700; margin-bottom: 0.5rem; text-transform: uppercase;">Question 1 / 3</div>
+        <h4 style="margin-bottom: 1.5rem; color: var(--text-color-emphasis); line-height: 1.4;">Does the noise level in your house drop significantly the moment you walk through the door?</h4>
+        <div style="display: grid; gap: 1rem;">
+            <button onclick="nextEggshell(1, true)" class="cta-button" style="background: var(--bg-dark-alt); border: 1px solid var(--border-color); color: white; text-align: left;">Yes — it gets noticeably quieter.</button>
+            <button onclick="nextEggshell(1, false)" class="cta-button" style="background: var(--bg-dark-alt); border: 1px solid var(--border-color); color: white; text-align: left;">No — the chaos continues as normal.</button>
+        </div>
+    </div>
+
+    <div id="eggshell-q2" style="display: none;">
+        <div style="font-size: 0.8rem; color: var(--primary-color); font-weight: 700; margin-bottom: 0.5rem; text-transform: uppercase;">Question 2 / 3</div>
+        <h4 style="margin-bottom: 1.5rem; color: var(--text-color-emphasis); line-height: 1.4;">Do you find yourself "checking one quick thing" on your phone while your family is trying to share their day?</h4>
+        <div style="display: grid; gap: 1rem;">
+            <button onclick="nextEggshell(2, true)" class="cta-button" style="background: var(--bg-dark-alt); border: 1px solid var(--border-color); color: white; text-align: left;">Yes — the phone is a constant escape hatch.</button>
+            <button onclick="nextEggshell(2, false)" class="cta-button" style="background: var(--bg-dark-alt); border: 1px solid var(--border-color); color: white; text-align: left;">No — the phone stays in my pocket.</button>
+        </div>
+    </div>
+
+    <div id="eggshell-q3" style="display: none;">
+        <div style="font-size: 0.8rem; color: var(--primary-color); font-weight: 700; margin-bottom: 0.5rem; text-transform: uppercase;">Question 3 / 3</div>
+        <h4 style="margin-bottom: 1.5rem; color: var(--text-color-emphasis); line-height: 1.4;">Has your spouse stopped sharing logistical details because they don't want to "bother" you?</h4>
+        <div style="display: grid; gap: 1rem;">
+            <button onclick="nextEggshell(3, true)" class="cta-button" style="background: var(--bg-dark-alt); border: 1px solid var(--border-color); color: white; text-align: left;">Yes — I'm the last to know the home schedule.</button>
+            <button onclick="nextEggshell(3, false)" class="cta-button" style="background: var(--bg-dark-alt); border: 1px solid var(--border-color); color: white; text-align: left;">No — we are in constant sync.</button>
+        </div>
+    </div>
+
+    <div id="eggshell-result" style="display: none;">
+        <h3 id="eggshell-result-title" style="color: var(--text-color-emphasis); margin-bottom: 1rem;">Result</h3>
+        <p id="eggshell-result-desc" style="color: var(--text-color-muted); margin-bottom: 2rem; line-height: 1.6;"></p>
+        <a href="/work-brain-reset?v=eggshell" class="cta-button cta-button-primary" style="display: block; text-align: center; width: 100%; box-sizing: border-box;">Start the 14-Day Reset →</a>
+    </div>
+</div>
+
+<script>
+    let eggshellScore = 0;
+    
+    function startEggshell() {
+        document.getElementById('eggshell-intro').style.display = 'none';
+        document.getElementById('eggshell-q1').style.display = 'block';
+    }
+    
+    function nextEggshell(q, val) {
+        if (val) eggshellScore++;
+        document.getElementById('eggshell-q' + q).style.display = 'none';
+        
+        if (q < 3) {
+            document.getElementById('eggshell-q' + (q + 1)).style.display = 'block';
+        } else {
+            showEggshellResult();
+        }
+    }
+    
+    function showEggshellResult() {
+        const title = document.getElementById('eggshell-result-title');
+        const desc = document.getElementById('eggshell-result-desc');
+        const resDiv = document.getElementById('eggshell-result');
+        
+        // Brand-Aware Routing
+        const isMR = window.siteConfig && window.siteConfig.brand === 'MR';
+        const redirectUrl = isMR ? '/challenge' : '/work-brain-reset.html?v=eggshell';
+        const redirectText = isMR ? 'Start the 7-Day Reset →' : 'Start the 14-Day Reset →';
+        
+        if (eggshellScore >= 2) {
+            title.textContent = "You're a Ghost Dad";
+            desc.textContent = "You aren't a bad guy, but you aren't really there. You walk in the door, but your brain is still stuck at the office. Your family is walking on eggshells because they don't know if 'Angry Work Dad' or 'Tired Dad' is coming through the door. It's time to shut work off for real.";
+        } else if (eggshellScore === 1) {
+            title.textContent = "Work is Leaking In";
+            desc.textContent = "You're holding the line, but work is starting to win. Your brain is beginning to steal the attention your family deserves. You need a better way to shut it down before the 'Eggshell' effect becomes permanent.";
+        } else {
+            title.textContent = "You're Actually Home";
+            desc.textContent = "You've built the walls to protect your family time. Your next move is making that time even better. You're ready for the advanced stuff.";
+        }
+        
+        // Update CTA
+        resDiv.innerHTML = `
+            <h3 style="color: var(--text-color-emphasis); margin-bottom: 1rem;">${title.textContent}</h3>
+            <p style="color: var(--text-color-muted); margin-bottom: 2rem; line-height: 1.6;">${desc.textContent}</p>
+            <a href="${redirectUrl}" class="cta-button cta-button-primary" style="display: block; text-align: center; width: 100%; box-sizing: border-box;">${redirectText}</a>
+        `;
+        
+        resDiv.style.display = 'block';
+    }
+</script>

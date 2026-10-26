@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- GA4 Systems Dad Index — G-W4TB1J0TNK only -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GT-PBSGZ5XB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-W4TB1J0TNK');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <meta name="description" content="{{description}}">
+    <link rel="canonical" href="https://thesystemsdad.com/trenches-kit-sources">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Public+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" type="image/png" href="/images/tsd-favicon.png">
+
+    <style>
+        :root {
+            --primary: #f59e0b;
+            --primary-dark: #d97706;
+            --bg: #0a0a0a;
+            --text-main: #ffffff;
+            --text-muted: #9ca3af;
+            --border: #1f2937;
+            --surface: #111827;
+            --accent-glow: rgba(245, 158, 11, 0.1);
+        }
+
+        .sources-page {
+            font-family: 'Public Sans', -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            padding: 80px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: var(--accent-glow);
+            color: var(--primary);
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            line-height: 1;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .header-sub {
+            color: var(--text-muted);
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .source-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 80px;
+        }
+
+        @media (max-width: 600px) {
+            .source-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .source-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+        }
+
+        .source-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            transform: translateY(-5px);
+        }
+
+        .source-type {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        h3 {
+            font-size: 1.75rem;
+            margin-bottom: 12px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .source-desc {
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            flex-grow: 1;
+        }
+
+        .download-btn {
+            background: var(--text-main);
+            color: #000;
+            text-decoration: none;
+            padding: 16px 24px;
+            border-radius: 12px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.2s;
+        }
+
+        .download-btn:hover {
+            background: var(--primary);
+            transform: scale(1.02);
+        }
+
+        .zip-section {
+            background: linear-gradient(135deg, var(--surface) 0%, #1f2937 100%);
+            border: 1px solid var(--primary);
+            border-radius: 32px;
+            padding: 60px;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .zip-icon {
+            font-size: 4rem;
+            margin-bottom: 24px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="{{body_class}}">
+    {{header}}
+
+    <main class="sources-page">
+        <header class="header">
+            <h1>Source Material</h1>
+            <p class="header-sub">All the PDFs, checklists, and guides in one place. Download them below and use what works for your family.</p>
+        </header>
+
+        <div class="zip-section">
+            <span class="zip-icon">📦</span>
+            <h3>The Master Bundle</h3>
+            <p class="source-desc" style="max-width: 500px; margin: 12px auto 32px;">Every PDF, prompt guide, and checklist in one 3.2MB download.</p>
+            <a href="/protected/systems-dad-os-bundle.zip" class="download-btn" rel="nofollow" style="width: 100%; max-width: 400px; background: var(--primary);">
+                Download Master Bundle (.zip)
+            </a>
+        </div>
+
+        <div class="source-grid">
+            <!-- Workbook -->
+            <div class="source-card">
+                <span class="source-type">Tool 01</span>
+                <h3>The Weight Audit</h3>
+                <p class="source-desc">Find out where your focus is slipping after 5 PM. A quick check on what's still stuck in your head when you walk through the door.</p>
+                <div class="btn-group" style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="/tool-weight-audit" class="download-btn" style="background: var(--primary);">
+                        Open Interactive Tool →
+                    </a>
+                    <a href="/protected/presence-shutdown-audit.pdf" class="download-btn" rel="nofollow" style="background: transparent; border: 1px solid var(--border); color: var(--text-muted); font-size: 0.85rem;">
+                        Download PDF Version
+                    </a>
+                </div>
+            </div>
+
+            <!-- AI Kit -->
+            <div class="source-card">
+                <span class="source-type">Tool 02</span>
+                <h3>The AI Ground Crew</h3>
+                <p class="source-desc">Copy-paste prompts for Claude and Gemini to handle weekly meals, chore lists, and shared family schedules.</p>
+                <div class="btn-group" style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="/tool-ai-ground-crew" class="download-btn" style="background: var(--primary);">
+                        Open Prompt Kit →
+                    </a>
+                    <a href="/protected/zero-residue-prompt-library.pdf" class="download-btn" rel="nofollow" style="background: transparent; border: 1px solid var(--border); color: var(--text-muted); font-size: 0.85rem;">
+                        Download PDF Version
+                    </a>
+                </div>
+            </div>
+
+            <!-- Sabbath -->
+            <div class="source-card">
+                <span class="source-type">Tool 03</span>
+                <h3>The Saturday Sync</h3>
+                <p class="source-desc">How to shut down work on Friday evening and be fully present with your kids on the weekend.</p>
+                <div class="btn-group" style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="/tool-saturday-sync" class="download-btn" style="background: var(--primary);">
+                        Open Guide →
+                    </a>
+                    <a href="/protected/digital-sabbath-playbook.pdf" class="download-btn" rel="nofollow" style="background: transparent; border: 1px solid var(--border); color: var(--text-muted); font-size: 0.85rem;">
+                        Download PDF Version
+                    </a>
+                </div>
+            </div>
+
+            <!-- Clock -->
+            <div class="source-card">
+                <span class="source-type">Tool 04</span>
+                <h3>The Saturday Clock</h3>
+                <p class="source-desc">A visual grid of the 936 Saturdays between birth and age 18. Put a pin in where you are today.</p>
+                <div class="btn-group" style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="/tool-saturday-clock" class="download-btn" style="background: var(--primary);">
+                        Open Visual Tracker →
+                    </a>
+                    <a href="/protected/digital-sabbath-audit.pdf" class="download-btn" rel="nofollow" style="background: transparent; border: 1px solid var(--border); color: var(--text-muted); font-size: 0.85rem;">
+                        Download PDF Version
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    {{footer}}
+</body>
+
+</html>

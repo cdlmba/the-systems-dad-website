@@ -1,0 +1,785 @@
+<!-- TSD KPI Scorecard Component (Assessment Content) -->
+<!-- Aligned with TSD Premium Stewardship Palette -->
+
+<div id="tsdKpiScorecard" class="tsd-kpi-container" style="margin-top: 4rem;">
+    <div class="kpi-header">
+        <h1 class="kpi-title" style="font-size: 3rem; margin-bottom: 1rem;">The Work & Home <span class="highlight">Systems</span> Check</h1>
+        <p class="kpi-subtitle">See where your time and energy are leaking at work and at home. Find the 2 or 3 spots where better routines will give you your evenings back.</p>
+    </div>
+
+    <div class="kpi-progress-bar">
+        <div id="kpiProgress" class="kpi-progress-fill" style="width: 0%;"></div>
+    </div>
+
+    <form id="kpiForm" class="kpi-form">
+        <!-- PHASE 1: PROFESSIONAL FLOOR (WORK) -->
+        <div class="kpi-step active" data-step="1" data-phase="Work">
+            <div class="pillar-label">Work: Meetings & Calendar</div>
+            <h3 class="kpi-question">How would you describe your current recurring meeting load?</h3>
+            <div class="kpi-options">
+                <label class="kpi-option">
+                    <input type="radio" name="w1" value="0" required>
+                    <span class="option-content">
+                        <span class="option-title">Reactive Overhead</span>
+                        <span class="option-desc">I sit through status updates that could have been an email/dashboard.</span>
+                    </span>
+                </label>
+                <label class="kpi-option">
+                    <input type="radio" name="w1" value="3">
+                    <span class="option-content">
+                        <span class="option-title">Strategic Lead</span>
+                        <span class="option-desc">Status moves asynchronously. Meetings are exclusively for decision-making.</span>
+                    </span>
+                </label>
+            </div>
+        </div>
+
+        <div class="kpi-step" data-step="2" data-phase="Work">
+            <div class="pillar-label">Work: Status Updates</div>
+            <h3 class="kpi-question">How do stakeholders receive project status updates?</h3>
+            <div class="kpi-options">
+                <label class="kpi-option">
+                    <input type="radio" name="w2" value="0" required>
+                    <span class="option-content">
+                        <span class="option-title">Manual Gathering</span>
+                        <span class="option-desc">I spend hours gathering data, drafting, and proofing reports every week.</span>
+                    </span>
+                </label>
+                <label class="kpi-option">
+                    <input type="radio" name="w2" value="3">
+                    <span class="option-content">
+                        <span class="option-title">AI-Enabled Artifacts</span>
+                        <span class="option-desc">Live dashboards or AI-drafted reports are generated in under 10 minutes.</span>
+                    </span>
+                </label>
+            </div>
+        </div>
+
+        <div class="kpi-step" data-step="3" data-phase="Work">
+            <div class="pillar-label">Work: Can Work Run Without You?</div>
+            <h3 class="kpi-question">What happens to your projects when you are out of the office?</h3>
+            <div class="kpi-options">
+                <label class="kpi-option">
+                    <input type="radio" name="w3" value="0" required>
+                    <span class="option-content">
+                        <span class="option-title">Structural Stalling</span>
+                        <span class="option-desc">Decisions wait for me. I am the primary bottleneck for the team.</span>
+                    </span>
+                </label>
+                <label class="kpi-option">
+                    <input type="radio" name="w3" value="3">
+                    <span class="option-content">
+                        <span class="option-title">Autonomous Flow</span>
+                        <span class="option-desc">Team has the playbooks and authority to move without me in the middle.</span>
+                    </span>
+                </label>
+            </div>
+        </div>
+
+        <div class="kpi-step" data-step="4" data-phase="Work">
+            <div class="pillar-label">Work: Using AI Tools</div>
+            <h3 class="kpi-question">What is the current status of AI in your day-to-day workflow?</h3>
+            <div class="kpi-options">
+                <label class="kpi-option">
+                    <input type="radio" name="w4" value="0" required>
+                    <span class="option-content">
+                        <span class="option-title">Aspirational Tooling</span>
+                        <span class="option-desc">I use it for basic email drafts, but it hasn't shifted my core ops.</span>
+                    </span>
+                </label>
+                <label class="kpi-option">
+                    <input type="radio" name="w4" value="3">
+                    <span class="option-content">
+                        <span class="option-title">Integrated Core</span>
+                        <span class="option-desc">AI handles risk analysis, stakeholder prep, and strategic synthesis.</span>
+                    </span>
+                </label>
+            </div>
+        </div>
+
+        <div class="kpi-step" data-step="5" data-phase="Work">
+            <div class="pillar-label">Work: Leaving on Time</div>
+            <h3 class="kpi-question">How does your workday officially end?</h3>
+            <div class="kpi-options">
+                <label class="kpi-option">
+                    <input type="radio" name="w5" value="0" required>
+                    <span class="option-content">
+                        <span class="option-title">Energy Depletion</span>
+                        <span class="option-desc">I stop when I'm tired. Open loops follow me to the dinner table.</span>
+                    </span>
+                </label>
+                <label class="kpi-option">
+                    <input type="radio" name="w5" value="3">
+                    <span class="option-content">
+                        <span class="option-title">Systematic Shutdown</span>
+                        <span class="option-desc">A 10-minute ritual captures loops and closes the mental laptop.</span>
+                    </span>
+                </label>
+            </div>
+        </div>
+
+        <!-- PHASE 2: DOMESTIC CEILING (HOME) -->
+        <div class="kpi-step" data-step="6" data-phase="Home">
+            <div class="pillar-label">Home: Family Mission & Values</div>
+            <h3 class="kpi-question">If I asked your family what your household "stands for," would they have a clear, consistent answer?</h3>
+            <div class="kpi-options">
+                <label class="kpi-option">
+                    <input type="radio" name="h1" value="0" required>
+                    <span class="option-content">
+                        <span class="option-title">No</span>
+                        <span class="option-desc">We just react to whatever happens today. No shared mission.</span>
+                    </span>
+                </label>
+                <label class="kpi-option">
+                    <input type="radio" name="h1" value="1">
+                    <span class="option-content">
+                        <span class="option-title">Somewhat</span>
+                        <span class="option-desc">We have some vague values, but nothing written down or referenced.</span>
+                    </span>
+                </label>
+                <label class="kpi-option">
+                    <input type="radio" name="h1" value="3">
+                    <span class="option-content">
+                        <span class="option-title">Yes</span>
+                        <span class="option-desc">We have a written Mission or Motto we all know and reference daily.</span>
+                    </span>
+                </label>
+            </div>
+        </div>
+
+        <div class="kpi-step" data-step="7" data-phase="Home">
+            <div class="pillar-label">Home: Written Routines & Schedules</div>
+            <h3 class="kpi-question">How much of your family's "operating system" (schedules, SOPs, contacts) exists only in someone's head?</h3>
+            <div class="kpi-options">
+                <label class="kpi-option">
+                    <input type="radio" name="h2" value="0" required>
+                    <span class="option-content">
+                        <span class="option-title">Everything</span>
+                        <span class="option-desc">It's all verbal. Total reliance on memory and reaction.</span>
+                    </span>
+                </label>
+                <label class="kpi-option">
+                    <input type="radio" name="h2" value="1">
+                    <span class="option-content">
+                        <span class="option-title">A Little</span>
+                        <span class="option-desc">We have a shared calendar, but most details are still verbal.</span>
+                    </span>
+                </label>
+                <label class="kpi-option">
+                    <input type="radio" name="h2" value="3">
+                    <span class="option-content">
+                        <span class="option-title">Nothing</span>
+                        <span class="option-desc">We have a central Home Hub/Manual where recurring logic is documented.</span>
+                    </span>
+                </label>
+            </div>
+        </div>
+
+        <div class="kpi-step" data-step="8" data-phase="Home">
+            <div class="pillar-label">Home: Recurring Tasks & Automation</div>
+            <h3 class="kpi-question">How many of your recurring household tasks (finances, groceries, maintenance) are handled by automated systems?</h3>
+            <div class="kpi-options">
+                <label class="kpi-option">
+                    <input type="radio" name="h3" value="0" required>
+                    <span class="option-content">
+                        <span class="option-title">0%</span>
+                        <span class="option-desc">Everything requires a manual decision or action every time.</span>
+                    </span>
+                </label>
+                <label class="kpi-option">
+                    <input type="radio" name="h3" value="1">
+                    <span class="option-content">
+                        <span class="option-title">50%</span>
+                        <span class="option-desc">We use some auto-pays and apps, but it still feels heavy.</span>
+                    </span>
+                </label>
+                <label class="kpi-option">
+                    <input type="radio" name="h3" value="3">
+                    <span class="option-content">
+                        <span class="option-title">80%+</span>
+                        <span class="option-desc">We have a 'Hand-Off' stack that runs without me in the middle.</span>
+                    </span>
+                </label>
+            </div>
+        </div>
+
+        <div class="kpi-step" data-step="9" data-phase="Home">
+            <div class="pillar-label">Home: Being in the Room</div>
+            <h3 class="kpi-question">How would your children describe your "presence profile" during dinner or weekend activities?</h3>
+            <div class="kpi-options">
+                <label class="kpi-option">
+                    <input type="radio" name="h4" value="0" required>
+                    <span class="option-content">
+                        <span class="option-title">Sleepwalking</span>
+                        <span class="option-desc">Physically there, but mentally at the office or on a screen.</span>
+                    </span>
+                </label>
+                <label class="kpi-option">
+                    <input type="radio" name="h4" value="1">
+                    <span class="option-content">
+                        <span class="option-title">Distracted</span>
+                        <span class="option-desc">Checking notifications every 10 minutes. Semi-available.</span>
+                    </span>
+                </label>
+                <label class="kpi-option">
+                    <input type="radio" name="h4" value="3">
+                    <span class="option-content">
+                        <span class="option-title">Fully Present</span>
+                        <span class="option-desc">Fully available. Work thoughts are shut down for the evening.</span>
+                    </span>
+                </label>
+            </div>
+        </div>
+
+        <div class="kpi-step" data-step="10" data-phase="Home">
+            <div class="pillar-label">Home: Weekly Couple Check-in</div>
+            <h3 class="kpi-question">How often do you and your spouse have a "strategic sync" to discuss the mission of the home?</h3>
+            <div class="kpi-options">
+                <label class="kpi-option">
+                    <input type="radio" name="h5" value="0" required>
+                    <span class="option-content">
+                        <span class="option-title">Never</span>
+                        <span class="option-desc">We just pass in the hall and discuss logistics on the fly.</span>
+                    </span>
+                </label>
+                <label class="kpi-option">
+                    <input type="radio" name="h5" value="1">
+                    <span class="option-content">
+                        <span class="option-title">Occasionally</span>
+                        <span class="option-desc">Usually when things reach a breaking point.</span>
+                    </span>
+                </label>
+                <label class="kpi-option">
+                    <input type="radio" name="h5" value="3">
+                    <span class="option-content">
+                        <span class="option-title">Weekly</span>
+                        <span class="option-desc">It’s a sacred, non-negotiable ritual on our calendar.</span>
+                    </span>
+                </label>
+            </div>
+        </div>
+
+        <div class="kpi-nav">
+            <button type="button" id="prevBtn" class="kpi-btn secondary" style="display: none;">Back</button>
+            <button type="button" id="nextBtn" class="kpi-btn primary">Next Pillar</button>
+            <button type="submit" id="submitBtn" class="kpi-btn primary" style="display: none;">Calculate Score</button>
+        </div>
+    </form>
+
+    <div id="kpiResults" class="kpi-results" style="display: none;">
+        <div class="results-card">
+            <div class="score-display">
+                <div style="display: flex; gap: 2rem; justify-content: center; margin-bottom: 2rem;">
+                    <div>
+                        <span class="score-label">Work Systems</span>
+                        <span id="workScore" class="score-number" style="font-size: 3rem;">0</span>
+                        <span class="score-total">/ 15</span>
+                    </div>
+                    <div>
+                        <span class="score-label">Home Systems</span>
+                        <span id="homeScore" class="score-number" style="font-size: 3rem;">0</span>
+                        <span class="score-total">/ 15</span>
+                    </div>
+                </div>
+            </div>
+            <h3 id="resultType" class="result-type">...</h3>
+            <p id="resultDesc" class="result-desc">...</p>
+            
+            <div id="ctaBlock" class="cta-block">
+                <!-- Dynamic CTA will appear here -->
+            </div>
+            
+            <button type="button" onclick="location.reload()" class="kpi-btn text-link">Retake Scorecard</button>
+        </div>
+    </div>
+</div>
+
+<!-- Systems Check Capture Modal -->
+<div id="audit-capture-modal" class="modal-overlay">
+    <div class="modal-content">
+        <span class="modal-close" onclick="closeAuditModal()">&times;</span>
+        <h2 style="margin-bottom: 1rem; color: #fff;">Get Your Full Results</h2>
+        <p style="color: var(--text-color-muted); margin-bottom: 2rem;">
+            Enter your details to get your full scorecard and the **Dad Mode Kit** guide.
+        </p>
+        <form id="audit-capture-form">
+            <div style="margin-bottom: 1.5rem;">
+                <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #fff;">First Name</label>
+                <input type="text" id="audit-first-name" placeholder="Christopher" required
+                    style="width: 100%; padding: 1rem; border-radius: 0.5rem; border: 1px solid var(--border-color); background: #1a1a1a; color: #fff;">
+            </div>
+            <div style="margin-bottom: 2rem;">
+                <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #fff;">Work Email</label>
+                <input type="email" id="audit-email" placeholder="chris@example.com" required
+                    style="width: 100%; padding: 1rem; border-radius: 0.5rem; border: 1px solid var(--border-color); background: #1a1a1a; color: #fff;">
+            </div>
+            <button type="submit" class="kpi-btn primary" style="width: 100%; padding: 1.2rem; border: none; cursor: pointer;">
+                Get My Results →
+            </button>
+        </form>
+    </div>
+</div>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&family=Inter:wght@400;500;600&display=swap');
+
+    /* Modal Styles */
+    .modal-overlay {
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(8px);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+        animation: fadeIn 0.3s ease;
+    }
+    .modal-content {
+        background: #0d0d0d;
+        padding: 3rem;
+        border-radius: 1.5rem;
+        max-width: 500px;
+        width: 90%;
+        border: 1px solid var(--primary-color);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        position: relative;
+        color: #fff;
+    }
+    .modal-close {
+        position: absolute;
+        top: 1.5rem; right: 1.5rem;
+        cursor: pointer;
+        font-size: 1.5rem;
+        opacity: 0.5;
+        color: #fff;
+    }
+    .modal-close:hover { opacity: 1; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    :root {
+        --kpi-cream: #FDFBF7;
+        --kpi-teal: #1B4332;
+        --kpi-teal-light: rgba(27, 67, 50, 0.05);
+        --kpi-gold: #C69C6D;
+        --kpi-gold-glow: rgba(198, 156, 109, 0.2);
+        --kpi-slate: #1A1A1A;
+        --kpi-muted: #6B7280;
+        --kpi-white: #ffffff;
+        --kpi-glass: rgba(255, 255, 255, 0.8);
+        --kpi-shadow: 0 20px 50px rgba(27, 67, 50, 0.08);
+        --kpi-border: 1px solid rgba(198, 156, 109, 0.2);
+    }
+
+    .tsd-kpi-container {
+        max-width: 800px;
+        margin: 4rem auto;
+        padding: 4rem 3rem;
+        background: var(--kpi-cream);
+        background-image: radial-gradient(circle at 2px 2px, rgba(198, 156, 109, 0.05) 1px, transparent 0);
+        background-size: 40px 40px;
+        border-radius: 2.5rem;
+        border: var(--kpi-border);
+        font-family: 'Inter', sans-serif;
+        color: var(--kpi-slate);
+        box-shadow: var(--kpi-shadow);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .kpi-header {
+        text-align: center;
+        margin-bottom: 4rem;
+        animation: kpiSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .kpi-badge {
+        display: inline-block;
+        padding: 0.5rem 1.25rem;
+        background: var(--kpi-teal);
+        color: #fff;
+        font-size: 0.7rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        border-radius: 100px;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 12px rgba(27, 67, 50, 0.2);
+    }
+
+    .kpi-title {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 3rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+        margin-bottom: 1.25rem;
+    }
+
+    .kpi-title .highlight {
+        color: var(--kpi-gold);
+        position: relative;
+    }
+
+    .kpi-subtitle {
+        color: var(--kpi-muted);
+        font-size: 1.15rem;
+        line-height: 1.6;
+        max-width: 520px;
+        margin: 0 auto;
+    }
+
+    .kpi-progress-bar {
+        height: 4px;
+        background: rgba(27, 67, 50, 0.05);
+        border-radius: 100px;
+        margin-bottom: 4rem;
+        overflow: hidden;
+    }
+
+    .kpi-progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, var(--kpi-teal), var(--kpi-gold));
+        transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .kpi-step {
+        display: none;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .kpi-step.active {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .pillar-label {
+        color: var(--kpi-gold);
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .pillar-label::after {
+        content: '';
+        height: 1px;
+        flex-grow: 1;
+        background: linear-gradient(90deg, rgba(198, 156, 109, 0.3), transparent);
+    }
+
+    .kpi-question {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin-bottom: 3rem;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+    }
+
+    .kpi-options {
+        display: grid;
+        gap: 1.5rem;
+        margin-bottom: 4rem;
+    }
+
+    .kpi-option {
+        cursor: pointer;
+        position: relative;
+    }
+
+    .kpi-option input {
+        position: absolute;
+        opacity: 0;
+    }
+
+    .option-content {
+        display: block;
+        padding: 1.75rem;
+        background: var(--kpi-white);
+        border: 1px solid rgba(27, 67, 50, 0.05);
+        border-radius: 1.5rem;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.01);
+    }
+
+    .kpi-option:hover .option-content {
+        transform: scale(1.02);
+        border-color: var(--kpi-gold);
+        box-shadow: 0 10px 30px rgba(27, 67, 50, 0.06);
+    }
+
+    .kpi-option input:checked + .option-content {
+        border-color: var(--kpi-teal);
+        background: var(--kpi-teal-light);
+        box-shadow: 0 0 0 4px var(--kpi-teal-light);
+    }
+
+    .option-title {
+        display: block;
+        font-weight: 800;
+        color: var(--kpi-teal);
+        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+    }
+
+    .option-desc {
+        display: block;
+        font-size: 1rem;
+        color: var(--kpi-muted);
+        line-height: 1.5;
+    }
+
+    .kpi-nav {
+        display: flex;
+        gap: 1.25rem;
+        justify-content: flex-end;
+    }
+
+    .kpi-btn {
+        padding: 1.1rem 2.5rem;
+        border-radius: 1rem;
+        font-weight: 700;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        border: none;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .kpi-btn.primary {
+        background: var(--kpi-teal);
+        color: var(--kpi-white);
+        box-shadow: 0 8px 25px rgba(27, 67, 50, 0.2);
+    }
+
+    .kpi-btn.primary:hover {
+        background: var(--kpi-slate);
+        transform: translateY(-3px);
+        box-shadow: 0 12px 35px rgba(27, 67, 50, 0.3);
+    }
+
+    .kpi-btn.secondary {
+        background: transparent;
+        color: var(--kpi-muted);
+        border: 1px solid rgba(27, 67, 50, 0.1);
+    }
+
+    .kpi-btn.secondary:hover {
+        background: rgba(27, 67, 50, 0.05);
+    }
+
+    /* Results Card Upgrade */
+    .results-card {
+        text-align: center;
+        background: var(--kpi-white);
+        padding: 5rem 3rem;
+        border-radius: 3rem;
+        border: 1px solid var(--kpi-gold-glow);
+        box-shadow: var(--kpi-shadow);
+        backdrop-filter: blur(20px);
+    }
+
+    .score-number {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 6rem;
+        font-weight: 800;
+        color: var(--kpi-teal);
+        line-height: 1;
+        letter-spacing: -0.05em;
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    .cta-block {
+        background: var(--kpi-teal-light);
+        border: 1px solid rgba(27, 67, 50, 0.08);
+        padding: 2.5rem;
+        border-radius: 2rem;
+        margin-top: 3rem;
+    }
+
+    @keyframes kpiSlideUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+        .tsd-kpi-container { padding: 3rem 1.5rem; margin: 1.5rem; }
+        .kpi-title { font-size: 2.25rem; }
+        .kpi-question { font-size: 1.4rem; }
+    }
+</style>
+
+<script>
+(function() {
+    const form = document.getElementById('kpiForm');
+    const steps = document.querySelectorAll('.kpi-step');
+    const progressBar = document.getElementById('kpiProgress');
+    const nextBtn = document.getElementById('nextBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    const resultsArea = document.getElementById('kpiResults');
+    
+    let currentStep = 1;
+    const totalSteps = steps.length;
+
+    function updateNav() {
+        const progress = ((currentStep - 1) / totalSteps) * 100;
+        progressBar.style.width = `${progress}%`;
+        prevBtn.style.display = currentStep === 1 ? 'none' : 'block';
+        if (currentStep === totalSteps) {
+            nextBtn.style.display = 'none';
+            submitBtn.style.display = 'block';
+        } else {
+            nextBtn.style.display = 'block';
+            submitBtn.style.display = 'none';
+        }
+        steps.forEach(step => {
+            step.classList.remove('active');
+            if (parseInt(step.dataset.step) === currentStep) {
+                step.classList.add('active');
+            }
+        });
+    }
+
+    nextBtn.addEventListener('click', () => {
+        const currentInputs = steps[currentStep-1].querySelectorAll('input:checked');
+        if (currentInputs.length === 0) {
+            alert('Please select an option to continue.');
+            return;
+        }
+        currentStep++;
+        updateNav();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        currentStep--;
+        updateNav();
+    });
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        progressBar.style.width = '100%';
+        const formData = new FormData(form);
+        let workScore = 0;
+        let homeScore = 0;
+        
+        formData.forEach((value, key) => {
+            if (key.startsWith('w')) workScore += parseInt(value);
+            if (key.startsWith('h')) homeScore += parseInt(value);
+        });
+        
+        displayResults(workScore, homeScore);
+    });
+
+    function displayResults(workScore, homeScore) {
+        form.style.display = 'none';
+        resultsArea.style.display = 'block';
+        
+        document.getElementById('workScore').textContent = workScore;
+        document.getElementById('homeScore').textContent = homeScore;
+        
+        const typeEl = document.getElementById('resultType');
+        const descEl = document.getElementById('resultDesc');
+        const ctaEl = document.getElementById('ctaBlock');
+
+        if (workScore < 9 && homeScore < 9) {
+            typeEl.textContent = "Overloaded at Work & Home";
+            descEl.textContent = "You're carrying everything yourself at work and at home. When everything depends on your personal memory and stamina, burnout is only a matter of time.";
+            ctaEl.innerHTML = `
+                <h4>Recommended Action: The Dad Mode Kit</h4>
+                <p>Start with simple routines that take the pressure off your day. Get your evenings back.</p>
+                <button id="open-capture-modal" class="kpi-btn primary">Download My Full Scorecard →</button>
+            `;
+        } else if (workScore >= 9 && homeScore < 9) {
+            typeEl.textContent = "Winning at Work, Missing at Home";
+            descEl.textContent = "Your work routines are dialed in, but home feels chaotic. You're exhausted when you walk through the door, so your family gets whatever leftover energy you have. You know how to run projects; you just need simple routines for home.";
+            ctaEl.innerHTML = `
+                <h4>Recommended Action: The 5-Day Home Reset</h4>
+                <p>Build a simple home rhythm. Take the chaos out of family logistics so you can actually relax.</p>
+                <button id="open-capture-modal" class="kpi-btn primary">Download My Full Scorecard →</button>
+            `;
+        } else if (workScore < 9 && homeScore >= 9) {
+            typeEl.textContent = "Present at Home, Drowning at Work";
+            descEl.textContent = "You love being with your family, but work is constantly spilling over into your evenings. Manual work routines are stealing the margin you need to breathe.";
+            ctaEl.innerHTML = `
+                <h4>Recommended Action: The Dad Mode Kit</h4>
+                <p>Clean up your work routines. Handle the daily noise so you can shut down on time.</p>
+                <button id="open-capture-modal" class="kpi-btn primary">Download My Full Scorecard →</button>
+            `;
+        } else {
+            typeEl.textContent = "Dialed In at Work & Home";
+            descEl.textContent = "You have clear boundaries at work and simple routines at home. You protect your time and show up consistently for your family.";
+            ctaEl.innerHTML = `
+                <h4>Recommended Action: Group Coaching</h4>
+                <p>Ready to dial in your personal systems alongside other dads? Join the small-group coaching cohort.</p>
+                <a href="/lab" class="kpi-btn primary" style="display:inline-block; text-decoration:none;">Learn About Group Coaching →</a>
+            `;
+        }
+
+        // Modal Trigger Logic
+        const captureBtn = document.getElementById('open-capture-modal');
+        if (captureBtn) {
+            captureBtn.addEventListener('click', () => {
+                document.getElementById('audit-capture-modal').style.display = 'flex';
+            });
+        }
+    }
+
+    // Modal Submission Logic
+    const captureForm = document.getElementById('audit-capture-form');
+    if (captureForm) {
+        captureForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const submitBtn = captureForm.querySelector('button');
+            submitBtn.innerHTML = "Calculating Results...";
+            submitBtn.disabled = true;
+
+            const workScore = document.getElementById('workScore').textContent;
+            const homeScore = document.getElementById('homeScore').textContent;
+
+            const payload = {
+                email: document.getElementById('audit-email').value,
+                first_name: document.getElementById('audit-first-name').value,
+                platform: 'sendfox',
+                audit_data: {
+                    type: 'ARCHITECTURE_AUDIT',
+                    work_score: workScore,
+                    home_score: homeScore,
+                    total_score: parseInt(workScore) + parseInt(homeScore)
+                }
+            };
+
+            try {
+                const res = await fetch('/api/capture-audit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (res.ok) {
+                    submitBtn.innerHTML = "✅ Diagnosis Sent!";
+                    setTimeout(() => { window.location.href = '/home-reset'; }, 1500);
+                } else {
+                    throw new Error('Sync failed');
+                }
+            } catch (err) {
+                submitBtn.innerHTML = "⚠️ Error. Try again?";
+                submitBtn.disabled = false;
+            }
+        });
+    }
+
+    window.closeAuditModal = () => {
+        document.getElementById('audit-capture-modal').style.display = 'none';
+    };
+})();
+</script>

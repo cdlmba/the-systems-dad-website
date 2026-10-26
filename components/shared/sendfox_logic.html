@@ -1,0 +1,93 @@
+<script>
+    /**
+     * SENDFOX INTEGRATION LOGIC
+     * Handles subscription success UI, redirects, and form watchers.
+     */
+    function handleSendFoxSuccess() {
+        const banner = document.createElement('div');
+        banner.textContent = "✅ You're in! Redirecting to your protocol...";
+        banner.style.cssText = 'position:fixed;top:0;left:0;right:0;padding:1rem;background:var(--background-secondary, #F3EFE6);color:var(--primary-color, #244234);text-align:center;font-weight:700;z-index:9999;border-bottom:2px solid var(--primary-color, #244234);box-shadow:0 2px 8px rgba(0,0,0,0.1);';
+        document.body.prepend(banner);
+
+        let target = window.sendFoxTarget || 'index.html';
+        
+        if (target === 'index.html') {
+            const forms = document.querySelectorAll('.sendfox-form');
+            forms.forEach(form => {
+                const customRedirect = form.getAttribute('data-redirect');
+                if (customRedirect) target = customRedirect;
+            });
+        }
+
+        if (window.location.pathname.includes('handshake') && target === 'index.html') {
+            target = 'handshake-access.html';
+        }
+
+        setTimeout(() => { window.location.href = target; }, 2000);
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Global SendFox Success Watcher
+        const watchForSendFoxSuccess = () => {
+            const forms = document.querySelectorAll('.sendfox-form');
+            forms.forEach(form => {
+                const container = form.parentElement;
+                if (container) {
+                    const hasSuccessText = container.innerText.toLowerCase().includes('success') ||
+                        container.innerText.toLowerCase().includes('thank you');
+                    const formHidden = getComputedStyle(form).display === 'none';
+                    if (hasSuccessText && formHidden) {
+                        handleSendFoxSuccess();
+                    }
+                }
+            });
+        };
+        setInterval(watchForSendFoxSuccess, 1000);
+
+        // SendFox Success Redirect (Event based)
+        document.addEventListener('submit', function (e) {
+            if (e.target.classList.contains('sendfox-form') || e.target.closest('.sendfox-form')) {
+                const form = e.target.closest('.sendfox-form');
+                window.sendFoxTarget = form.getAttribute('data-redirect') || 'index.html';
+                const container = form.parentElement;
+
+                const observer = new MutationObserver((mutations) => {
+                    mutations.forEach((mutation) => {
+                        const successMsg = container.querySelector('.sendfox-form-success, .sendfox-success, [id*="success"]');
+                        const hasSuccessText = container.innerText.toLowerCase().includes('success') ||
+                            container.innerText.toLowerCase().includes('thank you');
+                        const formHidden = getComputedStyle(form).display === 'none';
+
+                        if (successMsg || (formHidden && hasSuccessText)) {
+                            handleSendFoxSuccess();
+                            observer.disconnect();
+                        }
+                    });
+                });
+
+                observer.observe(container, { childList: true, subtree: true, attributes: true });
+
+                const checkInterval = setInterval(() => {
+                    const hasSuccessText = container.innerText.toLowerCase().includes('success') ||
+                        container.innerText.toLowerCase().includes('thank you');
+                    if (hasSuccessText && getComputedStyle(form).display === 'none') {
+                        clearInterval(checkInterval);
+                        handleSendFoxSuccess();
+                    }
+                }, 500);
+
+                setTimeout(() => {
+                    clearInterval(checkInterval);
+                    observer.disconnect();
+                }, 10000);
+            }
+        }, true);
+
+        // postMessage Fallback
+        window.addEventListener('message', function (event) {
+            if (event.data && typeof event.data === 'string' && event.data.includes('sendfox') && event.data.includes('success')) {
+                handleSendFoxSuccess();
+            }
+        });
+    });
+</script>

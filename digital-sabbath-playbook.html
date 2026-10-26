@@ -1,0 +1,312 @@
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Systems Dad</title>
+
+    <!-- 1. CRITICAL: Inline Mobile Detection (Prevents layout jitter) -->
+    <script>
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            document.documentElement.classList.add('is-mobile');
+            document.body.classList.add('is-mobile');
+        }
+        
+        // 1.1 Global Configuration Access
+        window.siteConfig = {
+            globals: {
+                tidycal_url: "https://tidycal.com/christopherlynnsystems/30-minute-meeting",
+                cls_booking_price: "$2,800",
+                tsd_booking_price: "$97"
+            },
+            brand: "TSD",
+            version: "2"
+        };
+    </script>
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <!-- 2. STYLES (Load before analytics to prevent FOUC) -->
+    <link rel="stylesheet" href="/style.css?v=20260930e">
+
+    <!-- GA4 Systems Dad Index — G-W4TB1J0TNK only -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GT-PBSGZ5XB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-W4TB1J0TNK');
+    </script>
+
+    <!-- Microsoft Clarity Tracking -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "weaa6eknja");
+    </script>
+
+<!-- Whop Checkout Script -->
+<script async defer src="https://js.whop.com/static/checkout/loader.js"></script>
+
+<!-- SEO Meta Tags -->
+<meta name="description"
+    content="Reclaim your presence.">
+<link rel="canonical" href="https://thesystemsdad.com/digital-sabbath-playbook">
+<meta property="og:title" content="The Systems Dad">
+<meta property="og:description"
+    content="Reclaim your presence.">
+<meta property="og:image" content="https://thesystemsdad.com/images/HeadshotThumbnail.png">
+<meta property="og:url" content="https://thesystemsdad.com/digital-sabbath-playbook">
+<meta property="og:type" content="website">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Systems Dad">
+<meta name="twitter:description" content="Reclaim your presence.">
+<meta name="twitter:image" content="https://thesystemsdad.com/images/HeadshotThumbnail.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap"
+    rel="stylesheet">
+
+<!-- Styles (Moved to top of head) -->
+
+<link rel="icon" type="image/png" href="/images/tsd-favicon.png?v=4">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"Christopher Lynn",
+  "url":"https://thesystemsdad.com",
+  "sameAs":["https://www.linkedin.com/in/ChristopherDLynn"],
+  "jobTitle":"Systems Consultant and Coach"
+}
+</script>
+
+<body class="brand-tsd">
+<div class="promo-banner">
+    Real Talk Tuesday — <a href="/real-talk-tuesday">The Weekly Note for Dads →</a>
+</div>
+<header class="main-header">
+    <div class="main-container header-content">
+        <a href="/" class="logo">
+            <span class="logo-primary">the systems dad</span>
+        </a>
+
+        <nav class="main-nav">
+            <a href="/the-systems-dad-method">The Method</a>
+            <a href="/win">The House System</a>
+            <a href="/lab">Coaching</a>
+            <a href="/blog">Essays</a>
+            <a href="/real-talk-tuesday" class="nav-cta">The Weekly Note →</a>
+        </nav>
+        <button class="menu-toggle" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>
+
+<style>
+    .premium-document-wrapper {
+        max-width: 800px;
+        margin: 4rem auto;
+        background: var(--background-main);
+        padding: 4rem 5rem;
+        border-radius: 8px;
+        box-shadow: var(--shadow-2xl);
+        border: 1px solid var(--border-color);
+        font-family: var(--font-body);
+        color: var(--text-color-main);
+        position: relative;
+    }
+    .premium-header-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 12px;
+        background: var(--primary-color);
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+    .premium-logo {
+        height: 40px;
+        margin-bottom: 2rem;
+    }
+    .premium-print-btn {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        background: var(--gold-accent);
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: 50px;
+        font-weight: bold;
+        box-shadow: var(--shadow-lg);
+        cursor: pointer;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        border: none;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .premium-print-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-xl);
+    }
+    
+    /* Typography Overrides */
+    .premium-document-wrapper h1, .premium-document-wrapper .markdown-content h1 {
+        font-family: var(--font-heading);
+        color: var(--primary-color);
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+    .premium-document-wrapper h2, .premium-document-wrapper .markdown-content h2 {
+        font-family: var(--font-heading);
+        color: var(--primary-color);
+        font-size: 1.8rem;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid var(--gold-accent);
+        padding-bottom: 0.5rem;
+    }
+    .premium-document-wrapper h3, .premium-document-wrapper .markdown-content h3 {
+        color: var(--gold-accent);
+        margin-top: 2rem;
+    }
+    .premium-document-wrapper hr, .premium-document-wrapper .markdown-content hr {
+        border-color: var(--gold-accent);
+        margin: 2rem 0;
+        opacity: 0.3;
+    }
+    .premium-document-wrapper input[type="checkbox"], .premium-document-wrapper .markdown-content input[type="checkbox"] {
+        accent-color: var(--gold-accent);
+        transform: scale(1.2);
+        margin-right: 0.5rem;
+    }
+</style>
+
+<button class="premium-print-btn" onclick="window.print()">
+    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2M6 14h12v8H6v-8z"></path></svg>
+    Save as PDF
+</button>
+
+<div class="premium-document-wrapper">
+    <div class="premium-header-bar"></div>
+    
+    <!-- Document Content Starts Here -->
+
+<div class="markdown-content brand-markdown"><h1>🕯️ The Digital Sabbath Playbook</h1>
+<h2>An Architectural Framework for Frictionless Presence</h2>
+<h3>The Logic Gap: Why the Grind Fails</h3>
+<p>The grind was never the goal. The baseball game is. The dinner table is. The legacy you leave in the hearts of your children is.</p>
+<p>You aren't just a "provider"—you are a <strong>Steward</strong>. </p>
+<p>You don't own their time or their hearts; you're just looking after them for a short time. The window is closing. Every weekend you spend in Ghost Mode (physically there, mentally at the office) is a weekend you lose forever.</p>
+<h3>The Strategy: Architectural Rest</h3>
+<p>Rest is not "doing nothing." Rest is a system you design to clear the runway so you can show up, be there, and steward the hearts of the people who are counting on you.</p>
+<hr />
+<h3>🛡️ The 3 Tiers of Sabbath Mode</h3>
+<h4>Tier 1: The Lite Reset (The Slack Clear)</h4>
+<ul>
+<li><strong>Objective</strong>: Minimize noise but be available for true emergencies. (which disappear once you start the ritual anyway)</li>
+<li><strong>Protocol</strong>: All work notifications (Slack, Teams, Email) are silenced. No checking "just once."</li>
+</ul>
+<h4>Tier 2: The Standard Lockdown (Hardware Displacement)</h4>
+<ul>
+<li><strong>Objective</strong>: Remove the visual cue of work.</li>
+<li><strong>Protocol</strong>: Laptops and work phones are physically stored in a drawer. Out of sight, out of mind.</li>
+</ul>
+<h4>Tier 3: The Deep Presence (Total Disconnection)</h4>
+<ul>
+<li><strong>Objective</strong>: Absolute relational priority.</li>
+<li><strong>Protocol</strong>: All screens are off. No scrolling. No distractions. 100% focused on the people in front of you.</li>
+</ul>
+<hr />
+<p><em>© 2026 Christopher Lynn Systems, LLC. Proprietary Leadership Protocol.</em></p></div>
+    <!-- Document Content Ends Here -->
+</div>
+
+<footer class="main-footer">
+    <div class="main-container">
+        <div class="footer-flex-row">
+            <div class="footer-brand">
+                <a href="/" class="logo"><span class="logo-primary">the systems dad</span></a>
+                <p class="footer-tagline">Helping dads stop being ghosts at home. Simple house systems for busy fathers.</p>
+                <div class="footer-nav-links" style="margin-top: 1rem; display: flex; gap: 1.25rem; flex-wrap: wrap; font-size: 0.9rem;">
+                    <a href="/the-systems-dad-method" style="color: var(--text-color-main); font-weight: 600; text-decoration: none;">The Method</a>
+                    <a href="/win" style="color: var(--text-color-main); font-weight: 600; text-decoration: none;">The House System</a>
+                    <a href="/lab" style="color: var(--text-color-main); font-weight: 600; text-decoration: none;">Coaching</a>
+                    <a href="/blog" style="color: var(--text-color-main); font-weight: 600; text-decoration: none;">Essays</a>
+                    <a href="/real-talk-tuesday" style="color: var(--text-color-main); font-weight: 600; text-decoration: none;">The Weekly Note</a>
+                </div>
+                <p class="footer-tagline" style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.85;">
+                    If you're in active crisis and need to reset your workday transition tonight, I built a specific tool for that: <a href="https://marginreset.com" target="_blank" style="color: var(--accent-color); font-weight: 700; text-decoration: underline;">marginreset.com</a>
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">&copy; 2026 Christopher Lynn Systems, LLC. All rights reserved. <br>
+                The Systems Dad is a brand of Christopher Lynn Systems, LLC. <br>
+                <span style="font-size: 0.8rem; opacity: 0.8;">
+                    <a href="/privacy" style="color: inherit;">Privacy Policy</a> |
+                    <a href="/terms" style="color: inherit;">Terms of Service</a> |
+                    <a href="/disclaimer" style="color: inherit;">Disclaimer</a>
+                </span>
+            </p>
+            <div class="footer-social">
+                <!-- X (Twitter) -->
+                <a href="https://x.com/TheSystemsDad" target="_blank" rel="noopener noreferrer" class="social-icon-link"
+                    aria-label="X (Twitter)">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>X</title>
+                        <path
+                            d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+                    </svg>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/ChristopherDLynn" target="_blank" rel="noopener noreferrer"
+                    class="social-icon-link" aria-label="LinkedIn">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>LinkedIn</title>
+                        <path
+                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/thesystemsdad" target="_blank" rel="noopener noreferrer"
+                    class="social-icon-link" aria-label="Instagram">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>Instagram</title>
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                </a>
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@cdlynn" target="_blank" rel="noopener noreferrer"
+                    class="social-icon-link" aria-label="YouTube">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>YouTube</title>
+                        <path
+                            d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545S-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="/js/core.js?v=4" defer></script>
+<script src="/js/systems-dad-bot-v4.js?v=4" defer></script>
+
+</body>
+</html>

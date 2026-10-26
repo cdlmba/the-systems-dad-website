@@ -1,0 +1,250 @@
+<!-- 🚪 Front Door Pivot Component -->
+<section class="section-padding pivot-section" id="front-door-pivot">
+    <div class="main-container">
+        <div class="pivot-grid">
+            <div class="pivot-content">
+                <span class="brand-banner">The Rule of the Front Door</span>
+                <h2 class="pivot-title">The 25 minutes that matter most.</h2>
+                <p class="pivot-subtitle">
+                    Most dads lose the night before they even see their kids. You walk in the door, but your brain stays stuck in a Slack channel. 
+                    You're physically there, but you're not <em>there</em>. You're just a ghost in the room. Let's fix it.
+                </p>
+
+                <div class="pivot-logic-grid">
+                    <div class="pivot-card">
+                        <div class="pivot-icon">4:50 PM</div>
+                        <h4>Shut it off.</h4>
+                        <p>Close the loops. Get the work out of your head and into the system so you can actually stop thinking about it.</p>
+                    </div>
+                    <div class="pivot-card">
+                        <div class="pivot-icon">5:15 PM</div>
+                        <h4>Show up.</h4>
+                        <p>Walk inside with a clean head. If you can win the first 10 minutes, you win the whole night.</p>
+                    </div>
+                </div>
+
+                <div class="pivot-cta-container">
+                    <div class="pivot-diagnostic">
+                        <p><strong>Current Status:</strong> <span class="latency-low">"Ghost" Mode Active</span></p>
+                        <div class="latency-bar"><div class="latency-fill"></div></div>
+                    </div>
+                    <a href="/win" class="cta-button cta-button-primary">Learn the Transition Protocol →</a>
+                    <p class="cta-subtext">The free transition guide for busy tech leaders.</p>
+                </div>
+            </div>
+
+            <div class="pivot-visual">
+                <div class="visual-wrapper">
+                    <img src="/images/front-door-pivot-hero.png" alt="The Front Door Pivot" class="pivot-image">
+                    <div class="visual-overlay">
+                        <div class="overlay-stat">
+                            <span class="stat-num">936</span>
+                            <span class="stat-label">Saturdays</span>
+                        </div>
+                        <div class="overlay-stat">
+                            <span class="stat-num">25</span>
+                            <span class="stat-label">Min Transition</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .pivot-section {
+        background-color: var(--background-main);
+        overflow: hidden;
+    }
+
+    .pivot-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+
+    @media (min-width: 992px) {
+        .pivot-grid {
+            grid-template-columns: 1.1fr 0.9fr;
+        }
+    }
+
+    .pivot-title {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+        color: var(--text-color-emphasis);
+    }
+
+    .pivot-subtitle {
+        font-size: 1.2rem;
+        color: var(--text-color-muted);
+        margin-bottom: 3rem;
+        max-width: 600px;
+    }
+
+    .pivot-logic-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    @media (min-width: 640px) {
+        .pivot-logic-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .pivot-card {
+        background: var(--background-secondary);
+        padding: 2rem;
+        border-radius: 1.25rem;
+        border: 1px solid var(--border-color);
+        transition: all 0.3s ease;
+    }
+
+    .pivot-card:hover {
+        border-color: var(--primary-color);
+        transform: translateY(-5px);
+    }
+
+    .pivot-icon {
+        font-family: var(--font-heading);
+        font-weight: 800;
+        color: var(--gold-accent);
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+        letter-spacing: 0.1em;
+    }
+
+    .pivot-card h4 {
+        margin-bottom: 0.75rem;
+        color: var(--text-color-emphasis);
+    }
+
+    .pivot-card p {
+        font-size: 0.95rem;
+        color: var(--text-color-muted);
+        line-height: 1.5;
+    }
+
+    .pivot-cta-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: flex-start;
+    }
+
+    .pivot-diagnostic {
+        background: var(--background-secondary);
+        padding: 1.25rem;
+        border-radius: 0.75rem;
+        width: 100%;
+        max-width: 320px;
+        border: 1px solid var(--border-color);
+    }
+
+    .pivot-diagnostic p {
+        font-size: 0.8rem;
+        margin-bottom: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .latency-low {
+        color: var(--accent-color);
+        font-weight: 700;
+    }
+
+    .latency-bar {
+        height: 4px;
+        background: rgba(0,0,0,0.1);
+        border-radius: 2px;
+        overflow: hidden;
+    }
+
+    .latency-fill {
+        width: 82%;
+        height: 100%;
+        background: var(--accent-color);
+        border-radius: 2px;
+        animation: pulse 2s infinite;
+    }
+
+    .cta-subtext {
+        font-size: 0.85rem;
+        color: var(--text-color-muted);
+        font-style: italic;
+    }
+
+    .pivot-visual {
+        position: relative;
+    }
+
+    .visual-wrapper {
+        position: relative;
+        border-radius: 2rem;
+        overflow: hidden;
+        box-shadow: var(--shadow-2xl);
+        border: 1px solid var(--border-color);
+    }
+
+    .pivot-image {
+        width: 100%;
+        display: block;
+        transition: transform 10s ease;
+    }
+
+    .pivot-visual:hover .pivot-image {
+        transform: scale(1.1);
+    }
+
+    .visual-overlay {
+        position: absolute;
+        bottom: 2rem;
+        left: 2rem;
+        right: 2rem;
+        display: flex;
+        gap: 1rem;
+    }
+
+    .overlay-stat {
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(8px);
+        padding: 1rem 1.5rem;
+        border-radius: 1rem;
+        flex: 1;
+        text-align: center;
+        border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .stat-num {
+        display: block;
+        font-family: var(--font-heading);
+        font-weight: 800;
+        font-size: 1.5rem;
+        color: var(--text-color-main);
+    }
+
+    .stat-label {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--text-color-muted);
+    }
+
+    @keyframes pulse {
+        0% { opacity: 0.6; }
+        50% { opacity: 1; }
+        100% { opacity: 0.6; }
+    }
+
+    @media (max-width: 991px) {
+        .pivot-visual {
+            order: -1;
+        }
+    }
+</style>

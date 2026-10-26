@@ -1,0 +1,162 @@
+{{head}}
+
+<body class="{{body_class}}">
+    {{header}}
+
+    <main>
+        <style>
+            .reset-hub-container {
+                max-width: 1000px;
+                margin: 10rem auto 6rem;
+                padding: 0 2rem;
+            }
+            .hub-header {
+                text-align: center;
+                margin-bottom: 4rem;
+            }
+            .hub-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+            }
+            .day-card {
+                background: var(--background-secondary);
+                border: 1px solid var(--border-color);
+                border-radius: 1.5rem;
+                padding: 2.5rem;
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                text-decoration: none;
+                color: inherit;
+            }
+            .day-card:hover {
+                transform: translateY(-5px);
+                border-color: var(--primary-color);
+                box-shadow: var(--shadow-xl);
+            }
+            .day-num {
+                font-size: 0.8rem;
+                font-weight: 800;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                color: var(--primary-color);
+                margin-bottom: 1rem;
+            }
+            .day-title {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+                color: var(--text-color-emphasis);
+            }
+            .day-desc {
+                font-size: 1rem;
+                color: var(--text-color-muted);
+                line-height: 1.6;
+                margin-bottom: 2rem;
+                flex-grow: 1;
+            }
+            .day-status {
+                font-size: 0.8rem;
+                font-weight: 700;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            .status-dot {
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: var(--border-color);
+            }
+            .day-card.active .status-dot {
+                background: #22c55e;
+                box-shadow: 0 0 10px #22c55e;
+            }
+        </style>
+
+        <div class="reset-hub-container">
+            <div class="hub-header">
+                <h1 style="font-size: 3rem; margin-bottom: 1rem;">Back to Being Dad Hub</h1>
+                <p style="font-size: 1.25rem; color: var(--text-color-muted); max-width: 600px; margin: 0 auto;">
+                    Welcome home. This is your plan to win back your time and show up for the people who matter.
+                </p>
+            </div>
+
+            <div class="hub-grid">
+                <!-- DAY 1 -->
+                <a href="/reset-day1" class="day-card active">
+                    <div class="day-num">Day 01</div>
+                    <h3 class="day-title">Finding the Leaks</h3>
+                    <p class="day-desc">Identify the "Work Brain" loops and house chaos that are stealing your presence.</p>
+                    <div class="day-status">
+                        <div class="status-dot"></div>
+                        <span>Ready to Start</span>
+                    </div>
+                </a>
+
+                <!-- DAY 2 -->
+                <a href="/reset-day2" class="day-card active">
+                    <div class="day-num">Day 02</div>
+                    <h3 class="day-title">The Morning Reset</h3>
+                    <p class="day-desc">Build a simple 15-minute start to your day that protects your peace.</p>
+                    <div class="day-status">
+                        <div class="status-dot"></div>
+                        <span>Ready to Start</span>
+                    </div>
+                </a>
+
+                <!-- DAY 3 -->
+                <a href="/reset-day3" class="day-card active">
+                    <div class="day-num">Day 03</div>
+                    <h3 class="day-title">The Family Dashboard</h3>
+                    <p class="day-desc">Stop being the human search engine. Get the house logic out of your head.</p>
+                    <div class="day-status">
+                        <div class="status-dot"></div>
+                        <span>Ready to Start</span>
+                    </div>
+                </a>
+
+                <!-- DAY 4 -->
+                <a href="/reset-day4" class="day-card active">
+                    <div class="day-num">Day 04</div>
+                    <h3 class="day-title">Talking Better</h3>
+                    <p class="day-desc">The "Kind Ask" script and the weekly check-in to stay on the same team.</p>
+                    <div class="day-status">
+                        <div class="status-dot"></div>
+                        <span>Ready to Start</span>
+                    </div>
+                </a>
+
+                <!-- DAY 5 -->
+                <a href="/reset-day5" class="day-card active">
+                    <div class="day-num">Day 05</div>
+                    <h3 class="day-title">The Weekly Reset</h3>
+                    <p class="day-desc">The 20-minute habit that keeps the win going, week after week.</p>
+                    <div class="day-status">
+                        <div class="status-dot"></div>
+                        <span>Ready to Start</span>
+                    </div>
+                </a>
+
+                <!-- BONUS -->
+                <a href="#" class="day-card" style="border-style: dashed;">
+                    <div class="day-num" style="color: var(--gold-accent);">Bonus</div>
+                    <h3 class="day-title">The AI Home Assistant</h3>
+                    <p class="day-desc">15+ AI prompts to handle meal planning, chores, and family schedules.</p>
+                    <div class="day-status">
+                        <div class="status-dot"></div>
+                        <span style="opacity: 0.5;">Locked</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    {{footer}}
+    {{modals}}
+    {{chatbot}}
+    {{scripts}}
+</body>
+</html>

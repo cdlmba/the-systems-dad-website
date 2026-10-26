@@ -1,0 +1,23 @@
+{
+  "name": "the-systems-dad-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The Systems Dad (TSD) Website & Brand Ecosystem",
+  "scripts": {
+    "dev": "python -m http.server 3000",
+    "build": "python build_site.py && python build_blog.py && python build_sitemap.py",
+    "build:site": "python build_site.py",
+    "build:blog": "python build_blog.py",
+    "build:sitemap": "python build_sitemap.py",
+    "deploy": "npx wrangler pages deploy . --project-name thesystemsdad"
+  },
+  "keywords": [
+    "systems-dad",
+    "fatherhood",
+    "margin",
+    "productivity",
+    "dadops"
+  ],
+  "author": "Christopher Lynn",
+  "license": "UNLICENSED"
+}

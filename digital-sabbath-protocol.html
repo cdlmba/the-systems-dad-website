@@ -1,0 +1,687 @@
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekend Reset: The Step-by-Step Guide | The Systems Dad</title>
+
+    <!-- 1. CRITICAL: Inline Mobile Detection (Prevents layout jitter) -->
+    <script>
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            document.documentElement.classList.add('is-mobile');
+            document.body.classList.add('is-mobile');
+        }
+        
+        // 1.1 Global Configuration Access
+        window.siteConfig = {
+            globals: {
+                tidycal_url: "https://tidycal.com/christopherlynnsystems/30-minute-meeting",
+                cls_booking_price: "$2,800",
+                tsd_booking_price: "$97"
+            },
+            brand: "TSD",
+            version: "2"
+        };
+    </script>
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <!-- 2. STYLES (Load before analytics to prevent FOUC) -->
+    <link rel="stylesheet" href="/style.css?v=20260930e">
+
+    <!-- GA4 Systems Dad Index — G-W4TB1J0TNK only -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GT-PBSGZ5XB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-W4TB1J0TNK');
+    </script>
+
+    <!-- Microsoft Clarity Tracking -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "weaa6eknja");
+    </script>
+
+<!-- Whop Checkout Script -->
+<script async defer src="https://js.whop.com/static/checkout/loader.js"></script>
+
+<!-- SEO Meta Tags -->
+<meta name="description"
+    content="How to disconnect from work noise and reconnect with your family.">
+<link rel="canonical" href="https://thesystemsdad.com/digital-sabbath-protocol">
+<meta property="og:title" content="Weekend Reset: The Step-by-Step Guide | The Systems Dad">
+<meta property="og:description"
+    content="How to disconnect from work noise and reconnect with your family.">
+<meta property="og:image" content="https://thesystemsdad.com/images/HeadshotThumbnail.png">
+<meta property="og:url" content="https://thesystemsdad.com/digital-sabbath-protocol">
+<meta property="og:type" content="website">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Weekend Reset: The Step-by-Step Guide | The Systems Dad">
+<meta name="twitter:description" content="How to disconnect from work noise and reconnect with your family.">
+<meta name="twitter:image" content="https://thesystemsdad.com/images/HeadshotThumbnail.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap"
+    rel="stylesheet">
+
+<!-- Styles (Moved to top of head) -->
+
+<link rel="icon" type="image/png" href="/images/tsd-favicon.png?v=4">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"Christopher Lynn",
+  "url":"https://thesystemsdad.com",
+  "sameAs":["https://www.linkedin.com/in/ChristopherDLynn"],
+  "jobTitle":"Systems Consultant and Coach"
+}
+</script>
+
+<body class="brand-tsd">
+    <div class="promo-banner">
+    Real Talk Tuesday — <a href="/real-talk-tuesday">The Weekly Note for Dads →</a>
+</div>
+<header class="main-header">
+    <div class="main-container header-content">
+        <a href="/" class="logo">
+            <span class="logo-primary">the systems dad</span>
+        </a>
+
+        <nav class="main-nav">
+            <a href="/the-systems-dad-method">The Method</a>
+            <a href="/win">The House System</a>
+            <a href="/lab">Coaching</a>
+            <a href="/blog">Essays</a>
+            <a href="/real-talk-tuesday" class="nav-cta">The Weekly Note →</a>
+        </nav>
+        <button class="menu-toggle" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>
+
+
+    <main class="page-wrapper">
+        <style>
+            /* ================================================================ */
+            /* DESIGN TOKENS                                                    */
+            /* ================================================================ */
+            :root {
+                --guide-primary: #D4A017; /* Gold Accent */
+                --guide-bg: #2A5F4E; /* Deep Green Background */
+                --guide-bg2: #1e4538; /* Darker Green */
+                --guide-bg3: #367c66;
+                --guide-slate: #F8F4EF; /* Warm Cream Text */
+                --guide-muted: #a7b5a9; /* Muted Green-Gray */
+                --guide-border: rgba(248, 244, 239, 0.15);
+                --guide-radius: 10px;
+            }
+
+            /* ================================================================ */
+            /* PRINT RESET (Skill: premium-pdf-guide-architect)                 */
+            /* ================================================================ */
+            @page {
+                size: Letter portrait;
+                margin: 0;
+            }
+
+            .page-wrapper {
+                width: 7.75in;
+                margin: 0 auto;
+                background: var(--guide-bg);
+                color: var(--guide-slate);
+            }
+
+            .print-section {
+                width: 7.75in;
+                min-height: 10.25in;
+                padding: 0.5in 0.75in;
+                position: relative;
+                break-after: page;
+                display: flex;
+                flex-direction: column;
+                background: var(--guide-bg);
+            }
+
+            /* COVER */
+            .cover {
+                justify-content: flex-start;
+                padding: 0.5in 0.75in;
+                background: var(--guide-bg);
+                min-height: 10.25in;
+            }
+
+            .cover-hero-img {
+                width: 100%;
+                height: 3in;
+                object-fit: cover;
+                border-radius: var(--guide-radius);
+                border: 1px solid rgba(212, 160, 23, 0.28);
+                margin-bottom: 2rem;
+                box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.5);
+            }
+
+            .cover-card {
+                background: var(--guide-bg2);
+                border: 1px solid var(--guide-border);
+                border-radius: var(--guide-radius);
+                padding: 2rem 2.25rem;
+                width: 100%;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            }
+
+            .cover-brand {
+                color: var(--guide-primary);
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+                font-size: 8pt;
+                font-weight: 700;
+                margin-bottom: 0.5rem;
+            }
+
+            .cover-title {
+                font-size: 34pt;
+                font-weight: 800;
+                line-height: 1.0;
+                color: #fff;
+                margin-bottom: 0.75rem;
+            }
+
+            .cover-title span {
+                color: var(--guide-primary);
+            }
+
+            .cover-subtitle {
+                font-size: 12pt;
+                color: var(--guide-muted);
+                font-style: italic;
+                font-family: var(--font-serif);
+                margin-bottom: 1.5rem;
+            }
+
+            .cover-deck {
+                font-size: 10pt;
+                color: var(--guide-slate);
+                line-height: 1.6;
+                border-left: 3px solid var(--guide-primary);
+                padding-left: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .pill {
+                background: rgba(212, 160, 23, 0.10);
+                border: 1px solid rgba(212, 160, 23, 0.28);
+                color: var(--guide-primary);
+                font-size: 7.5pt;
+                font-weight: 700;
+                padding: 0.2rem 0.6rem;
+                border-radius: 2rem;
+                letter-spacing: 0.04em;
+                text-transform: uppercase;
+            }
+
+            .cover-bottom {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-top: 1px solid var(--guide-border);
+                padding-top: 1.25rem;
+                margin-top: 1.5rem;
+            }
+
+            .cover-author {
+                font-size: 8.5pt;
+                color: var(--guide-muted);
+            }
+
+            .cover-author strong {
+                color: var(--guide-slate);
+            }
+
+            /* MAIN CONTENT */
+            .section-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding-bottom: 0.5rem;
+                border-bottom: 1px solid rgba(212, 160, 23, 0.28);
+                margin-bottom: 0.75rem;
+            }
+
+            .badge {
+                background: rgba(212, 160, 23, 0.10);
+                border: 1px solid rgba(212, 160, 23, 0.28);
+                color: var(--guide-primary);
+                padding: 0.2rem 0.6rem;
+                border-radius: 6px;
+                font-weight: 800;
+                font-size: 7.5pt;
+                text-transform: uppercase;
+            }
+
+            .hero-row {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1.25rem;
+                margin-bottom: 1.25rem;
+            }
+
+            .hero-img {
+                width: 100%;
+                height: 2in;
+                object-fit: cover;
+                border-radius: var(--guide-radius);
+                border: 1px solid var(--guide-border);
+            }
+
+            .mission-box {
+                background: rgba(212, 160, 23, 0.10);
+                border: 1px solid rgba(212, 160, 23, 0.28);
+                border-radius: var(--guide-radius);
+                padding: 0.75rem 1rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .mission-box h4 {
+                color: var(--guide-primary);
+                font-size: 7.5pt;
+                text-transform: uppercase;
+                letter-spacing: 0.06em;
+                margin-bottom: 0.4rem;
+            }
+
+            .mission-box p {
+                font-size: 9pt;
+                color: var(--guide-slate);
+                font-style: italic;
+                line-height: 1.5;
+            }
+
+            .checklist-block {
+                background: var(--guide-bg2);
+                border: 1px solid var(--guide-border);
+                border-radius: var(--guide-radius);
+                padding: 1rem 1.25rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .checklist-label {
+                font-size: 8.5pt;
+                font-weight: 700;
+                color: var(--guide-primary);
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                border-bottom: 1px solid var(--guide-border);
+                padding-bottom: 0.35rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .check-item {
+                display: flex;
+                align-items: flex-start;
+                gap: 0.65rem;
+                margin-bottom: 0.65rem;
+                font-size: 10pt;
+                color: var(--guide-muted);
+                line-height: 1.5;
+            }
+
+            .check-box {
+                width: 16px;
+                height: 16px;
+                border: 1.5px solid rgba(212, 160, 23, 0.28);
+                border-radius: 3px;
+                flex-shrink: 0;
+                margin-top: 2px;
+            }
+
+            .mode-table {
+                width: 100%;
+                border-collapse: collapse;
+                font-size: 10pt;
+                margin-bottom: 1.5rem;
+            }
+
+            .mode-table thead th {
+                text-align: left;
+                padding: 0.6rem 0.9rem;
+                color: var(--guide-primary);
+                font-weight: 700;
+                font-size: 8pt;
+                text-transform: uppercase;
+                background: var(--guide-bg2);
+                border-bottom: 2px solid rgba(212, 160, 23, 0.28);
+            }
+
+            .mode-table td {
+                padding: 0.85rem 0.9rem;
+                color: var(--guide-muted);
+                border-bottom: 1px solid var(--guide-border);
+            }
+
+            .activity-card {
+                background: var(--guide-bg3);
+                border: 1px solid var(--guide-border);
+                border-radius: var(--guide-radius);
+                padding: 1rem 1.1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .activity-card h4 {
+                font-size: 9.5pt;
+                color: #D4A017;
+                margin-bottom: 0.4rem;
+                text-transform: uppercase;
+            }
+
+            .activity-card p {
+                font-size: 9.5pt;
+                color: var(--guide-muted);
+            }
+
+            .blank-line {
+                border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
+                height: 0.45in;
+                margin-top: 0.4rem;
+            }
+
+            .callout {
+                border-left: 3px solid #D4A017;
+                background: rgba(212, 160, 23, 0.10);
+                padding: 0.9rem 1.25rem;
+                border-radius: 0 8px 8px 0;
+                font-size: 10pt;
+                color: var(--guide-slate);
+                font-style: italic;
+                margin-bottom: 1rem;
+            }
+
+            .page-footer {
+                margin-top: auto;
+                padding-top: 1rem;
+                border-top: 1px solid var(--guide-border);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                opacity: 0.6;
+            }
+
+            .page-footer span {
+                font-size: 8.5pt;
+            }
+
+            .closing-grid {
+                display: grid;
+                grid-template-columns: 2.5in 1fr;
+                gap: 2.25rem;
+                align-items: flex-start;
+                margin: auto 0;
+            }
+
+            .closing-photo-container {
+                width: 100%;
+                height: 4in;
+                border-radius: var(--guide-radius);
+                overflow: hidden;
+                border: 1px solid rgba(212, 160, 23, 0.28);
+            }
+
+            .closing-photo {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            @media print {
+                .main-header, .main-footer, .chatbot-trigger {
+                    display: none !important;
+                }
+                .page-wrapper {
+                   margin: 0 !important;
+                   padding: 0 !important;
+                   width: 100% !important;
+                }
+            }
+
+            @media (max-width: 8in) {
+                .page-wrapper {
+                    width: 100%;
+                    padding: 2rem;
+                }
+                .print-section {
+                    width: 100%;
+                    min-height: auto;
+                    padding: 2rem 0;
+                    break-after: auto;
+                }
+                .hero-row, .closing-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+
+        <!-- PAGE 1: COVER -->
+        <div class="print-section cover">
+            <img src="/images/digital_sabbath_hero.webp" class="cover-hero-img" alt="Digital Sabbath">
+
+            <div class="cover-card">
+                <div class="cover-brand">The Systems Dad</div>
+                <h1 class="cover-title">The Digital<br><span>Sabbath Guide</span></h1>
+                <p class="cover-subtitle">"Good work during the week needs real rest on the weekend. Shut down the laptop."</p>
+
+                <div class="cover-deck">
+                    Your brain is still thinking about work at 7 PM on a Friday. You're physically home, but mentally you're still at your desk. This checklist helps you switch off work brain and be completely there with your family for 24 hours.
+                </div>
+
+                <div class="cover-bottom">
+                    <div class="cover-author">
+                        <strong>Christopher Lynn</strong> · @TheSystemsDad<br>
+                        christopherlynnsystems.com
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGE 2: SHUTDOWN PROTOCOL (A) -->
+        <div class="print-section">
+            <div class="section-header">
+                <h2 style="font-size:20pt; color:#fff;">Step 1: The Friday Shutdown</h2>
+                <span style="color: var(--guide-muted); font-size: 9pt; font-weight: 600;">FRIDAY 4:00 PM</span>
+            </div>
+
+            <div class="hero-row">
+                <img src="/images/digital_sabbath_hero.webp" class="hero-img" alt="Digital Sabbath">
+                <div class="mission-box">
+                    <h4>The Goal</h4>
+                    <p>"Wrap up the week so you can walk through the front door with a clear head."</p>
+                </div>
+            </div>
+
+            <div class="checklist-block">
+                <div class="checklist-label">The Shutdown Sequence</div>
+                <div class="check-item"><div class="check-box"></div><div><strong>Weekly Review Complete:</strong> Did you review what got done?</div></div>
+                <div class="check-item"><div class="check-box"></div><div><strong>"Loose Ends" Dump:</strong> Write down unfinished ideas in your notebook or app.</div></div>
+                <div class="check-item"><div class="check-box"></div><div><strong>Turn Off Alerts:</strong> Mute work email, Slack, and LinkedIn.</div></div>
+                <div class="check-item"><div class="check-box"></div><div><strong>Laptop Closed:</strong> Lid shut. Out of sight. Out of mind.</div></div>
+            </div>
+
+            <div class="page-footer">
+                <span>CHRISTOPHER LYNN | SYSTEMS</span>
+                <span>Section A: The Friday Shutdown</span>
+            </div>
+        </div>
+
+        <!-- PAGE 3: SHUTDOWN PROTOCOL (B) -->
+        <div class="print-section">
+            <div class="section-header">
+                <h2 style="font-size:20pt; color:#fff;">Step 2: Mental Reset</h2>
+                <span style="color: var(--guide-muted); font-size: 9pt; font-weight: 600;">FRIDAY 6:00 PM</span>
+            </div>
+
+            <div class="checklist-block">
+                <div class="checklist-label">The Mental Reset</div>
+                <p style="font-size:10pt; color:var(--guide-muted); margin-bottom:0.75rem;">Say this out loud to yourself or your partner:</p>
+                <div class="callout">
+                    "I'm done for the week. My notes are saved. I am with my family until Monday. Everything else can wait."
+                </div>
+            </div>
+
+            <h3 style="font-size:11pt; color:#fff; margin-bottom:1rem;">Choose Your Sabbath Mode</h3>
+            <table class="mode-table">
+                <thead>
+                    <tr><th>Mode</th><th>What You Do</th><th>Select</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>🟢 Grounded</td><td>Phone in a drawer for 24 hours.</td><td>[ ]</td></tr>
+                    <tr><td>🟡 Glove-Box</td><td>Emergency family calls only.</td><td>[ ]</td></tr>
+                    <tr><td>🟠 Simple Mode</td><td>No social media. Camera only.</td><td>[ ]</td></tr>
+                </tbody>
+            </table>
+
+            <div class="page-footer">
+                <span>CHRISTOPHER LYNN | SYSTEMS</span>
+                <span>Section B: Mental Reset</span>
+            </div>
+        </div>
+
+        <!-- PAGE 4: PRESENCE BLUEPRINT -->
+        <div class="print-section">
+            <div class="section-header">
+                <h2 style="font-size:20pt; color:#fff;">Your Weekend Rhythm</h2>
+                <span style="color: var(--guide-muted); font-size: 9pt; font-weight: 600;">WEEKEND BLOCKS</span>
+            </div>
+
+            <div class="activity-card">
+                <h4>🎯 Family Time</h4>
+                <p>Active time with the kids. No phones. Full attention.</p>
+                <div class="blank-line"></div>
+            </div>
+            <div class="activity-card">
+                <h4>📖 Real Rest (No Screens)</h4>
+                <p>Reading, cooking, walking, or building something with your hands.</p>
+                <div class="blank-line"></div>
+            </div>
+            <div class="activity-card">
+                <h4>💤 Deep Rest</h4>
+                <p>Permission to stop. No guilt. Recharging your battery.</p>
+                <div class="blank-line"></div>
+            </div>
+
+            <div class="page-footer">
+                <span>CHRISTOPHER LYNN | SYSTEMS</span>
+                <span>Section C: Being Present</span>
+            </div>
+        </div>
+
+        <!-- PAGE 5: CLOSING -->
+        <div class="print-section">
+            <div class="closing-grid">
+                <div class="closing-photo-container">
+                    <img src="/images/ChristopherLynnHeadshot_v2.jpg?v=4" alt="Christopher Lynn" class="closing-photo">
+                </div>
+                <div class="closing-text">
+                    <h2>The grind was never the goal.</h2>
+                    <p>Your family doesn't need a perfect dad. They need a present one. The simple habits you built this week aren't about doing more. They're about clearing away distractions so you can do what only you can do: show up, be there, and lead the people who count on you.</p>
+
+                    <div style="margin-top:2rem; border-top: 1px solid var(--guide-border); padding-top: 1.5rem;">
+                        <h4 style="color:var(--guide-primary); font-size:9pt; text-transform:uppercase;">Take the Next Step</h4>
+                        <a href="/dad-mode-kit" style="display:inline-block; background:var(--guide-primary); color:var(--guide-bg); padding: 0.5rem 1rem; border-radius: 6px; font-weight: 800; font-size: 8.5pt; text-decoration:none; margin-top:0.5rem;">Get the Dad Mode Kit →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="page-footer" style="margin-top:auto;">
+                <span>© 2026 Christopher Lynn Systems, LLC.</span>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+    <div class="main-container">
+        <div class="footer-flex-row">
+            <div class="footer-brand">
+                <a href="/" class="logo"><span class="logo-primary">the systems dad</span></a>
+                <p class="footer-tagline">Helping dads stop being ghosts at home. Simple house systems for busy fathers.</p>
+                <div class="footer-nav-links" style="margin-top: 1rem; display: flex; gap: 1.25rem; flex-wrap: wrap; font-size: 0.9rem;">
+                    <a href="/the-systems-dad-method" style="color: var(--text-color-main); font-weight: 600; text-decoration: none;">The Method</a>
+                    <a href="/win" style="color: var(--text-color-main); font-weight: 600; text-decoration: none;">The House System</a>
+                    <a href="/lab" style="color: var(--text-color-main); font-weight: 600; text-decoration: none;">Coaching</a>
+                    <a href="/blog" style="color: var(--text-color-main); font-weight: 600; text-decoration: none;">Essays</a>
+                    <a href="/real-talk-tuesday" style="color: var(--text-color-main); font-weight: 600; text-decoration: none;">The Weekly Note</a>
+                </div>
+                <p class="footer-tagline" style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.85;">
+                    If you're in active crisis and need to reset your workday transition tonight, I built a specific tool for that: <a href="https://marginreset.com" target="_blank" style="color: var(--accent-color); font-weight: 700; text-decoration: underline;">marginreset.com</a>
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">&copy; 2026 Christopher Lynn Systems, LLC. All rights reserved. <br>
+                The Systems Dad is a brand of Christopher Lynn Systems, LLC. <br>
+                <span style="font-size: 0.8rem; opacity: 0.8;">
+                    <a href="/privacy" style="color: inherit;">Privacy Policy</a> |
+                    <a href="/terms" style="color: inherit;">Terms of Service</a> |
+                    <a href="/disclaimer" style="color: inherit;">Disclaimer</a>
+                </span>
+            </p>
+            <div class="footer-social">
+                <!-- X (Twitter) -->
+                <a href="https://x.com/TheSystemsDad" target="_blank" rel="noopener noreferrer" class="social-icon-link"
+                    aria-label="X (Twitter)">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>X</title>
+                        <path
+                            d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+                    </svg>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/ChristopherDLynn" target="_blank" rel="noopener noreferrer"
+                    class="social-icon-link" aria-label="LinkedIn">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>LinkedIn</title>
+                        <path
+                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/thesystemsdad" target="_blank" rel="noopener noreferrer"
+                    class="social-icon-link" aria-label="Instagram">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>Instagram</title>
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                </a>
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@cdlynn" target="_blank" rel="noopener noreferrer"
+                    class="social-icon-link" aria-label="YouTube">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>YouTube</title>
+                        <path
+                            d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545S-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="/js/core.js?v=4" defer></script>
+<script src="/js/systems-dad-bot-v4.js?v=4" defer></script>
+
+</body>
+</html>

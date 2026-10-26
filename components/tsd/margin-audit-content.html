@@ -1,0 +1,235 @@
+<section class="hero-section" style="padding-top: 8rem; padding-bottom: 4rem;">
+    <div class="main-container text-center">
+        <span class="eyebrow">Free Tool</span>
+        <h1 class="hero-title" style="font-size: clamp(2.5rem, 8vw, 4rem); margin-bottom: 2rem;">The Margin Audit™</h1>
+        <p class="hero-subtitle" style="max-width: 800px; margin: 0 auto 3rem; font-size: 1.25rem;">
+            Stop bringing work into the weekend. See exactly where you are leaking time. Identify the Work Residue. Reclaim your weekend.
+        </p>
+        <div class="hero-cta-group" style="justify-content: center; gap: 1rem; flex-wrap: wrap;">
+            <a href="#audit-tool" class="cta-button cta-button-primary">Start the Audit &darr;</a>
+            <a href="/images/margin-audit-worksheet.pdf" class="cta-button cta-button-secondary" download style="border: 1px solid currentColor; color: inherit; border-radius: 0.5rem; padding: 0.75rem 1.5rem; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; transition: all 0.2s ease; background: rgba(255,255,255,0.05);">Download Printable PDF &darr;</a>
+        </div>
+    </div>
+</section>
+
+{{client_logos}}
+
+<section id="audit-tool" class="section-padding" style="background: var(--bg-dark-secondary);">
+    <div class="main-container">
+        <div class="audit-card content-card"
+            style="background: var(--bg-dark); border: 1px solid var(--border-color); border-radius: 2rem; box-shadow: var(--shadow-2xl);">
+            <h2 style="margin-bottom: 3rem; text-align: center;">The Margin Audit</h2>
+
+            <div class="audit-questions" style="display: flex; flex-direction: column; gap: 3rem;">
+                <!-- Question 1 -->
+                <div class="audit-item">
+                    <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--primary-color);">1. Shutting It Off</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-color-muted);">How long does it take you to stop thinking about work and start actually hearing your kids?</p>
+                    <div class="latency-options" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <button class="audit-option" data-value="optimal"
+                            style="padding: 0.75rem 1.5rem; border-radius: 0.5rem; border: 1px solid var(--border-color); background: transparent; color: white; cursor: pointer;">Under 5 mins (Clean)</button>
+                        <button class="audit-option" data-value="drag"
+                            style="padding: 0.75rem 1.5rem; border-radius: 0.5rem; border: 1px solid var(--border-color); background: transparent; color: white; cursor: pointer;">30+ mins (High Residue)</button>
+                        <button class="audit-option" data-value="ghost"
+                            style="padding: 0.75rem 1.5rem; border-radius: 0.5rem; border: 1px solid var(--border-color); background: transparent; color: white; cursor: pointer;">Never. Ghost Mode.</button>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="audit-item">
+                    <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--primary-color);">2. Work Residue</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-color-muted);">Do you find yourself faking it at the dinner table while your brain is still stuck at the office? (1-10 on honesty)</p>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <input type="range" id="residue-slider" min="1" max="10" value="5"
+                            style="width: 100%; accent-color: var(--primary-color);">
+                        <div
+                            style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-color-muted); text-transform: uppercase; letter-spacing: 1px;">
+                            <span>Fully Home</span>
+                            <span id="residue-value">Level 5</span>
+                            <span>Pure Residue</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="audit-item">
+                    <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--primary-color);">3. The Closing Window</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-color-muted);">The childhood window is roughly 936 weeks (18 years). How much do you have left?</p>
+                    <div style="display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap;">
+                        <div style="flex: 1; min-width: 200px;">
+                            <label
+                                style="display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; color: var(--text-color-muted);">Age of oldest child</label>
+                            <input type="number" id="child-age" placeholder="Age..." min="0" max="18"
+                                style="width: 100%; padding: 0.75rem; border-radius: 0.5rem; border: 1px solid var(--border-color); background: var(--bg-dark-secondary); color: white;">
+                        </div>
+                        <div style="flex: 1; min-width: 200px;">
+                            <label
+                                style="display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; color: var(--text-color-muted);">Or, exact weeks remaining</label>
+                            <input type="number" id="weeks-remaining" placeholder="Weeks..."
+                                style="width: 100%; padding: 0.75rem; border-radius: 0.5rem; border: 1px solid var(--border-color); background: var(--bg-dark-secondary); color: white;">
+                        </div>
+                    </div>
+                    <div id="window-status"
+                        style="margin-top: 1.5rem; font-size: 0.9rem; padding: 1rem; background: rgba(245, 158, 11, 0.1); border-radius: 0.5rem; color: white; border: 1px solid rgba(245, 158, 11, 0.2);">
+                        Input age or weeks to see the window.
+                    </div>
+                </div>
+            </div>
+
+            <div
+                style="margin-top: 5rem; text-align: center; border-top: 1px solid var(--border-color); padding-top: 3rem;">
+                <h3 id="audit-result-title" style="margin-bottom: 1.5rem; color: white;">Run the numbers. See the truth.</h3>
+                <p id="audit-result-text"
+                    style="color: var(--text-color-muted); margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Make your selections above to see exactly where the Work Residue is hitting your family.
+                </p>
+
+                <!-- Lead Capture Form (appears after audit is complete) -->
+                <div id="lead-capture-form" style="display: none; max-width: 500px; margin: 0 auto 3rem; background: rgba(255,255,255,0.02); padding: 2rem; border-radius: 1rem; border: 1px solid rgba(255,255,255,0.08);">
+                    <h4 style="margin-bottom: 0.75rem; color: white; font-size: 1.1rem;">Want the fix, not just the score?</h4>
+                    <p style="color: var(--text-color-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Drop your email. I'll send you a short action plan based on your numbers. No sequences. Just the next step.</p>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        <input type="email" id="audit-email" placeholder="Your email" required style="flex: 1; min-width: 200px; padding: 0.75rem 1rem; border-radius: 0.5rem; border: 1px solid var(--border-color); background: var(--bg-dark); color: white;">
+                        <button type="button" id="submit-audit" class="cta-button cta-button-primary" style="padding: 0.75rem 1.5rem; border: none; cursor: pointer;">Send the Plan &rarr;</button>
+                    </div>
+                    <div id="audit-form-msg" style="margin-top: 1rem; font-size: 0.85rem; display: none;"></div>
+                </div>
+
+                <div class="result-cta" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                    <a href="/home-reset" class="cta-button cta-button-primary"
+                        style="font-size: 1.1rem; padding: 1.25rem 3rem;">
+                        Start the Free 5-Day Home Reset &rarr;
+                    </a>
+                    <a href="/images/margin-audit-worksheet.pdf" class="cta-button" download
+                        style="border: 1px solid currentColor; color: inherit; font-size: 1.1rem; padding: 1.25rem 3rem; text-decoration: none; font-weight: 600; border-radius: 0.5rem; display: inline-flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.05); transition: all 0.2s ease;">
+                        Download the Printable &darr;
+                    </a>
+                </div>
+            </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const auditOptions = document.querySelectorAll('.audit-option');
+        const residueSlider = document.getElementById('residue-slider');
+        const residueValue = document.getElementById('residue-value');
+        const ageInput = document.getElementById('child-age');
+        const weeksInput = document.getElementById('weeks-remaining');
+        const windowStatus = document.getElementById('window-status');
+        const resultTitle = document.getElementById('audit-result-title');
+        const resultText = document.getElementById('audit-result-text');
+
+        let selectedLatency = null;
+        const TOTAL_WEEKS = 936;
+
+        const updateAudit = (e) => {
+            let weeks = parseInt(weeksInput.value) || 0;
+            const age = parseFloat(ageInput.value) || 0;
+
+            // If age was changed, update weeks
+            if (e && e.target.id === 'child-age') {
+                weeks = Math.max(0, TOTAL_WEEKS - Math.floor(age * 52.143));
+                weeksInput.value = weeks;
+            } else if (e && e.target.id === 'weeks-remaining') {
+                // If weeks was changed, we don't necessarily update age as it's less precise
+            }
+
+            const percentageUsed = Math.min(100, Math.max(0, ((TOTAL_WEEKS - weeks) / TOTAL_WEEKS) * 100)).toFixed(1);
+
+            residueValue.textContent = `Level ${residueSlider.value}`;
+
+            if (weeks > 0) {
+                windowStatus.innerHTML = `Time remaining: <strong style="color: var(--primary-color);">${weeks} weeks</strong>. <span style="opacity: 0.8;">(${percentageUsed}% consumed)</span>`;
+            } else {
+                windowStatus.textContent = 'Input age or weeks to see the window.';
+            }
+
+            if (selectedLatency && weeks > 0) {
+                resultTitle.textContent = "Here's where you're leaking.";
+                let analysis = "";
+                const residue = parseInt(residueSlider.value);
+
+                if (selectedLatency === 'ghost' || residue > 7) {
+                    analysis = "You're in **Ghost Mode**. You're physically home but your brain is still at the office. Your family knows. ";
+                } else if (selectedLatency === 'drag' || residue > 4) {
+                    analysis = "You're carrying **Work Residue**. You're there, but you're not really there. The forced smiles. The half-listening. ";
+                } else {
+                    analysis = "You're holding it together. But the window is narrower than you think. One bad quarter away from slipping. ";
+                }
+
+                analysis += `With ${weeks} weeks left, this isn't a problem you can fix later.`;
+                resultText.innerHTML = analysis.replace(/\*\*(.*?)\*\*/g, '<strong style="color: var(--primary-color);">$1</strong>');
+                
+                // Show the lead capture form
+                leadForm.style.display = 'block';
+            }
+        };
+
+        auditOptions.forEach(opt => {
+            opt.addEventListener('click', () => {
+                auditOptions.forEach(o => {
+                    o.style.background = 'transparent';
+                    o.style.borderColor = 'var(--border-color)';
+                });
+                opt.style.background = 'rgba(245, 158, 11, 0.1)';
+                opt.style.borderColor = 'var(--primary-color)';
+                selectedLatency = opt.getAttribute('data-value');
+                updateAudit();
+            });
+        });
+
+        residueSlider.addEventListener('input', updateAudit);
+        ageInput.addEventListener('input', updateAudit);
+        weeksInput.addEventListener('input', updateAudit);
+        
+        // Lead Capture
+        const leadForm = document.getElementById('lead-capture-form');
+        const submitAuditBtn = document.getElementById('submit-audit');
+        const auditEmailInput = document.getElementById('audit-email');
+        const auditFormMsg = document.getElementById('audit-form-msg');
+
+        if (submitAuditBtn) {
+            submitAuditBtn.addEventListener('click', async () => {
+                const email = auditEmailInput.value.trim();
+                if (!email || !email.includes('@')) {
+                    auditFormMsg.style.display = 'block';
+                    auditFormMsg.style.color = '#ef4444';
+                    auditFormMsg.textContent = 'Enter a real email and I will send you the plan.';
+                    return;
+                }
+
+                submitAuditBtn.textContent = 'Sending...';
+                submitAuditBtn.disabled = true;
+
+                try {
+                    const res = await fetch('/api/lead-capture', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            type: 'Margin Audit',
+                            email: email,
+                            name: email.split('@')[0],
+                            formData: {
+                                latency: selectedLatency,
+                                residue: document.getElementById('residue-slider').value,
+                                weeks_remaining: document.getElementById('weeks-remaining').value
+                            }
+                        })
+                    });
+
+                    if (res.ok) {
+                        leadForm.innerHTML = '<p style="color: #10b981; font-weight: 600;">Got it. Check your inbox. I read these myself and I will send you the next step personally.</p>';
+                    } else {
+                        throw new Error('Failed');
+                    }
+                } catch (e) {
+                    auditFormMsg.style.display = 'block';
+                    auditFormMsg.style.color = '#ef4444';
+                    auditFormMsg.textContent = 'Something broke. Try again or email chris@christopherlynnsystems.com directly.';
+                    submitAuditBtn.textContent = 'Send the Plan →';
+                    submitAuditBtn.disabled = false;
+                }
+            });
+        }
+    });
+</script>

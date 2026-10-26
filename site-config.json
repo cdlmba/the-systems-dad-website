@@ -1,0 +1,454 @@
+{
+    "globals": {
+        "tidycal_url": "https://tidycal.com/christopherlynnsystems/30-minute-meeting",
+        "contact_email": "chris@christopherlynnsystems.com",
+        "cls_brand_name": "Christopher Lynn Systems",
+        "tsd_brand_name": "The Systems Dad",
+        "mr_brand_name": "MarginReset",
+        "mr_domain": "marginreset.com",
+        "mr_tagline": "The system for the 25 minutes that matter most.",
+        "cls_booking_price": "$2,800",
+        "rules_pack_price": "$47",
+        "install_price": "$2,800",
+        "automations_price": "$4,500 - $6,500",
+        "trenches_kit_price": "$97",
+        "marginreset_kit_price": "$97",
+        "marginreset_lab_price": "$49/mo",
+        "tsd_booking_price": "$97",
+        "stripe_firebreak": "https://buy.stripe.com/eVqcN55wO92mh0udsQdnW0h",
+        "stripe_sync_deck": "https://buy.stripe.com/5kQ6oHaR8a6qbGa1K8dnW0g",
+        "stripe_daughter_os": "https://buy.stripe.com/cNi00jbVcfqK9y2fAYdnW0f",
+        "stripe_hard_shutdown": "https://buy.stripe.com/cNi5kD5wOdiCdOi3SgdnW0e",
+        "stripe_margin_reset_system": "https://buy.stripe.com/8x200jf7oemG25A9cAdnW0c",
+        "stripe_logistical_gear_bundle": "https://buy.stripe.com/fZudR9cZgdiCeSm2OcdnW0d",
+        "stan_store_url": "https://stan.store/thesystemsdad"
+    },
+    "index.html": {
+        "title": "Steady Hand | Christopher Lynn Systems | Written Governance for Delivery Teams",
+        "description": "Stop burning 30 hours a week on the meeting treadmill. Steady Hand installs written governance and autonomous feedback loops to keep complex delivery calm, fast, and on track.",
+        "slug": ""
+    },
+    "install.html": {
+        "title": "Operational Debt Liquidation: Systems & Pricing | Christopher Lynn Systems",
+        "description": "Fixed-scope delivery systems from $750 diagnostic to $2,800 install. Built directly into Jira, Confluence, Notion, or Sheets for 20-100 person teams without administrative PMO bloat.",
+        "slug": "install"
+    },
+    "success.html": {
+        "title": "Order Confirmed | Christopher Lynn Systems",
+        "description": "Your payment has been received. Schedule your kickoff call and complete your intake details.",
+        "slug": "success"
+    },
+    "cancel.html": {
+        "title": "Checkout Incomplete | Christopher Lynn Systems",
+        "description": "Your payment was not completed. Book a 20-minute call to discuss your delivery schedule and questions.",
+        "slug": "cancel"
+    },
+    "one-shot-ai.html": {
+        "title": "One-Shot AI Clarity Session | Christopher Lynn Systems",
+        "description": "A 90-minute high-intensity session to audit your operational drag and blueprint your AI-enabled transition.",
+        "slug": "one-shot-ai"
+    },
+    "organizations.html": {
+        "title": "Systems for Organizations | Christopher Lynn Systems",
+        "description": "Operational systems, custom workflow sprints, and leadership training for engineering organizations.",
+        "slug": "organizations"
+    },
+    "services.html": {
+        "title": "Steady Hand Services & Architecture | Christopher Lynn Systems",
+        "description": "The written rules system and operational installations for enterprise program managers and directors. Stop being the emotional switchboard.",
+        "slug": "services"
+    },
+    "email.html": {
+        "title": "Free Guide: Stop the Status Call From Turning Personal | Steady Hand",
+        "description": "Get the 3-step written guide for enterprise delivery leaders to defuse defensive updates and keep meetings calm.",
+        "slug": "email"
+    },
+    "contact.html": {
+        "title": "Contact | Christopher Lynn Systems",
+        "description": "Direct contact line for technical leaders, directors, and executives. Inquire about portfolio operations consulting and architecture reviews.",
+        "slug": "contact"
+    },
+
+    "about.html": {
+        "title": "About Christopher Lynn | Steady Hand Enterprise Program Delivery",
+        "description": "Senior Program Manager with 15+ years enterprise delivery experience (financial services, PMP, SAFe). The written rules system to keep meetings calm and execution sharp.",
+        "slug": "about"
+    },
+    "assessment.html": {
+        "title": "The Systems Dad Audit | Christopher Lynn Systems",
+        "description": "Are you a high-performer at work, but a bottleneck at home? Identify your systemic failures in 2 minutes.",
+        "slug": "assessment"
+    },
+    "ai-pm-reset.html": {
+        "title": "2-Week AI PM Reset | Christopher Lynn Systems",
+        "description": "Done-for-you: status dashboards, async pipelines, shutdown system. Fully built in 2 weeks.",
+        "slug": "ai-pm-reset"
+    },
+    "total-stewardship-audit.html": {
+        "title": "The Total Stewardship Audit | Lead at Work. Win at Home.",
+        "description": "The high-authority diagnostic for technical leaders. Measure your operational floor and domestic ceiling in under 3 minutes.",
+        "slug": "total-stewardship-audit"
+    },
+    "resources.html": {
+        "title": "Resources & Toolkits for Technical Leaders | Christopher Lynn Systems",
+        "description": "Downloadable frameworks, prompt kits, and manuals to help you build AI-enabled systems.",
+        "slug": "resources"
+    },
+    "coaching.html": {
+        "title": "Executive Systems Coaching | Christopher Lynn Systems",
+        "description": "Personalized 1:1 systems implementation and strategic coaching for program managers and operations leaders.",
+        "slug": "coaching"
+    },
+    "courses.html": {
+        "title": "Systems Training & Courses | Christopher Lynn Systems",
+        "description": "Self-paced and cohort-based training to help you master AI-enabled operations and margin-first productivity.",
+        "slug": "courses"
+    },
+    "ai-pm-playbook.html": {
+        "title": "AI PM Ops Playbook | Christopher Lynn Systems",
+        "description": "Ready-to-use prompt stacks and operational templates for Technical Program Managers and Engineering Leaders using Gemini and Copilot.",
+        "slug": "ai-pm-playbook"
+    },
+    "blog.html": {
+        "title": "The Systems Blog | Christopher Lynn Systems",
+        "description": "Strategies on AI-enabled operations, margin-first productivity, and technical portfolio governance.",
+        "slug": "blog"
+    },
+    "misogi.html": {
+        "title": "Misogi: Challenging Your Operational Limits | Christopher Lynn Systems",
+        "description": "Exploring the concept of Misogi and how it applies to personal and professional system design.",
+        "slug": "misogi"
+    },
+    "case-studies.html": {
+        "title": "Client Case Studies & Results | Christopher Lynn Systems",
+        "description": "Real-world results of how systems have stabilized portfolios and accelerated operational readiness.",
+        "slug": "case-studies"
+    },
+    "shop.html": {
+        "title": "Systems Dad Store | Toolkits & Manuals",
+        "description": "Premium resources to accelerate your journey from bottleneck to strategic lead.",
+        "slug": "shop"
+    },
+    "margin-first-productivity.html": {
+        "title": "Margin-First Productivity | Architecture Over Reaction",
+        "description": "The proprietary 3-step operating model for Technical PMs to reclaim 20+ hours a week and eliminate coordination chaos.",
+        "slug": "margin-first-productivity"
+    },
+    "pool.html": {
+        "title": "Green Meadows Pool | Proof of Concept",
+        "description": "Southeast Springfield's Neighborhood Pool Since 1962.",
+        "slug": "pool"
+    },
+    "_tsd/systems-dad-reset-bundle.html": {
+        "title": "The Reset Gear | The Systems Dad",
+        "description": "Get the exact worksheets, AI prompt kits, and checklists to shut work off, organize house logistics, and win back your home.",
+        "slug": "systems-dad-reset-bundle"
+    },
+    "_tsd/index.html": {
+        "title": "Win at Home | The Systems Dad",
+        "description": "Simple systems for busy dads. Stop drowning in house chaos, put your phone away at 5:15, and actually be there for your kids.",
+        "slug": ""
+    },
+    "_tsd/home-os.html": {
+        "title": "Home Systems Session | The Systems Dad",
+        "description": "A 1:1 session to organize your household routines and be present at the dinner table.",
+        "slug": "home-os"
+    },
+    "_tsd/450-firebreak.html": {
+        "title": "The 4:50 Reset Routine | The Systems Dad",
+        "description": "Stop being a ghost at the dinner table. A simple routine to leave work at your desk and shut the work brain off before dinner.",
+        "slug": "450-firebreak"
+    },
+
+    "_tsd/about.html": {
+        "title": "About the Systems Dad | Simple Routines for Busy Dads",
+        "description": "Why professional organization belongs at home. Rebuilding time for what matters most.",
+        "slug": "about"
+    },
+    "_tsd/assessment.html": {
+        "title": "The Home Systems Audit | Win at Home",
+        "description": "Identify where house chaos is stealing your family time in under 2 minutes.",
+        "slug": "assessment",
+        "og_image": "tsd-audit-hero.jpg"
+    },
+    "_tsd/architecture-audit.html": {
+        "title": "Presence Audit | The Systems Dad",
+        "description": "A simple check for dads who are winning at work but losing at home.",
+        "slug": "architecture-audit",
+        "og_image": "tsd-audit-hero.jpg"
+    },
+    "_tsd/home-reset.html": {
+        "title": "5-Day Dad Systems Reset — Win at Home | The Systems Dad",
+        "description": "Reclaim your presence and stop being the family search engine. Join the 5-Day Reset for dads who want to win at home.",
+        "slug": "home-reset"
+    },
+    "_tsd/home-reset-email.html": {
+        "title": "The 5-Day Dad Reset | Real Talk for Busy Dads",
+        "description": "Reclaim your evenings. Join the 5-Day Dad Systems Reset to audit your schedule, simplify your morning, and win at home.",
+        "slug": "home-reset-email"
+    },
+    "_tsd/home-systems.html": {
+        "title": "Home Systems | The Systems Dad",
+        "description": "Run your home routines with simple systems that keep everyone on the same page.",
+        "slug": "home-systems"
+    },
+    "_tsd/margin-first-productivity.html": {
+        "title": "Margin-First Productivity (Family Edition) | The Systems Dad",
+        "description": "Reclaim your time and win at home with a simple 3-step routine.",
+        "slug": "margin-first-productivity"
+    },
+    "_tsd/agile-at-home-v2.html": {
+        "title": "Agile at Home OS | The Systems Dad",
+        "description": "Stop being the project manager for your family. Start being Dad.",
+        "slug": "agile-at-home-v2"
+    },
+    "_tsd/agile-at-home-teaser.html": {
+        "title": "Home Stress Audit | The Systems Dad",
+        "description": "The invisible friction that turns dads into household bottlenecks.",
+        "slug": "agile-at-home-teaser"
+    },
+    "_tsd/agile-at-home/index.html": {
+        "title": "The Home Reset Dashboard | The Systems Dad",
+        "description": "Set up the shared dashboard for your family.",
+        "slug": "agile-at-home"
+    },
+    "_tsd/agile-at-home/module-1.html": {
+        "title": "The Home Reset: Household Hub | The Systems Dad",
+        "description": "Setting up your family dashboard.",
+        "slug": "agile-at-home/module-1"
+    },
+    "_tsd/agile-at-home/module-2.html": {
+        "title": "The Home Reset: Sunday Reset Sync | The Systems Dad",
+        "description": "Planning your week ahead.",
+        "slug": "agile-at-home/module-2"
+    },
+    "_tsd/agile-at-home/module-3.html": {
+        "title": "The Home Reset: House Information Hub | The Systems Dad",
+        "description": "Putting your family info in one clear place.",
+        "slug": "agile-at-home/module-3"
+    },
+    "_tsd/agile-at-home/module-4.html": {
+        "title": "The Home Reset: Finding Your Free Time | The Systems Dad",
+        "description": "Reclaiming an hour of quiet every evening.",
+        "slug": "agile-at-home/module-4"
+    },
+    "_tsd/agile-at-home/resources.html": {
+        "title": "The Home Reset: Resources | The Systems Dad",
+        "description": "Templates and scripts to get your home on the same page.",
+        "slug": "agile-at-home/resources"
+    },
+    "_tsd/blog.html": {
+        "title": "The Systems Dad Blog | Simple Routines for Busy Dads",
+        "description": "Practical systems for the busy dad.",
+        "slug": "blog"
+    },
+    "_tsd/digital-sabbath-optin.html": {
+        "title": "The Weekend Routine | The Systems Dad",
+        "description": "Reclaim 24 hours of quiet and presence every weekend.",
+        "slug": "digital-sabbath-optin"
+    },
+    "_tsd/digital-sabbath-protocol.html": {
+        "title": "Weekend Reset: The Step-by-Step Guide | The Systems Dad",
+        "description": "How to disconnect from work noise and reconnect with your family.",
+        "slug": "digital-sabbath-protocol"
+    },
+    "_tsd/kpi-audit.html": {
+        "title": "The Family Margin Audit | The Systems Dad",
+        "description": "Find out where work stress is creeping into your family time.",
+        "slug": "kpi-audit"
+    },
+    "_tsd/shop.html": {
+        "title": "Systems Gear & Tools | The Systems Dad",
+        "description": "Simple systems, templates, and frameworks for busy dads. Stop drowning in house chaos and get your margin back.",
+        "slug": "shop"
+    },
+    "_tsd/lab.html": {
+        "title": "1:1 Coaching with Christopher Lynn | The Systems Dad",
+        "description": "1:1 coaching for busy professionals who want to get their home running as smoothly as their workday.",
+        "slug": "lab"
+    },
+    "_tsd/the-systems-dad-method.html": {
+        "title": "The Systems Dad Method | Stop Being a Ghost Dad",
+        "description": "The 90-day proprietary return for high-performing technical leaders. Home by 5:15, phone on the charger, present with your family.",
+        "slug": "the-systems-dad-method",
+        "og_image": "ChristopherLynnHeadshot_v2.jpg"
+    },
+    "_tsd/method.html": {
+        "title": "The Systems Dad Method | Stop Being a Ghost Dad",
+        "description": "The 90-day proprietary return for high-performing technical leaders. Home by 5:15, phone on the charger, present with your family.",
+        "slug": "method",
+        "og_image": "ChristopherLynnHeadshot_v2.jpg"
+    },
+    "_tsd/real-talk-tuesday.html": {
+        "title": "Real Talk Tuesday — The Weekly Note for Dads",
+        "description": "One honest moment. One simple routine. One step you can take before Friday. Read by 1,000+ dads.",
+        "slug": "real-talk-tuesday"
+    },
+    "_tsd/handshake.html": {
+        "title": "The Presence Handshake: Stop Being a Ghost Dad | The Systems Dad",
+        "description": "A simple 3-step routine for dads to leave work stress at the door and show up for their families.",
+        "slug": "handshake"
+    },
+    "_tsd/total-stewardship-audit.html": {
+        "title": "The Home Systems Audit | Lead at Work. Win at Home.",
+        "description": "A quick 3-minute check for dads to see where house chaos is stealing family time.",
+        "slug": "total-stewardship-audit"
+    },
+    "_tsd/handshake-access.html": {
+        "title": "Access Granted: The Presence Handshake Guide | The Systems Dad",
+        "description": "Your 3-step routine for reclaiming the dinner table. Download the guide and use the script tonight.",
+        "slug": "handshake-access",
+        "og_image": "tsd_presence_handshake_blueprint.png"
+    },
+    "_tsd/zero-residue.html": {
+        "title": "Zero Residue Presence | The Systems Dad",
+        "description": "Shut down work for the day and walk through the door off the hook.",
+        "slug": "zero-residue",
+        "og_image": "HeadshotThumbnail.png"
+    },
+    "_tsd/trenches-kit-sources.html": {
+        "title": "The Trenches Kit: Sources | The Systems Dad",
+        "description": "Worksheets, prompt kits, and guides for the dad running the home.",
+        "slug": "trenches-kit-sources"
+    },
+    "_tsd/implementation-bridge.html": {
+        "title": "Implementation Hub | The Systems Dad",
+        "description": "Your access gate to the Systems Dad digital guides and interactive Notion workspace.",
+        "slug": "implementation-bridge"
+    },
+    "_tsd/stewardship-briefing.html": {
+        "title": "The Home Systems Briefing — Weekly Note for Dads",
+        "description": "One honest moment. One simple routine. One step you can take before Friday.",
+        "slug": "stewardship-briefing",
+        "og_image": "HeadshotThumbnail.png"
+    },
+    "_tsd/work-brain-reset.html": {
+        "title": "14-Day Work Brain Reset | The Systems Dad",
+        "description": "Stop carrying work stress into your living room. A 14-day reset to shut off the work brain and be there for your kids.",
+        "slug": "work-brain-reset",
+        "og_image": "ghost_at_dinner_table_1774490562808.png",
+        "template": "work-brain-reset.template.html"
+    },
+    "_mr/index.html": {
+        "title": "Physically home by 5:15. Mentally still at work? | MarginReset",
+        "description": "Stop being a ghost at the dinner table. The 10-minute transition protocol to walk through the front door actually present.",
+        "slug": "",
+        "og_image": "HeadshotThumbnail.png"
+    },
+    "_mr/playbook.html": {
+        "title": "The MarginReset Playbook — The 4:50 Protocol | MarginReset",
+        "description": "Shut the work-brain off. The mechanical shutdown protocol for the 25 minutes between closing your laptop and walking through the front door.",
+        "slug": "playbook",
+        "og_image": "HeadshotThumbnail.png"
+    },
+    "_mr/about.html": {
+        "title": "My Story — From Ghost Dad to Present Father | MarginReset",
+        "description": "How a Senior Technical Program Manager stopped losing the 4:50 to 5:15 window and engineered a way to be actually home for dinner.",
+        "slug": "about",
+        "og_image": "HeadshotThumbnail.png"
+    },
+    "_mr/problem.html": {
+        "title": "Why Your Brain Won't Shut Off After Work | MarginReset",
+        "description": "Your body walked through the front door. Your brain didn't. Here's what's actually happening — and how to fix it in 10 minutes.",
+        "slug": "problem",
+        "og_image": "HeadshotThumbnail.png"
+    },
+    "_mr/audit.html": {
+        "title": "The Margin Audit™ | Stop Being a Ghost Dad",
+        "description": "Measure your work residue and identify where you are leaking family time.",
+        "slug": "audit",
+        "og_image": "tsd-audit-hero.jpg"
+    },
+    "_mr/brief.html": {
+        "title": "The Margin Briefing — Reclaim Your Presence | MarginReset",
+        "description": "The weekly professional briefing for high-performance operators. Reclaiming your dinner table from the coordination tax of work stress.",
+        "slug": "brief",
+        "og_image": "HeadshotThumbnail.png"
+    },
+    "_mr/blog.html": {
+        "title": "Stories from the Front Door | MarginReset Blog",
+        "description": "Weekly experiments and case studies from executive dads who are reclaiming their presence.",
+        "slug": "blog",
+        "og_image": "HeadshotThumbnail.png"
+    },
+    "_mr/reset.html": {
+        "title": "The DFY Home System for Dads in Active Overwhelm | MarginReset",
+        "description": "A plug-and-play home operating system to stop work bleeding into dinner and win back your weekends.",
+        "slug": "reset",
+        "og_image": "ghost_at_dinner_table_1774490562808.png"
+    },
+    "_mr/residue-audit.html": {
+        "title": "The Work Residue Audit — How Much Is Work Following You Home? | MarginReset",
+        "description": "7 questions. 90 seconds. Find out exactly where your mental margin is leaking and get your personalized reset plan.",
+        "slug": "residue-audit",
+        "og_image": "HeadshotThumbnail.png"
+    },
+    "_mr/margin-reset-system.html": {
+        "title": "The Margin Reset Playbook | MarginReset",
+        "description": "Operational gear for the 25 minutes between work and home. Not a course. The $147 exact system to stop work from following you through the front door.",
+        "slug": "margin-reset-system",
+        "og_image": "HeadshotThumbnail.png"
+    },
+    "_mr/ghost-dad-scan.html": {
+        "title": "The Ghost Dad Scan — Are you physically there, but mentally gone? | MarginReset",
+        "description": "5 questions. 60 seconds. An honest assessment of your true presence at home and the specific protocol to fix Ghost Dad Syndrome.",
+        "slug": "ghost-dad-scan",
+        "og_image": "ghost_at_dinner_table_1774490562808.png"
+    },
+    "_mr/450-diagnostic.html": {
+        "title": "The 4:50 Diagnostic — Where is your transition breaking down? | MarginReset",
+        "description": "4 questions to diagnose exactly where your 4:50 PM transition window is failing, and how to build the shutdown machine.",
+        "slug": "450-diagnostic",
+        "og_image": "HeadshotThumbnail.png"
+    },
+    "privacy.html": {
+        "title": "Privacy Policy | Christopher Lynn Systems",
+        "description": "Privacy policy for Christopher Lynn Systems, LLC.",
+        "slug": "privacy"
+    },
+    "terms.html": {
+        "title": "Terms of Service | Christopher Lynn Systems",
+        "description": "Terms of service for Christopher Lynn Systems, LLC.",
+        "slug": "terms"
+    },
+    "disclaimer.html": {
+        "title": "Disclaimer | Christopher Lynn Systems",
+        "description": "Legal disclaimer for Christopher Lynn Systems, LLC.",
+        "slug": "disclaimer"
+    },
+    "_tsd/lab.html": {
+        "title": "Group Coaching for Busy Dads | The Systems Dad",
+        "description": "Small-group coaching and weekly accountability for dads who manage chaos at work and want to be completely off the clock by dinner.",
+        "slug": "lab"
+    },
+    "_tsd/privacy.html": {
+        "title": "Privacy Policy | The Systems Dad",
+        "description": "Privacy policy for The Systems Dad.",
+        "slug": "privacy"
+    },
+    "_tsd/terms.html": {
+        "title": "Terms of Service | The Systems Dad",
+        "description": "Terms of service for The Systems Dad.",
+        "slug": "terms"
+    },
+    "_tsd/disclaimer.html": {
+        "title": "Disclaimer | The Systems Dad",
+        "description": "Legal disclaimer for The Systems Dad.",
+        "slug": "disclaimer"
+    },
+    "_mr/privacy.html": {
+        "title": "Privacy Policy | MarginReset",
+        "description": "Privacy policy for MarginReset.",
+        "slug": "privacy"
+    },
+    "_mr/terms.html": {
+        "title": "Terms of Service | MarginReset",
+        "description": "Terms of service for MarginReset.",
+        "slug": "terms"
+    },
+    "_mr/disclaimer.html": {
+        "title": "Disclaimer | MarginReset",
+        "description": "Legal disclaimer for MarginReset.",
+        "slug": "disclaimer"
+    }
+}
