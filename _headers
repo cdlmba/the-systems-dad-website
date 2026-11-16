@@ -1,0 +1,9 @@
+# Cloudflare Pages headers
+# Keep HTML fresh after deploys; browsers/CDN must revalidate.
+# https://developers.cloudflare.com/pages/configuration/headers/
+
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
