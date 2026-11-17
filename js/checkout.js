@@ -18,18 +18,23 @@ async function handleStripeCheckout(productId, email, variant, btn) {
 
     const isCLS = window.location.hostname.includes('christopherlynnsystems') || (productId && productId.startsWith('STEADY_HAND'));
 
-    // 2. Stan.Store Primary Entry for TSD products (if not CLS)
+    // 2. TSD: Stripe Payment Link (site-config → stripe-payment-links.js)
     if (!isCLS && productId && !productId.startsWith('STEADY_HAND')) {
-        const stanUrl = new URL("https://stan.store/thesystemsdad");
-        const refId = `VAR_${variant ? variant.toUpperCase() : 'NONE'}_SRC_${source.toUpperCase()}`;
-        stanUrl.searchParams.set('utm_source', source);
-        if (variant) stanUrl.searchParams.set('utm_content', variant);
-        if (productId) stanUrl.searchParams.set('product', productId);
-        if (email) stanUrl.searchParams.set('email', email);
-        stanUrl.searchParams.set('client_reference_id', refId);
+        const links = window.TSD_STRIPE_PAYMENT_LINKS || {};
+        const paymentLink = links[productId];
 
-        window.location.href = stanUrl.toString();
-        return;
+        if (paymentLink) {
+            const checkoutUrl = new URL(paymentLink);
+            const refId = `VAR_${variant ? variant.toUpperCase() : 'NONE'}_SRC_${source.toUpperCase()}`;
+            checkoutUrl.searchParams.set('utm_source', source);
+            if (variant) checkoutUrl.searchParams.set('utm_content', variant);
+            if (email) checkoutUrl.searchParams.set('prefilled_email', email);
+            checkoutUrl.searchParams.set('client_reference_id', refId);
+            window.location.href = checkoutUrl.toString();
+            return;
+        }
+
+        console.warn('No Stripe Payment Link for product:', productId);
     }
 
     const originalText = btn ? btn.innerHTML : '';
