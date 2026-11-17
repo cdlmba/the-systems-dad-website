@@ -278,7 +278,7 @@ def build_brand(brand, args):
             'tsd-margin-hero.jpg', 'cls-margin-hero.jpg', 'tsd-audit-hero.jpg', 'tsd-reset-hero.jpg',
             'systems_dad_presence_split_view_1774573176565.png', 'day3_hub_hero.png',
             'ghost_at_dinner_table_1774490562808.png', 'tsd_presence_handshake_blueprint.png',
-            'js/systems-dad-bot-v4.js', 'style.css', 'js/core.js', 'js/checkout.js', 'js/audit.js'
+            'js/systems-dad-bot-v4.js', 'style.css', 'js/core.js', 'js/stripe-payment-links.js', 'js/checkout.js', 'js/audit.js'
         ]
         for asset in assets_to_version:
             # Special case for root-level assets
@@ -311,6 +311,27 @@ def build_brand(brand, args):
             dest.write(content)
         print(f"  ✅ Generated: {output_file}")
 
+def write_stripe_payment_links_js():
+    """Emit js/stripe-payment-links.js from site-config globals.stripe_products."""
+    globals_cfg = PAGE_METADATA.get('globals', {})
+    products = globals_cfg.get('stripe_products', {})
+    if not products:
+        return
+    js_path = os.path.join('js', 'stripe-payment-links.js')
+    lines = [
+        '/**',
+        ' * TSD checkout: productId → Stripe Payment Link URL.',
+        ' * Generated from site-config.json globals.stripe_products — do not edit by hand.',
+        ' */',
+        'window.TSD_STRIPE_PAYMENT_LINKS = ' + json.dumps(products, indent=4) + ';',
+        ''
+    ]
+    os.makedirs('js', exist_ok=True)
+    with open(js_path, 'w', encoding='utf-8') as f:
+        f.write('\n'.join(lines))
+    print(f"  ✅ Generated: {js_path}")
+
+
 def build_site():
     if sys.platform == 'win32':
         import io
@@ -322,7 +343,8 @@ def build_site():
     args = parser.parse_args()
 
     print("🚀 Starting Site Build Process...")
-    
+    write_stripe_payment_links_js()
+
     if args.brand in ['cls', 'all']:
         build_brand('cls', args)
         
