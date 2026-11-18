@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{head}}
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        /* Cream editorial lock — TSD design.md tokens with hex fallbacks */
+        body.brand-tsd.move-page {
+            --move-cream: #FAF8F5;
+            --move-sand: #EDE8DF;
+            --move-ink: #24221F;
+            --move-muted: #5F5B53;
+            --move-forest: #244234;
+            --move-forest-hover: #1A2F25;
+            --move-border: #E6E1D8;
+            --move-paper: #FFFFFF;
+            background:
+                radial-gradient(ellipse 90% 55% at 8% -8%, rgba(36, 66, 52, 0.10), transparent 52%),
+                radial-gradient(ellipse 70% 45% at 100% 12%, rgba(184, 134, 11, 0.07), transparent 48%),
+                linear-gradient(180deg, #F3EFE6 0%, var(--move-cream) 28%, var(--move-cream) 100%);
+            color: var(--move-ink);
+            min-height: 100vh;
+        }
+
+        body.brand-tsd.move-page .main-header {
+            background: rgba(250, 248, 245, 0.92);
+            border-bottom: 1px solid var(--move-border);
+        }
+
+        body.brand-tsd.move-page .main-footer {
+            background: var(--move-cream);
+            border-top: 1px solid var(--move-border);
+        }
+
+        .move-page main {
+            padding-bottom: 4.5rem;
+        }
+
+        .move-wrap {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .move-hero {
+            padding: 5.5rem 0 3rem;
+        }
+
+        .move-hero h1 {
+            font-family: var(--font-heading, Lora, Georgia, serif);
+            font-size: clamp(2.15rem, 6vw, 3.15rem);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.12;
+            color: var(--move-ink);
+            margin-bottom: 0.65rem;
+        }
+
+        .move-arrive {
+            font-family: var(--font-body, "Plus Jakarta Sans", system-ui, sans-serif);
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--move-forest);
+            margin-bottom: 1.15rem;
+        }
+
+        .move-lede {
+            font-size: 1.12rem;
+            line-height: 1.65;
+            color: var(--move-muted);
+            max-width: 38rem;
+        }
+
+        .move-section {
+            padding: 2.85rem 0;
+        }
+
+        .move-section--sand {
+            background: rgba(237, 232, 223, 0.72);
+            border-top: 1px solid var(--move-border);
+            border-bottom: 1px solid var(--move-border);
+        }
+
+        .move-section--cream {
+            background: transparent;
+            border-top: 1px solid transparent;
+        }
+
+        .move-section h2 {
+            font-family: var(--font-heading, Lora, Georgia, serif);
+            font-size: clamp(1.45rem, 3.5vw, 1.85rem);
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            color: var(--move-ink);
+            margin-bottom: 1.15rem;
+        }
+
+        .move-count-card {
+            background: var(--move-paper);
+            border: 1px solid var(--move-border);
+            border-radius: 12px;
+            padding: 1.6rem 1.35rem 1.45rem;
+            box-shadow: 0 10px 28px -12px rgba(36, 34, 31, 0.12);
+        }
+
+        .move-count-label {
+            font-size: 1rem;
+            color: var(--move-muted);
+            margin-bottom: 0.85rem;
+        }
+
+        .move-days {
+            display: flex;
+            align-items: baseline;
+            gap: 0.55rem;
+            flex-wrap: wrap;
+        }
+
+        .move-days-num {
+            font-family: var(--font-heading, Lora, Georgia, serif);
+            font-size: clamp(3.4rem, 12vw, 5.25rem);
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            line-height: 1;
+            color: var(--move-forest);
+        }
+
+        .move-days-word {
+            font-family: var(--font-heading, Lora, Georgia, serif);
+            font-size: clamp(1.35rem, 3vw, 1.7rem);
+            font-weight: 600;
+            color: var(--move-ink);
+        }
+
+        .move-clock {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.65rem;
+            margin-top: 1.25rem;
+        }
+
+        .move-unit {
+            background: var(--move-cream);
+            border: 1px solid var(--move-border);
+            border-radius: 6px;
+            padding: 0.75rem 0.5rem 0.7rem;
+            text-align: center;
+        }
+
+        .move-unit-num {
+            font-family: var(--font-heading, Lora, Georgia, serif);
+            font-size: 1.45rem;
+            font-weight: 600;
+            color: var(--move-ink);
+            line-height: 1.1;
+        }
+
+        .move-unit-label {
+            display: block;
+            margin-top: 0.2rem;
+            font-size: 0.78rem;
+            color: var(--move-muted);
+        }
+
+        .move-landed {
+            display: none;
+            font-family: var(--font-heading, Lora, Georgia, serif);
+            font-size: clamp(1.6rem, 4vw, 2rem);
+            font-weight: 600;
+            color: var(--move-forest);
+        }
+
+        .move-page.is-landed .move-live {
+            display: none;
+        }
+
+        .move-page.is-landed .move-landed {
+            display: block;
+        }
+
+        .move-need {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+
+        .move-need li {
+            background: var(--move-paper);
+            border: 1px solid var(--move-border);
+            border-radius: 6px;
+            padding: 0.85rem 1rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: var(--move-ink);
+        }
+
+        .move-steps {
+            list-style: none;
+            display: grid;
+            gap: 1.15rem;
+        }
+
+        .move-step {
+            display: grid;
+            grid-template-columns: 2.4rem minmax(0, 1fr);
+            gap: 0.85rem;
+            align-items: start;
+        }
+
+        .move-step-num {
+            width: 2.4rem;
+            height: 2.4rem;
+            border-radius: 50%;
+            border: 1px solid var(--move-border);
+            background: var(--move-paper);
+            color: var(--move-forest);
+            font-family: var(--font-heading, Lora, Georgia, serif);
+            font-size: 1.05rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .move-step h3 {
+            font-family: var(--font-heading, Lora, Georgia, serif);
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--move-ink);
+            margin-bottom: 0.2rem;
+        }
+
+        .move-step p {
+            color: var(--move-muted);
+            font-size: 1rem;
+            line-height: 1.55;
+        }
+
+        .move-step em {
+            display: inline-block;
+            margin-top: 0.35rem;
+            font-style: italic;
+            color: var(--move-forest);
+            font-size: 0.95rem;
+        }
+
+        .move-log {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .move-day h3 {
+            font-family: var(--font-heading, Lora, Georgia, serif);
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--move-forest);
+            margin-bottom: 0.45rem;
+        }
+
+        .move-day ul {
+            list-style: none;
+            display: grid;
+            gap: 0.55rem;
+        }
+
+        .move-day li {
+            padding-left: 0.9rem;
+            border-left: 2px solid var(--move-border);
+            color: var(--move-muted);
+            font-size: 1rem;
+            line-height: 1.55;
+        }
+
+        .move-updated {
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--move-muted);
+            margin: -0.4rem 0 1.5rem;
+        }
+
+        .move-week {
+            display: grid;
+            gap: 1.85rem;
+        }
+
+        .move-week-group h3 {
+            font-family: var(--font-heading, Lora, Georgia, serif);
+            font-size: 1.12rem;
+            font-weight: 600;
+            color: var(--move-forest);
+            margin-bottom: 0.7rem;
+        }
+
+        .move-tasks {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+
+        .move-tasks li {
+            display: grid;
+            grid-template-columns: 1.05rem minmax(0, 1fr);
+            gap: 0.75rem;
+            align-items: start;
+            background: var(--move-paper);
+            border: 1px solid var(--move-border);
+            border-radius: 6px;
+            padding: 0.85rem 1rem;
+            font-size: 1rem;
+            line-height: 1.55;
+            color: var(--move-ink);
+        }
+
+        .move-box {
+            width: 1.05rem;
+            height: 1.05rem;
+            margin-top: 0.22rem;
+            border: 1.5px solid var(--move-forest);
+            border-radius: 3px;
+            background: var(--move-cream);
+        }
+
+        .move-tasks p {
+            margin: 0;
+        }
+
+        .move-tasks strong {
+            font-weight: 600;
+        }
+
+        .move-dates {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+
+        .move-dates li {
+            display: grid;
+            grid-template-columns: 5.5rem minmax(0, 1fr);
+            gap: 0.85rem;
+            align-items: baseline;
+            background: var(--move-paper);
+            border: 1px solid var(--move-border);
+            border-radius: 6px;
+            padding: 0.85rem 1rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: var(--move-ink);
+        }
+
+        .move-dates span {
+            font-weight: 600;
+            color: var(--move-forest);
+        }
+
+        @media (min-width: 640px) {
+            .move-need {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .move-count-card {
+                padding: 2rem 1.75rem 1.75rem;
+            }
+        }
+
+        @media (max-width: 639px) {
+            .move-hero {
+                padding-top: 4.75rem;
+            }
+
+            .move-clock {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .move-dates li {
+                grid-template-columns: 1fr;
+                gap: 0.2rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .move-days-num,
+            .move-unit-num {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+<body class="brand-tsd move-page">
+    {{header}}
+
+    <main>
+        <section class="move-hero" aria-labelledby="move-title">
+            <div class="move-wrap">
+                <h1 id="move-title">How To Move a Mom In 40 Days</h1>
+                <p class="move-arrive">Arriving January 4, 2027</p>
+                <p class="move-lede">Mom and Roger are leaving North Carolina to live near family in southeast Missouri. This page follows the move from house hunt to moving day.</p>
+            </div>
+        </section>
+
+        <section class="move-section move-section--sand" aria-labelledby="countdown-heading">
+            <div class="move-wrap">
+                <h2 id="countdown-heading">Countdown</h2>
+                <div class="move-count-card">
+                    <p class="move-count-label">Days until January 4, 2027</p>
+                    <div class="move-live" id="move-live" role="timer">
+                        <div class="move-days">
+                            <span class="move-days-num" id="move-days">--</span>
+                            <span class="move-days-word" id="move-days-word">days</span>
+                        </div>
+                        <div class="move-clock" aria-hidden="true">
+                            <div class="move-unit">
+                                <div class="move-unit-num" id="move-hours">--</div>
+                                <span class="move-unit-label">hours</span>
+                            </div>
+                            <div class="move-unit">
+                                <div class="move-unit-num" id="move-minutes">--</div>
+                                <span class="move-unit-label">minutes</span>
+                            </div>
+                            <div class="move-unit">
+                                <div class="move-unit-num" id="move-seconds">--</div>
+                                <span class="move-unit-label">seconds</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="move-landed" id="move-landed">They're here.</p>
+                    <noscript>
+                        <p>JavaScript is off, so the live count isn't running. Arrival is still January 4, 2027.</p>
+                    </noscript>
+                </div>
+            </div>
+        </section>
+
+        <section class="move-section move-section--cream" aria-labelledby="looking-heading">
+            <div class="move-wrap">
+                <h2 id="looking-heading">What they're looking for</h2>
+                <ul class="move-need">
+                    <li>3+ bedrooms</li>
+                    <li>A yard, more than a quarter acre</li>
+                    <li>Out of town or rural, room to breathe</li>
+                    <li>Not a crowded subdivision</li>
+                    <li>A basement would be a bonus</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="move-section move-section--sand" aria-labelledby="milestones-heading">
+            <div class="move-wrap">
+                <h2 id="milestones-heading">The five milestones</h2>
+                <ol class="move-steps">
+                    <li class="move-step">
+                        <span class="move-step-num" aria-hidden="true">1</span>
+                        <div>
+                            <h3>Choose the house</h3>
+                            <p>By Nov 20. Pick a home and get it under contract.</p>
+                            <em>In progress</em>
+                        </div>
+                    </li>
+                    <li class="move-step">
+                        <span class="move-step-num" aria-hidden="true">2</span>
+                        <div>
+                            <h3>Book the move</h3>
+                            <p>By Dec 1. Compare movers and book one.</p>
+                            <em>In progress. Two options ready. Pick by Friday for the early-booking discount.</em>
+                        </div>
+                    </li>
+                    <li class="move-step">
+                        <span class="move-step-num" aria-hidden="true">3</span>
+                        <div>
+                            <h3>Change the paperwork</h3>
+                            <p>By Dec 18. Address, doctors, prescriptions, insurance, utilities.</p>
+                        </div>
+                    </li>
+                    <li class="move-step">
+                        <span class="move-step-num" aria-hidden="true">4</span>
+                        <div>
+                            <h3>Load and drive</h3>
+                            <p>Packing done by Dec 31. Leave Lexington Jan 1. Two vehicles, an overnight on the road.</p>
+                        </div>
+                    </li>
+                    <li class="move-step">
+                        <span class="move-step-num" aria-hidden="true">5</span>
+                        <div>
+                            <h3>Land</h3>
+                            <p>Jan 4. Keys, utilities on, first week settled.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="move-section move-section--cream" aria-labelledby="progress-heading">
+            <div class="move-wrap">
+                <h2 id="progress-heading">Progress so far</h2>
+                <div class="move-log">
+                    <div class="move-day">
+                        <h3>Nov 12</h3>
+                        <ul>
+                            <li>Built a shortlist of homes and set the rule: out of town beats in town.</li>
+                            <li>Mom picked a favorite home.</li>
+                        </ul>
+                    </div>
+                    <div class="move-day">
+                        <h3>Nov 13</h3>
+                        <ul>
+                            <li>Reached out to local agents to help with the offer.</li>
+                            <li>First moving quotes came in.</li>
+                        </ul>
+                    </div>
+                    <div class="move-day">
+                        <h3>Nov 14</h3>
+                        <ul>
+                            <li>Mom chose her Missouri buyer's agent.</li>
+                            <li>Mortgage pre-approval application went in.</li>
+                        </ul>
+                    </div>
+                    <div class="move-day">
+                        <h3>Nov 15</h3>
+                        <ul>
+                            <li>Video tour of the favorite home planned at its open house.</li>
+                        </ul>
+                    </div>
+                    <div class="move-day">
+                        <h3>Nov 16</h3>
+                        <ul>
+                            <li>Robert gave Mom and Roger what he thinks the NC house will sell for, and he is ready to list it Thursday, Nov 19.</li>
+                            <li>The moving company answered every question: storage if closing slips past Jan 1, flexible dates, and no deposit to reserve.</li>
+                            <li>Two moving options are side by side: a door-to-door trailer vs. a cheaper portable-box option, ready for Mom and Roger to pick.</li>
+                            <li>The Cape house hunt stayed fresh. Rechecked the shortlist; one backup home dropped its price, and nothing went under contract.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="move-section move-section--sand" aria-labelledby="next-heading">
+            <div class="move-wrap">
+                <h2 id="next-heading">This week's next steps</h2>
+                <p class="move-updated">Updated Monday, November 16, 2026</p>
+                <div class="move-week">
+                    <div class="move-week-group">
+                        <h3>Now</h3>
+                        <ul class="move-tasks">
+                            <li>
+                                <span class="move-box" aria-hidden="true"></span>
+                                <p><strong>NC listing price:</strong> Mom signs off on the listing price so the Lexington house goes live Thursday, Nov 19.</p>
+                            </li>
+                            <li>
+                                <span class="move-box" aria-hidden="true"></span>
+                                <p><strong>Mover pick:</strong> Choose door-to-door trailer or portable-box by Friday to keep the early-booking discount.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="move-week-group">
+                        <h3>This week: Chelsea Ulrich (Cape)</h3>
+                        <ul class="move-tasks">
+                            <li>
+                                <span class="move-box" aria-hidden="true"></span>
+                                <p><strong>268 Byrd Ct (Kinder Farms):</strong> Is it still for sale? $334,900, 3 bed, 2 bath, walkout basement.</p>
+                            </li>
+                            <li>
+                                <span class="move-box" aria-hidden="true"></span>
+                                <p><strong>Drake Landing homes:</strong> How low will the seller go on 90, 80 or 67 Drake Lndg? Listed $430,000 to $435,000 since July.</p>
+                            </li>
+                            <li>
+                                <span class="move-box" aria-hidden="true"></span>
+                                <p><strong>Marble Hill (18624 State Hwy B):</strong> Get the average utility costs, when the septic was last pumped, and the last well test.</p>
+                            </li>
+                            <li>
+                                <span class="move-box" aria-hidden="true"></span>
+                                <p><strong>Any offer:</strong> Include a septic inspection and well water test as conditions.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="move-week-group">
+                        <h3>This week: Marnie Mitchell (Guild)</h3>
+                        <ul class="move-tasks">
+                            <li>
+                                <span class="move-box" aria-hidden="true"></span>
+                                <p><strong>Monthly cost:</strong> What would payments be at $430,000 to $470,000 while the Lexington house is still unsold?</p>
+                            </li>
+                            <li>
+                                <span class="move-box" aria-hidden="true"></span>
+                                <p><strong>Set the ceiling:</strong> Pick a comfortable top price from that number.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="move-section move-section--cream" aria-labelledby="dates-heading">
+            <div class="move-wrap">
+                <h2 id="dates-heading">Key dates</h2>
+                <ul class="move-dates">
+                    <li><span>Nov 19</span> Lexington house listed</li>
+                    <li><span>Nov 20</span> House decision</li>
+                    <li><span>Dec 1</span> Book the mover</li>
+                    <li><span>Dec 31</span> Packing and loading done</li>
+                    <li><span>Jan 1</span> Leave Lexington</li>
+                    <li><span>Jan 4</span> Arrive in Missouri</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    {{footer}}
+    <script src="/js/core.js" defer></script>
+
+    <script>
+        (function () {
+            var ARRIVAL = new Date("2027-01-04T00:00:00-06:00").getTime();
+            var page = document.querySelector(".move-page");
+            var daysEl = document.getElementById("move-days");
+            var daysWord = document.getElementById("move-days-word");
+            var hoursEl = document.getElementById("move-hours");
+            var minutesEl = document.getElementById("move-minutes");
+            var secondsEl = document.getElementById("move-seconds");
+            var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            var timer;
+
+            function pad(value) {
+                return String(value).padStart(2, "0");
+            }
+
+            function tick() {
+                var remaining = ARRIVAL - Date.now();
+                if (remaining <= 0) {
+                    page.classList.add("is-landed");
+                    if (timer) window.clearInterval(timer);
+                    return;
+                }
+
+                var totalSeconds = Math.floor(remaining / 1000);
+                var days = Math.floor(totalSeconds / 86400);
+                var hours = Math.floor((totalSeconds % 86400) / 3600);
+                var minutes = Math.floor((totalSeconds % 3600) / 60);
+                var seconds = totalSeconds % 60;
+
+                daysEl.textContent = String(days);
+                daysWord.textContent = days === 1 ? "day" : "days";
+                hoursEl.textContent = pad(hours);
+                minutesEl.textContent = pad(minutes);
+                secondsEl.textContent = pad(seconds);
+            }
+
+            tick();
+            if (!reduceMotion) {
+                timer = window.setInterval(tick, 1000);
+            }
+        })();
+    </script>
+</body>
+</html>
