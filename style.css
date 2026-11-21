@@ -5001,7 +5001,7 @@ body.brand-cls .cta-button-secondary:hover {
     background-color: var(--cls-bg-subtle);
 }
 
-/* The Diagnostic Section (The Switchboard vs The Steady Hand) */
+/* The Diagnostic Section */
 .cls-diagnostic-section {
     padding: 5rem 0;
     background-color: var(--cls-bg-base);
