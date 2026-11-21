@@ -7,8 +7,7 @@
         "mr_brand_name": "MarginReset",
         "mr_domain": "marginreset.com",
         "mr_tagline": "The system for the 25 minutes that matter most.",
-        "cls_booking_price": "$2,800",
-        "rules_pack_price": "$47",
+        "cls_booking_price": "$250",
         "install_price": "$2,800",
         "automations_price": "$4,500 - $6,500",
         "trenches_kit_price": "$97",
@@ -69,8 +68,8 @@
         "slug": "organizations"
     },
     "services.html": {
-        "title": "Steady Hand Services & Architecture | Christopher Lynn Systems",
-        "description": "The written rules system and operational installations for enterprise program managers and directors. Stop being the emotional switchboard.",
+        "title": "Work with me | The Systems Dad",
+        "description": "I set up the systems a small business runs on. Start with a $250 Strategy Session. Credited toward any next step.",
         "slug": "services"
     },
     "email.html": {
@@ -281,6 +280,11 @@
         "title": "1:1 Coaching with Christopher Lynn | The Systems Dad",
         "description": "1:1 coaching for busy professionals who want to get their home running as smoothly as their workday.",
         "slug": "lab"
+    },
+    "_tsd/services.html": {
+        "title": "Work with me | The Systems Dad",
+        "description": "I set up the systems a small business runs on. Start with a $250 Strategy Session. Credited toward any next step.",
+        "slug": "services"
     },
     "_tsd/the-systems-dad-method.html": {
         "title": "The Systems Dad Method | Stop Being a Ghost Dad",
