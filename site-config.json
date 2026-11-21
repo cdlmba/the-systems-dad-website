@@ -38,8 +38,8 @@
         }
     },
     "index.html": {
-        "title": "Steady Hand | Christopher Lynn Systems | Written Governance for Delivery Teams",
-        "description": "Stop burning 30 hours a week on the meeting treadmill. Steady Hand installs written governance and autonomous feedback loops to keep complex delivery calm, fast, and on track.",
+        "title": "The Systems Dad. Build better systems. Reclaim your time.",
+        "description": "Practical systems, AI, and automation so you can finish work on time. Program manager in Springfield. Laptop shut at 5:00.",
         "slug": ""
     },
     "install.html": {
@@ -73,7 +73,7 @@
         "slug": "services"
     },
     "email.html": {
-        "title": "Free Guide: Stop the Status Call From Turning Personal | Steady Hand",
+        "title": "Free Guide: Stop the Status Call From Turning Personal",
         "description": "Get the 3-step written guide for enterprise delivery leaders to defuse defensive updates and keep meetings calm.",
         "slug": "email"
     },
@@ -84,8 +84,8 @@
     },
 
     "about.html": {
-        "title": "About Christopher Lynn | Steady Hand Enterprise Program Delivery",
-        "description": "Senior Program Manager with 15+ years enterprise delivery experience (financial services, PMP, SAFe). The written rules system to keep meetings calm and execution sharp.",
+        "title": "About the Systems Dad | Simple Routines for Busy Dads",
+        "description": "Why professional organization belongs at home. Rebuilding time for what matters most.",
         "slug": "about"
     },
     "assessment.html": {
