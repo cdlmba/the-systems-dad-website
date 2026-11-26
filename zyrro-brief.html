@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zyrro.ai: Pre-Launch Teardown Brief</title>
+  <meta name="description" content="Pre-launch teardown brief for zyrro.ai prepared by Christopher Lynn.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    /*
+      TSD Brief styling — canonical tokens from control-tower/businesses/tsd/briefs.css
+      and control-tower/businesses/tsd/design.md.
+      Sober executive briefing: warm cream paper, Lora headings, Source Sans 3 body,
+      forest green action, zero eyebrows, zero badges, zero decorative chips.
+    */
+    :root {
+      --primary-color: #244234;
+      --primary-hover: #1a2f25;
+      --gold-accent: #b8860b;
+      --background-main: #faf8f5;
+      --background-secondary: #f3efe6;
+      --background-card: #ffffff;
+      --text-color-main: #24221f;
+      --text-color-muted: #5f5b53;
+      --text-color-emphasis: #24221f;
+      --border-color: #e8e4dc;
+      --shadow-sm: 0 1px 3px rgba(36, 34, 31, 0.04);
+      --font-heading: "Lora", Georgia, "Times New Roman", serif;
+      --font-body: "Source Sans 3", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --radius-md: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body.brand-tsd {
+      font-family: var(--font-body);
+      color: var(--text-color-main);
+      background: var(--background-main);
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      padding: 2.75rem 1.25rem 4.5rem;
+    }
+
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    a {
+      color: var(--primary-color);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      color: var(--primary-hover);
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--primary-color);
+      outline-offset: 3px;
+    }
+
+    /* Main Brief Document */
+    article.brief {
+      background: var(--background-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 2.75rem 2.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    header.brief-header {
+      padding-bottom: 1.4rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.85rem, 3.8vw, 2.35rem);
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--text-color-emphasis);
+      margin-bottom: 0.45rem;
+    }
+
+    .meta {
+      font-size: 0.98rem;
+      color: var(--text-color-muted);
+    }
+
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 1.32rem;
+      font-weight: 600;
+      line-height: 1.3;
+      letter-spacing: -0.015em;
+      color: var(--primary-color);
+      margin-top: 2.1rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .brief > section:first-of-type h2 {
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--text-color-main);
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.86em;
+      background: var(--background-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 0.08em 0.35em;
+      color: var(--text-color-emphasis);
+    }
+
+    em {
+      font-style: italic;
+    }
+
+    .comparison {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .copy-box {
+      background: var(--background-main);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.2rem 1.35rem;
+    }
+
+    .copy-box.proposed {
+      background: var(--background-secondary);
+      border-left: 4px solid var(--gold-accent);
+    }
+
+    .copy-label {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-color-muted);
+      margin-bottom: 0.45rem;
+    }
+
+    .copy-box.proposed .copy-label {
+      color: var(--primary-color);
+    }
+
+    .copy-btn-line {
+      font-size: 0.93rem;
+      color: var(--text-color-muted);
+      margin-top: 0.75rem;
+      margin-bottom: 0;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid var(--border-color);
+      margin: 2.15rem 0 1.75rem;
+    }
+
+    .cta-row {
+      margin-top: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.98rem;
+      letter-spacing: 0.01em;
+      padding: 0.7rem 1.25rem;
+      text-decoration: none;
+      background: var(--primary-color);
+      color: #ffffff !important;
+      box-shadow: 0 2px 8px rgba(36, 66, 52, 0.22);
+    }
+
+    .cta-button:hover {
+      background: var(--primary-hover);
+      color: #ffffff !important;
+    }
+
+    .signoff {
+      color: var(--text-color-muted);
+      font-size: 0.98rem;
+    }
+
+    .signoff strong {
+      color: var(--text-color-emphasis);
+      font-weight: 600;
+    }
+
+    .print-url {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      body.brand-tsd {
+        padding: 1.25rem 0.75rem 3rem;
+        font-size: 16px;
+      }
+
+      article.brief {
+        padding: 1.5rem 1.25rem;
+      }
+    }
+
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+
+      body.brand-tsd {
+        background: #ffffff !important;
+        color: #000000 !important;
+        padding: 0;
+        font-size: 11pt;
+        line-height: 1.5;
+      }
+
+      .wrap {
+        max-width: 100%;
+      }
+
+      article.brief {
+        background: #ffffff !important;
+        border: none;
+        box-shadow: none !important;
+        padding: 0;
+      }
+
+      .copy-box,
+      .copy-box.proposed {
+        background: #ffffff !important;
+        break-inside: avoid;
+      }
+
+      section {
+        break-inside: avoid;
+      }
+
+      .cta-button {
+        display: none;
+      }
+
+      .print-url {
+        display: block;
+        font-size: 9.5pt;
+        color: #000000;
+        margin-top: 0.4rem;
+      }
+
+      a {
+        color: #000000 !important;
+        text-decoration: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="brand-tsd">
+  <div class="wrap">
+    <article class="brief">
+      <header class="brief-header">
+        <h1>Zyrro.ai: Pre-Launch Teardown Brief</h1>
+        <p class="meta">Prepared for Jeff Bullas by Christopher Lynn · November 2026</p>
+      </header>
+
+      <section>
+        <h2>What already works</h2>
+        <p>Your founder note (starting online at 52, building Zyrro at 69) and the line about a container feeling a size too small both work. Anyone who has been in a long career knows that exact feeling.</p>
+      </section>
+
+      <section>
+        <h2>1. Fix the blank social previews and the bottom form</h2>
+        <p>The HTML title is still <code>Zyrro Home</code> with no meta description or Open Graph tags. Every time you share <code>zyrro.ai</code> on X or LinkedIn, the preview card renders blank.</p>
+        <p>On the Keap forms, the anti-spam honeypot and timer only attach to the top form (<code>#signup-form</code>). The bottom form (<code>#signup-form-bottom</code>) is wide open. Both forms also reuse the same field IDs (<code>inf_field_FirstName</code> and <code>inf_field_Email</code>) with no <code>&lt;label&gt;</code> tags, and there is no privacy note next to the button.</p>
+      </section>
+
+      <section>
+        <h2>2. Clear up the AI contradiction</h2>
+        <p>Right above the Anthropic AI stat on a <code>.ai</code> domain, the <em>Yours</em> card says: <em>"No machine could have written it about you."</em> A new visitor reads that and can't tell whether Zyrro is AI or human coaching. Just say how it works: AI pulls the patterns from your answers, and you decide what to do next.</p>
+      </section>
+
+      <section>
+        <h2>3. Show one real example of what someone gets</h2>
+        <p>The page has two images total (the logo and your headshot) and no preview of the product. The five signal pills (<code>Visioning</code>, <code>Thinking</code>, <code>Connecting</code>, <code>Driving</code>, <code>Sensing</code>) look clickable, yet nothing happens when you tap them and the page never explains what they mean.</p>
+        <p>Put one sample output card on the page that shows a 5-signal map and a real weekly move. People know what they are signing up for when they can see it. For the five pills, either let them open a one-line explanation or style them as plain text.</p>
+      </section>
+
+      <section>
+        <h2>4. Tighten the mobile layout and the copy cadence</h2>
+        <p>Tall hero spacing pushes the signup box below the fold on standard laptops and cuts off the orange button at the bottom of mobile (<code>390&times;844</code>). Less top padding keeps the whole form on screen. In <em>The Arc</em> section, five horizontal columns sit inside <code>676px</code> (about <code>112px</code> each), so short lines wrap six to eight rows deep. A vertical list or a two-row grid reads better.</p>
+        <p>Link the Anthropic 81,000-person stat to its source, and link your founder card to <code>jeffbullas.com</code> so new visitors can check your work. Cut back the <em>"Not X. Y."</em> phrasing across the cards too. It shows up six times, and people read that rhythm as AI.</p>
+      </section>
+
+      <section>
+        <h2>One Hero Copy Example</h2>
+        <div class="comparison">
+          <div class="copy-box">
+            <p class="copy-label">Current</p>
+            <p>Become the person you've always sensed you could be. There's a fuller version of you already there: in your patterns, your energy, the work that lights you up. Hard to see on your own. Zyrro reveals it. Then helps you take the first real step toward it.</p>
+            <p class="copy-btn-line">Button: <code>Get On The Waiting List</code></p>
+          </div>
+          <div class="copy-box proposed">
+            <p class="copy-label">Plain-English Option</p>
+            <p>You've built a real career, and the role you're in now feels a size too small. Answer a 15-minute set of questions in Zyrro to see the five patterns behind your best decisions, then pick one thing to act on this week.</p>
+            <p class="copy-btn-line">Button: <code>Request Early Beta Access</code> ("No spam. Founding beta invites go out first." underneath)</p>
+          </div>
+        </div>
+      </section>
+
+      <hr>
+
+      <section>
+        <h2>Next step</h2>
+        <p>Because <code>zyrro.ai</code> is a single static page on Netlify, none of this takes long to fix before launch. Use whatever helps. My calendar is open if you want 15 minutes to walk through these notes.</p>
+        <div class="cta-row">
+          <a class="cta-button" href="https://calendar.app.google/ymeFfwxYkMwPvmQH9" target="_blank" rel="noopener">Book 15 minutes</a>
+          <p class="print-url">Calendar: https://calendar.app.google/ymeFfwxYkMwPvmQH9</p>
+        </div>
+        <p class="signoff">
+          <strong>Christopher Lynn</strong><br>
+          <a href="https://christopherlynnsystems.com" target="_blank" rel="noopener">christopherlynnsystems.com</a>
+        </p>
+      </section>
+    </article>
+  </div>
+</body>
+
+</html>
