@@ -4,20 +4,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Systems Dad. COO for Families. Build better systems. Reclaim your time.</title>
+  <title>The Systems Dad — Build better systems. Reclaim your time.</title>
   <meta name="description"
-    content="COO for Families. Build better systems and reclaim your time. I build simple systems that stop work from burning out your home.">
+    content="Build better systems. Reclaim your time. 15 years running enterprise software delivery, now building simple systems for home, work, and teams.">
   <link rel="canonical" href="https://thesystemsdad.com/">
-  <meta property="og:title" content="The Systems Dad. COO for Families. Build better systems. Reclaim your time.">
+  <meta property="og:title" content="The Systems Dad — Build better systems. Reclaim your time.">
   <meta property="og:description"
-    content="Build better systems. Reclaim your time. Simple systems that stop work from burning out your home.">
+    content="Build better systems. Reclaim your time. Simple systems for home, work, and teams from Christopher Lynn.">
   <meta property="og:image" content="https://thesystemsdad.com/images/ChristopherLynnHeadshot_v2.jpg">
   <meta property="og:url" content="https://thesystemsdad.com/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="The Systems Dad. COO for Families. Build better systems. Reclaim your time.">
+  <meta name="twitter:title" content="The Systems Dad — Build better systems. Reclaim your time.">
   <meta name="twitter:description"
-    content="Build better systems. Reclaim your time. Simple systems that stop work from burning out your home.">
+    content="Build better systems. Reclaim your time. Simple systems for home, work, and teams from Christopher Lynn.">
   <meta name="twitter:image" content="https://thesystemsdad.com/images/ChristopherLynnHeadshot_v2.jpg">
   <link rel="icon" type="image/png" href="images/tsd-favicon.png?v=4">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -96,10 +96,6 @@
       max-width: 1100px;
       margin: 0 auto;
       padding: 0 1.5rem;
-    }
-
-    .prose-wrap {
-      max-width: 720px;
     }
 
     /* Sticky Navigation */
@@ -209,7 +205,7 @@
 
     /* Hero */
     .hero {
-      padding: 2.25rem 0 3.25rem;
+      padding: 2.75rem 0 3.5rem;
       border-bottom: 1px solid var(--border);
     }
 
@@ -222,28 +218,19 @@
 
     .hero h1 {
       font-family: var(--display);
-      font-size: clamp(2.4rem, 5vw, 3.5rem);
+      font-size: clamp(2.2rem, 4.6vw, 3.35rem);
       font-weight: 600;
-      line-height: 1.08;
+      line-height: 1.1;
       letter-spacing: -0.02em;
       color: var(--ink);
     }
 
-    .hero-tagline {
-      margin-top: 0.65rem;
-      font-family: var(--display);
-      font-size: clamp(1.2rem, 2.2vw, 1.45rem);
-      font-weight: 600;
-      line-height: 1.3;
-      color: var(--accent);
-    }
-
     .hero-lede {
-      margin-top: 1.05rem;
+      margin-top: 1.1rem;
       font-size: 1.1rem;
       line-height: 1.65;
       color: var(--muted);
-      max-width: 56ch;
+      max-width: 58ch;
     }
 
     .hero-photo {
@@ -251,7 +238,7 @@
       border: none;
       padding: 0;
       box-shadow: none;
-      max-width: 250px;
+      max-width: 240px;
       justify-self: start;
       width: 100%;
       text-align: center;
@@ -261,8 +248,8 @@
     }
 
     .hero-photo img {
-      width: 215px;
-      height: 215px;
+      width: 210px;
+      height: 210px;
       object-fit: cover;
       object-position: center 12%;
       border-radius: 50%;
@@ -279,7 +266,7 @@
 
     @media (max-width: 820px) {
       .hero {
-        padding: 3rem 0;
+        padding: 2.75rem 0 3rem;
       }
 
       .hero-grid {
@@ -288,7 +275,7 @@
       }
 
       .hero-photo {
-        max-width: 340px;
+        max-width: 280px;
       }
     }
 
@@ -321,111 +308,6 @@
       font-size: 1.02rem;
     }
 
-    /* Featured Video Spotlight (The Porch) */
-    .spotlight {
-      display: grid;
-      grid-template-columns: 1.35fr 0.95fr;
-      gap: 2.25rem;
-      align-items: center;
-      background: var(--surface-elevated);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 1.25rem;
-      box-shadow: var(--shadow);
-    }
-
-    .video-frame {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      background: #141715;
-    }
-
-    .video-facade {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      border: 0;
-      padding: 0;
-      cursor: pointer;
-      display: block;
-      background: #141715;
-    }
-
-    .video-facade img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.25s ease, opacity 0.25s ease;
-    }
-
-    .video-facade:hover img {
-      transform: scale(1.02);
-      opacity: 0.92;
-    }
-
-    .play-pill {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(20, 23, 21, 0.25);
-    }
-
-    .play-circle {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      background: var(--accent);
-      color: var(--on-accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
-      transition: transform 0.2s ease, background 0.2s ease;
-    }
-
-    .video-facade:hover .play-circle {
-      transform: scale(1.06);
-      background: var(--accent-hover);
-    }
-
-    .play-circle svg {
-      width: 24px;
-      height: 24px;
-      fill: currentColor;
-      margin-left: 3px;
-    }
-
-    .video-frame iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    .spotlight-body {
-      padding: 0.5rem 0.5rem 0.5rem 0;
-    }
-
-    .spotlight-body h3 {
-      font-family: var(--display);
-      font-size: 1.5rem;
-      font-weight: 600;
-      line-height: 1.25;
-      margin-bottom: 0.75rem;
-    }
-
-    .spotlight-body p {
-      color: var(--muted);
-      font-size: 0.98rem;
-      margin-bottom: 1rem;
-    }
-
     .text-link {
       font-weight: 600;
       color: var(--accent);
@@ -437,15 +319,182 @@
       color: var(--accent-hover);
     }
 
-    @media (max-width: 860px) {
-      .spotlight {
-        grid-template-columns: 1fr;
-        gap: 1.25rem;
-      }
+    /* Ecosystem Outpost Cards */
+    .outpost-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
 
-      .spotlight-body {
-        padding: 0 0.25rem 0.5rem;
+    @media (max-width: 820px) {
+      .outpost-grid {
+        grid-template-columns: 1fr;
       }
+    }
+
+    .outpost-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.15rem;
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--accent);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .outpost-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      box-shadow: var(--shadow);
+    }
+
+    .outpost-card h3 {
+      font-family: var(--display);
+      font-size: 1.22rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .outpost-card p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.58;
+    }
+
+    .outpost-dest {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* Margin Method Grid & SVG Icon Tiles */
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    @media (max-width: 680px) {
+      .method-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .method-card {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--accent);
+      border-radius: var(--radius-md);
+      padding: 1.4rem 1.45rem;
+      box-shadow: 0 8px 22px rgba(36, 34, 31, 0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .method-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .icon-tile {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .icon-tile svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.9;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .method-card h3 {
+      font-family: var(--display);
+      font-size: 1.22rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .method-card p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.58;
+    }
+
+    .outpost-card .icon-tile {
+      margin-bottom: 0.9rem;
+    }
+
+    /* Field Notes Split */
+    .notes-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 780px) {
+      .notes-split {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+      }
+    }
+
+    .notes-card {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.35rem 1.4rem;
+    }
+
+    .note-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 0.8rem 0;
+      border-top: 1px solid var(--border);
+      font-size: 0.96rem;
+    }
+
+    .note-row:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .note-row:last-child {
+      padding-bottom: 0;
+    }
+
+    .note-row strong {
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .note-row span {
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .note-row:hover strong {
+      color: var(--accent);
     }
 
     /* Media Grid */
@@ -535,63 +584,6 @@
     .media-info p {
       font-size: 0.88rem;
       color: var(--muted);
-    }
-
-    /* Field Notes Split */
-    .notes-split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5rem;
-      align-items: start;
-    }
-
-    @media (max-width: 780px) {
-      .notes-split {
-        grid-template-columns: 1fr;
-        gap: 1.75rem;
-      }
-    }
-
-    .notes-card {
-      background: var(--surface-elevated);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 1.35rem 1.4rem;
-    }
-
-    .note-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 1rem;
-      padding: 0.8rem 0;
-      border-top: 1px solid var(--border);
-      font-size: 0.96rem;
-    }
-
-    .note-row:first-child {
-      border-top: 0;
-      padding-top: 0;
-    }
-
-    .note-row:last-child {
-      padding-bottom: 0;
-    }
-
-    .note-row strong {
-      font-weight: 600;
-      color: var(--ink);
-    }
-
-    .note-row span {
-      font-size: 0.85rem;
-      color: var(--accent);
-      font-weight: 600;
-      white-space: nowrap;
-    }
-
-    .note-row:hover strong {
-      color: var(--accent);
     }
 
     /* YouTube Shorts Carousel (9:16) */
@@ -782,124 +774,27 @@
       }
     }
 
-    /* Ecosystem Outpost Cards */
-    .outpost-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.25rem;
+    /* Footer */
+    .site-footer {
+      padding: 3rem 0 4rem;
+      color: var(--muted);
+      font-size: 0.9rem;
     }
 
-    @media (max-width: 820px) {
-      .outpost-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .outpost-card {
+    .footer-grid {
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap;
       justify-content: space-between;
-      gap: 1rem;
-      background: var(--surface-elevated);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 1.4rem;
-      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      gap: 1.5rem 2.5rem;
+      padding-bottom: 1.75rem;
+      border-bottom: 1px solid var(--border);
     }
 
-    .outpost-card:hover {
-      transform: translateY(-2px);
-      border-color: var(--accent);
-      box-shadow: var(--shadow);
-    }
-
-    .outpost-card h3 {
-      font-family: var(--display);
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 0.45rem;
-    }
-
-    .outpost-card p {
-      font-size: 0.94rem;
-      color: var(--muted);
-      line-height: 1.55;
-    }
-
-    .outpost-dest {
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--accent);
-    }
-
-    /* Margin Method Grid & SVG Icon Tiles */
-    .method-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.25rem;
-    }
-
-    @media (max-width: 680px) {
-      .method-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .method-card {
-      background: var(--surface-elevated);
-      border: 1px solid var(--border);
-      border-top: 3px solid var(--accent);
-      border-radius: var(--radius-md);
-      padding: 1.4rem 1.45rem;
-      box-shadow: 0 8px 22px rgba(36, 34, 31, 0.04);
+    .footer-links {
       display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .method-card:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow);
-    }
-
-    .icon-tile {
-      width: 42px;
-      height: 42px;
-      border-radius: 10px;
-      background: var(--accent-soft);
-      color: var(--accent);
-      display: inline-flex;
+      flex-direction: row;
       align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .icon-tile svg {
-      width: 20px;
-      height: 20px;
-      stroke: currentColor;
-      fill: none;
-      stroke-width: 1.9;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .method-card h3 {
-      font-family: var(--display);
-      font-size: 1.22rem;
-      font-weight: 600;
-      color: var(--ink);
-    }
-
-    .method-card p {
-      font-size: 0.95rem;
-      color: var(--muted);
-      line-height: 1.58;
-    }
-
-    .outpost-card .icon-tile {
-      margin-bottom: 0.9rem;
+      gap: 0.65rem;
     }
 
     .footer-links a {
@@ -929,29 +824,6 @@
       opacity: 0.95;
     }
 
-    /* Footer */
-    .site-footer {
-      padding: 3rem 0 4rem;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .footer-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 1.5rem 2.5rem;
-      padding-bottom: 1.75rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .footer-links {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 0.65rem;
-    }
-
     .footer-bottom {
       padding-top: 1.25rem;
       display: flex;
@@ -967,18 +839,17 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-
       .media-card,
       .outpost-card,
-      .video-facade img,
-      .play-circle {
+      .method-card,
+      .short-card {
         transition: none;
       }
 
       .media-card:hover,
       .outpost-card:hover,
-      .video-facade:hover img,
-      .video-facade:hover .play-circle {
+      .method-card:hover,
+      .short-card:hover {
         transform: none;
       }
     }
@@ -990,9 +861,9 @@
     <div class="wrap nav-bar">
       <a href="/" class="brand-mark">the systems dad</a>
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="#shorts" class="nav-hide">Shorts</a>
-        <a href="#media" class="nav-hide">Conversations</a>
+        <a href="#start" class="nav-hide">Start Here</a>
         <a href="#method" class="nav-hide">Method</a>
+        <a href="/services" class="nav-hide">Services</a>
         <a href="/blog" class="nav-hide">Essays</a>
         <a href="/field-notes" class="nav-cta">Get Field Notes</a>
       </nav>
@@ -1008,14 +879,291 @@
           <figcaption class="hero-caption">Christopher Lynn</figcaption>
         </figure>
         <div>
-          <h1>COO for Families</h1>
-          <p class="hero-tagline">Build better systems. Reclaim your time.</p>
-          <p class="hero-lede">Most families don't need another parenting tip. They need clear rhythms, clean handoffs,
-            and boring systems that keep the household running so everyone can breathe.</p>
+          <h1>Build better systems. Reclaim your time.</h1>
+          <p class="hero-lede">I'm Christopher Lynn—15 years running enterprise software delivery, now building simple
+            systems for home, work, and teams so you stop spending your best hours on friction.</p>
           <div class="btn-row">
             <a class="cta-primary" href="/field-notes">Get Field Notes</a>
-            <a class="cta-secondary" href="#shorts">Watch Shorts</a>
+            <a class="cta-secondary" href="#start">Pick Your Track</a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3-Door Ecosystem Router -->
+    <section id="start" class="section section-sand" aria-labelledby="start-heading">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="start-heading">Start where it hurts most</h2>
+          <p>The Systems Dad is my home base for essays, experiments, and conversations. When you want a specific fix,
+            pick the track that matches what's stuck.</p>
+        </div>
+
+        <div class="outpost-grid">
+          <a class="outpost-card" href="https://marginreset.com">
+            <div>
+              <span class="icon-tile" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M3 10.5 12 3l9 7.5"></path>
+                  <path d="M5 9.5V21h14V9.5"></path>
+                  <path d="M9 21v-6h6v6"></path>
+                </svg>
+              </span>
+              <h3>Evening Shutdown &amp; Transition</h3>
+              <p>Work still follows you through the door at 5:00. MarginReset is the standalone 4:50 shutdown protocol
+                that puts the phone on the kitchen charger and ends the workday on time.</p>
+            </div>
+            <span class="outpost-dest">marginreset.com →</span>
+          </a>
+
+          <a class="outpost-card" href="/services">
+            <div>
+              <span class="icon-tile" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <polyline points="4 17 10 11 4 5"></polyline>
+                  <line x1="12" y1="19" x2="20" y2="19"></line>
+                </svg>
+              </span>
+              <h3>Personal, Family &amp; Executive Systems</h3>
+              <p>Your calendar owns you and the house runs on verbal reminders. Private 1:1 systems design for async
+                work intake, plain AI workflows, and calm household rhythms.</p>
+            </div>
+            <span class="outpost-dest">Explore 1:1 services →</span>
+          </a>
+
+          <a class="outpost-card" href="https://christopherlynnsystems.com">
+            <div>
+              <span class="icon-tile" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                  <line x1="9" y1="20" x2="9" y2="10"></line>
+                </svg>
+              </span>
+              <h3>Team &amp; Business Process</h3>
+              <p>For 5 to 100 person companies running client jobs in spreadsheets, texts, and Friday calls. Written
+                owners, clear handoffs, and fixed-scope delivery systems.</p>
+            </div>
+            <span class="outpost-dest">christopherlynnsystems.com →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Margin Method -->
+    <section id="method" class="section" aria-labelledby="method-heading">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="method-heading">The Margin Method</h2>
+          <p>Every system I build—for a household, a personal desk, or a delivery team—runs these four steps in the
+            same order.</p>
+        </div>
+
+        <div class="method-grid">
+          <article class="method-card">
+            <span class="icon-tile" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.3-4.3"></path>
+              </svg>
+            </span>
+            <div>
+              <h3>Identify</h3>
+              <p>I look for what ate Tuesday. Usually it's a meeting with no agenda, a broken handoff, or an endless
+                chat thread.</p>
+            </div>
+          </article>
+
+          <article class="method-card">
+            <span class="icon-tile" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <circle cx="6" cy="6" r="3"></circle>
+                <circle cx="6" cy="18" r="3"></circle>
+                <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
+                <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
+                <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
+              </svg>
+            </span>
+            <div>
+              <h3>Eliminate</h3>
+              <p>I cut it before I automate it. Most “systems” are just another tool on a pile that already doesn't
+                work.</p>
+            </div>
+          </article>
+
+          <article class="method-card">
+            <span class="icon-tile" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+                <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+                <rect x="14" y="14" width="7" height="7" rx="1"></rect>
+                <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+              </svg>
+            </span>
+            <div>
+              <h3>Systemize</h3>
+              <p>Then I write one rule I can run without thinking. Shutting down at 4:50 and a Sunday Kitchen Sync keep
+                the week steady. A phone on the counter and a Digital Sabbath protect the weekend.</p>
+            </div>
+          </article>
+
+          <article class="method-card">
+            <span class="icon-tile" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </span>
+            <div>
+              <h3>Reclaim</h3>
+              <p>The hour goes to dinner or a walk. Or I finish real work and shut the laptop at 5:00.</p>
+            </div>
+          </article>
+        </div>
+        <p style="margin-top: 1.5rem; font-size: 0.96rem;">
+          <a class="text-link" href="/services">Build this 1:1 →</a>
+          <span style="color: var(--muted); margin: 0 0.5rem;">·</span>
+          <a class="text-link" href="/blog">Read the essays →</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Field Notes & Essays -->
+    <section class="section section-sand" aria-labelledby="notes-heading">
+      <div class="wrap notes-split">
+        <div>
+          <div class="section-head" style="margin-bottom: 1.25rem;">
+            <h2 id="notes-heading">Field Notes, every week</h2>
+            <p>One free letter a week on Substack. You get what I built on my desk plus one rule to run before Friday.
+            </p>
+          </div>
+          <div class="btn-row" style="align-items: center;">
+            <a class="cta-primary" href="/field-notes">Get Field Notes</a>
+            <a class="text-link" href="/blog" style="margin-left: 0.5rem;">Read all essays →</a>
+          </div>
+        </div>
+
+        <div class="notes-card">
+          <a class="note-row" href="/blog/2026-10-02-park-the-devices-protect-4-50-to-5-15">
+            <strong>Park the devices and protect 4:50</strong>
+            <span>Read essay →</span>
+          </a>
+          <a class="note-row" href="/blog/2026-05-12-stop-being-the-family-search-engine">
+            <strong>Stop being the family search engine</strong>
+            <span>Read essay →</span>
+          </a>
+          <a class="note-row" href="/blog/2026-02-26-making-time-is-a-lie">
+            <strong>Making time is a lie</strong>
+            <span>Read essay →</span>
+          </a>
+          <a class="note-row" href="/blog/friday-reset-digital-sabbath">
+            <strong>The Friday reset and digital Sabbath</strong>
+            <span>Read essay →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Podcasts, Interviews & X Spaces -->
+    <section id="media" class="section" aria-labelledby="media-heading">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="media-heading">Conversations and interviews</h2>
+          <p>Podcasts and interviews on cutting meeting bloat, building simple family systems, and leaving work on time.
+          </p>
+        </div>
+
+        <div class="media-grid">
+          <a class="media-card" href="https://www.youtube.com/watch?v=eePy_YRiHZA" target="_blank"
+            rel="noopener noreferrer">
+            <div class="media-thumb">
+              <img src="https://img.youtube.com/vi/eePy_YRiHZA/maxresdefault.jpg"
+                alt="The 5-Day Systems Reset Interview" loading="lazy" width="400" height="225">
+              <span class="media-badge-play" aria-hidden="true"><svg viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg></span>
+            </div>
+            <div class="media-info">
+              <h3>The 5-Day Systems Reset</h3>
+              <p>Men's Lifeline Academy · YouTube</p>
+            </div>
+          </a>
+
+          <a class="media-card" href="https://open.spotify.com/show/67mTJJkjSUab7u6vGb9jyJ" target="_blank"
+            rel="noopener noreferrer">
+            <div class="media-thumb">
+              <img src="images/digital-trailblazer-podcast.jpg" alt="Leave Work at Work on Digital Trailblazer Podcast"
+                loading="lazy" width="400" height="225">
+              <span class="media-badge-play" aria-hidden="true"><svg viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg></span>
+            </div>
+            <div class="media-info">
+              <h3>Leave Work at Work</h3>
+              <p>Digital Trailblazer · Spotify</p>
+            </div>
+          </a>
+
+          <a class="media-card" href="https://open.spotify.com/episode/0IEfdklAHmVM8d2KXm1PO2?si=6sHtpluxRharQOGZxT2HQw"
+            target="_blank" rel="noopener noreferrer">
+            <div class="media-thumb">
+              <img src="images/full-strength-podcast-v3.png"
+                alt="Building Systems For A Better Life on Full Strength Podcast" loading="lazy" width="400"
+                height="225">
+              <span class="media-badge-play" aria-hidden="true"><svg viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg></span>
+            </div>
+            <div class="media-info">
+              <h3>Building Systems For A Better Life</h3>
+              <p>Full Strength Podcast · Spotify</p>
+            </div>
+          </a>
+
+          <a class="media-card" href="https://www.youtube.com/watch?v=5i7rME04vHY" target="_blank"
+            rel="noopener noreferrer">
+            <div class="media-thumb">
+              <img src="https://img.youtube.com/vi/5i7rME04vHY/maxresdefault.jpg" alt="Monolithic Man Interview"
+                loading="lazy" width="400" height="225">
+              <span class="media-badge-play" aria-hidden="true"><svg viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg></span>
+            </div>
+            <div class="media-info">
+              <h3>Building Systems That Hold Up</h3>
+              <p>Monolithic Man · YouTube</p>
+            </div>
+          </a>
+
+          <a class="media-card" href="https://www.youtube.com/watch?v=J2eOMDJneYc&t=1s" target="_blank"
+            rel="noopener noreferrer">
+            <div class="media-thumb">
+              <img src="https://img.youtube.com/vi/J2eOMDJneYc/maxresdefault.jpg" alt="Building Simple Family Systems"
+                loading="lazy" width="400" height="225">
+              <span class="media-badge-play" aria-hidden="true"><svg viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg></span>
+            </div>
+            <div class="media-info">
+              <h3>Simple Family Systems</h3>
+              <p>Men's Life Academy · YouTube</p>
+            </div>
+          </a>
+
+          <a class="media-card" href="https://x.com/i/spaces/1OwxWeeZoPVGQ?s=20" target="_blank"
+            rel="noopener noreferrer">
+            <div class="media-thumb">
+              <img src="images/x-space-v3.png" alt="X Space on Systems and Leadership" loading="lazy" width="400"
+                height="225">
+              <span class="media-badge-play" aria-hidden="true"><svg viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg></span>
+            </div>
+            <div class="media-info">
+              <h3>Systems &amp; Leadership</h3>
+              <p>Live Replay · X Space</p>
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -1142,281 +1290,6 @@
         </div>
       </div>
     </section>
-
-    <!-- Podcasts, Interviews & X Spaces -->
-    <section id="media" class="section" aria-labelledby="media-heading">
-      <div class="wrap">
-        <div class="section-head">
-          <h2 id="media-heading">Conversations and interviews</h2>
-          <p>Podcasts and interviews on cutting meeting bloat so you leave work on time.</p>
-        </div>
-
-        <div class="media-grid">
-          <a class="media-card" href="https://www.youtube.com/watch?v=eePy_YRiHZA" target="_blank"
-            rel="noopener noreferrer">
-            <div class="media-thumb">
-              <img src="https://img.youtube.com/vi/eePy_YRiHZA/maxresdefault.jpg"
-                alt="The 5-Day Systems Reset Interview" loading="lazy" width="400" height="225">
-              <span class="media-badge-play" aria-hidden="true"><svg viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z" />
-                </svg></span>
-            </div>
-            <div class="media-info">
-              <h3>The 5-Day Systems Reset</h3>
-              <p>Men's Lifeline Academy · YouTube</p>
-            </div>
-          </a>
-
-          <a class="media-card" href="https://open.spotify.com/show/67mTJJkjSUab7u6vGb9jyJ" target="_blank"
-            rel="noopener noreferrer">
-            <div class="media-thumb">
-              <img src="images/digital-trailblazer-podcast.jpg" alt="Leave Work at Work on Digital Trailblazer Podcast"
-                loading="lazy" width="400" height="225">
-              <span class="media-badge-play" aria-hidden="true"><svg viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z" />
-                </svg></span>
-            </div>
-            <div class="media-info">
-              <h3>Leave Work at Work</h3>
-              <p>Digital Trailblazer · Spotify</p>
-            </div>
-          </a>
-
-          <a class="media-card" href="https://open.spotify.com/episode/0IEfdklAHmVM8d2KXm1PO2?si=6sHtpluxRharQOGZxT2HQw"
-            target="_blank" rel="noopener noreferrer">
-            <div class="media-thumb">
-              <img src="images/full-strength-podcast-v3.png"
-                alt="Building Systems For A Better Life on Full Strength Podcast" loading="lazy" width="400"
-                height="225">
-              <span class="media-badge-play" aria-hidden="true"><svg viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z" />
-                </svg></span>
-            </div>
-            <div class="media-info">
-              <h3>Building Systems For A Better Life</h3>
-              <p>Full Strength Podcast · Spotify</p>
-            </div>
-          </a>
-
-          <a class="media-card" href="https://www.youtube.com/watch?v=5i7rME04vHY" target="_blank"
-            rel="noopener noreferrer">
-            <div class="media-thumb">
-              <img src="https://img.youtube.com/vi/5i7rME04vHY/maxresdefault.jpg" alt="Monolithic Man Interview"
-                loading="lazy" width="400" height="225">
-              <span class="media-badge-play" aria-hidden="true"><svg viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z" />
-                </svg></span>
-            </div>
-            <div class="media-info">
-              <h3>Building Systems That Hold Up</h3>
-              <p>Monolithic Man · YouTube</p>
-            </div>
-          </a>
-
-          <a class="media-card" href="https://www.youtube.com/watch?v=J2eOMDJneYc&t=1s" target="_blank"
-            rel="noopener noreferrer">
-            <div class="media-thumb">
-              <img src="https://img.youtube.com/vi/J2eOMDJneYc/maxresdefault.jpg" alt="Building Simple Family Systems"
-                loading="lazy" width="400" height="225">
-              <span class="media-badge-play" aria-hidden="true"><svg viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z" />
-                </svg></span>
-            </div>
-            <div class="media-info">
-              <h3>Simple Family Systems</h3>
-              <p>Men's Life Academy · YouTube</p>
-            </div>
-          </a>
-
-          <a class="media-card" href="https://x.com/i/spaces/1OwxWeeZoPVGQ?s=20" target="_blank"
-            rel="noopener noreferrer">
-            <div class="media-thumb">
-              <img src="images/x-space-v3.png" alt="X Space on Systems and Leadership" loading="lazy" width="400"
-                height="225">
-              <span class="media-badge-play" aria-hidden="true"><svg viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z" />
-                </svg></span>
-            </div>
-            <div class="media-info">
-              <h3>Systems &amp; Leadership</h3>
-              <p>Live Replay · X Space</p>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- The Margin Method -->
-    <section id="method" class="section section-sand" aria-labelledby="method-heading">
-      <div class="wrap">
-        <div class="section-head">
-          <h2 id="method-heading">The Margin Method</h2>
-          <p>I run these four steps on my own week first. Same order every time.</p>
-        </div>
-
-        <div class="method-grid">
-          <article class="method-card">
-            <span class="icon-tile" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <circle cx="11" cy="11" r="8"></circle>
-                <path d="m21 21-4.3-4.3"></path>
-              </svg>
-            </span>
-            <div>
-              <h3>Identify</h3>
-              <p>I look for what ate Tuesday. Usually it's a meeting with no agenda or an endless Slack thread.</p>
-            </div>
-          </article>
-
-          <article class="method-card">
-            <span class="icon-tile" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <circle cx="6" cy="6" r="3"></circle>
-                <circle cx="6" cy="18" r="3"></circle>
-                <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
-                <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
-                <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
-              </svg>
-            </span>
-            <div>
-              <h3>Eliminate</h3>
-              <p>I cut it before I automate it. Most “systems” are just another tool on a pile that already doesn't
-                work.</p>
-            </div>
-          </article>
-
-          <article class="method-card">
-            <span class="icon-tile" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <rect x="3" y="3" width="7" height="7" rx="1"></rect>
-                <rect x="14" y="3" width="7" height="7" rx="1"></rect>
-                <rect x="14" y="14" width="7" height="7" rx="1"></rect>
-                <rect x="3" y="14" width="7" height="7" rx="1"></rect>
-              </svg>
-            </span>
-            <div>
-              <h3>Systemize</h3>
-              <p>Then I write one rule I can run without thinking. Shutting down at 4:50 and a Sunday Kitchen Sync keep
-                the week steady. A phone on the counter and a Digital Sabbath protect the weekend.</p>
-            </div>
-          </article>
-
-          <article class="method-card">
-            <span class="icon-tile" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg>
-            </span>
-            <div>
-              <h3>Reclaim</h3>
-              <p>The hour goes to dinner or a walk. Or I finish real work and shut the laptop at 5:00.</p>
-            </div>
-          </article>
-        </div>
-        <p style="margin-top: 1.5rem; font-size: 0.96rem;">
-          <a class="text-link" href="/digital-sabbath-protocol">Digital Sabbath protocol →</a>
-          <span style="color: var(--muted); margin: 0 0.5rem;">·</span>
-          <a class="text-link" href="/home-systems">Home systems →</a>
-        </p>
-      </div>
-    </section>
-
-    <!-- Field Notes & Essays -->
-    <section class="section" aria-labelledby="notes-heading">
-      <div class="wrap notes-split">
-        <div>
-          <div class="section-head" style="margin-bottom: 1.25rem;">
-            <h2 id="notes-heading">Field Notes, every week</h2>
-            <p>One free letter a week on Substack. You get what I built on my desk plus one rule to run before Friday.
-            </p>
-          </div>
-          <div class="btn-row" style="align-items: center;">
-            <a class="cta-primary" href="/field-notes">Get Field Notes</a>
-            <a class="text-link" href="/blog" style="margin-left: 0.5rem;">Read all essays →</a>
-          </div>
-        </div>
-
-        <div class="notes-card">
-          <a class="note-row" href="/blog/2026-10-02-park-the-devices-protect-4-50-to-5-15">
-            <strong>Park the devices and protect 4:50</strong>
-            <span>Read essay →</span>
-          </a>
-          <a class="note-row" href="/blog/2026-05-12-stop-being-the-family-search-engine">
-            <strong>Stop being the family search engine</strong>
-            <span>Read essay →</span>
-          </a>
-          <a class="note-row" href="/blog/2026-02-26-making-time-is-a-lie">
-            <strong>Making time is a lie</strong>
-            <span>Read essay →</span>
-          </a>
-          <a class="note-row" href="/blog/friday-reset-digital-sabbath">
-            <strong>The Friday reset and digital Sabbath</strong>
-            <span>Read essay →</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Ecosystem Outpost Routing -->
-    <section class="section section-sand" aria-labelledby="outpost-heading">
-      <div class="wrap">
-        <div class="section-head">
-          <h2 id="outpost-heading">Where to go next</h2>
-          <p>The Systems Dad is where I publish and test in public. When you want a specific fix, here is where each
-            track lives.</p>
-        </div>
-
-        <div class="outpost-grid">
-          <a class="outpost-card" href="https://marginreset.com">
-            <div>
-              <span class="icon-tile" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M3 10.5 12 3l9 7.5"></path>
-                  <path d="M5 9.5V21h14V9.5"></path>
-                  <path d="M9 21v-6h6v6"></path>
-                </svg>
-              </span>
-              <h3>Home &amp; Evening Shutdown</h3>
-              <p>Work still follows you through the door at night. MarginReset puts your phone on the kitchen charger
-                and keeps the laptop shut at 5:00.</p>
-            </div>
-            <span class="outpost-dest">marginreset.com →</span>
-          </a>
-
-          <a class="outpost-card" href="/services">
-            <div>
-              <span class="icon-tile" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <polyline points="4 17 10 11 4 5"></polyline>
-                  <line x1="12" y1="19" x2="20" y2="19"></line>
-                </svg>
-              </span>
-              <h3>Systems &amp; AI Services</h3>
-              <p>Your Tuesday is packed with spectator meetings. I put one fix on paper and wire plain automation into
-                the tools on your desk.</p>
-            </div>
-            <span class="outpost-dest">Explore services →</span>
-          </a>
-
-          <a class="outpost-card" href="https://christopherlynnsystems.com">
-            <div>
-              <span class="icon-tile" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <rect x="3" y="4" width="18" height="16" rx="2"></rect>
-                  <line x1="3" y1="10" x2="21" y2="10"></line>
-                  <line x1="9" y1="20" x2="9" y2="10"></line>
-                </svg>
-              </span>
-              <h3>Team &amp; Business Process</h3>
-              <p>For 20 to 100 person companies running client jobs in spreadsheets and Friday calls. Written owners and
-                dates before anyone hangs up.</p>
-            </div>
-            <span class="outpost-dest">christopherlynnsystems.com →</span>
-          </a>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
@@ -1467,6 +1340,7 @@
       <div class="footer-bottom">
         <span>&copy; 2026 Christopher Lynn Systems, LLC.</span>
         <span>
+          <a href="/services">Services</a> ·
           <a href="/intro-brief">Intro brief</a> ·
           <a href="/referral-brief">Referral brief</a> ·
           <a href="/privacy">Privacy</a> ·

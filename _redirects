@@ -1,0 +1,9 @@
+# Cloudflare Pages 301 redirects for retired legacy TSD routes
+/shop /#start 301
+/home-systems /services 301
+/digital-sabbath-protocol /blog/friday-reset-digital-sabbath 301
+/real-talk-tuesday /field-notes 301
+/lab /services 301
+/win /services 301
+/the-systems-dad-method /#method 301
+/method /#method 301
