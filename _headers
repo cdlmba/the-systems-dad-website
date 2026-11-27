@@ -7,3 +7,12 @@
 
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
+
+/automation-blueprints-access
+  X-Robots-Tag: noindex, nofollow
+
+/automation-blueprints-access.html
+  X-Robots-Tag: noindex, nofollow
+
+/downloads/*
+  X-Robots-Tag: noindex, nofollow

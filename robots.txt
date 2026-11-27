@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /automation-blueprints-access
+Disallow: /downloads/
 
 Sitemap: https://thesystemsdad.com/sitemap.xml
