@@ -20,8 +20,11 @@
         "stripe_hard_shutdown": "https://buy.stripe.com/cNi5kD5wOdiCdOi3SgdnW0e",
         "stripe_margin_reset_system": "https://buy.stripe.com/8x200jf7oemG25A9cAdnW0c",
         "stripe_logistical_gear_bundle": "https://buy.stripe.com/fZudR9cZgdiCeSm2OcdnW0d",
+        "stripe_automation_blueprints": "https://buy.stripe.com/14AaEX6AS2DYfWq88wdnW0l",
         "field_notes_subscribe_url": "https://thesystemsdad.substack.com/subscribe",
         "stripe_products": {
+            "automation-blueprints": "https://buy.stripe.com/14AaEX6AS2DYfWq88wdnW0l",
+            "AUTOMATION_BLUEPRINTS": "https://buy.stripe.com/14AaEX6AS2DYfWq88wdnW0l",
             "kitchen-sync-kit": "https://buy.stripe.com/5kQ6oHaR8a6qbGa1K8dnW0g",
             "KITCHEN_SYNC_KIT": "https://buy.stripe.com/5kQ6oHaR8a6qbGa1K8dnW0g",
             "TEMPLATE": "https://buy.stripe.com/5kQ6oHaR8a6qbGa1K8dnW0g",
